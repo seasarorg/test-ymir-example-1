@@ -1,0 +1,12 @@
+#Wed Feb 04 00:34:03 JST 2009
+actions=<actions />\r\n
+databaseDriverClassName=org.h2.Driver
+databaseName=H2 Database Engine
+databasePassword=
+databaseType=h2
+databaseURL=jdbc\:h2\:file\:%WEBAPP%/WEB-INF/h2/h2
+databaseUser=sa
+eclipse.preferences.version=1
+template.projectSpecificSettingsEnabled=false
+useDatabase=true
+viewEncoding=UTF-8
