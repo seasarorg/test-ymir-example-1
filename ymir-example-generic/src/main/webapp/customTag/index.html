@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Ymir+ZPTでのカスタムタグ</title>
+</head>
+<body>
+  <h1>Ymir+ZPTでのカスタムタグ</h1>
+  <p>Ymir+ZPTでは、<tt>org.seasar.ymir.zpt.TagRenderingInterceptor</tt>インタフェースの実装クラスを作成してapp.diconにコンポーネント登録しておくことで簡単にカスタムタグを定義することができます。</p>
+  <p>このサンプルアプリケーションには、<tt>&lt;math:increment value="1" /&gt;</tt>と記述すると「2」とレンダリングされるようなカスタムタグ「math:increment」が定義されています。以下が利用例です。</p>
+  <pre>
+    &lt;math:increment value="1" /&gt; → <math:increment value="1" />
+  </pre>
+  <p>ZPTテンプレート<tt>src/main/webapp/customTag/index.html</tt>中のカスタムタグ定義がレンダリングされていることが分かります。</p>
+  <div align="right">
+    <a href="../index.html">戻る</a>
+  </div>
+</body>
+</html>

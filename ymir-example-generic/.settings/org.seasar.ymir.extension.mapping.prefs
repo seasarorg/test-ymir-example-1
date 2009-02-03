@@ -1,0 +1,4 @@
+%customTag%index.html=com.example.web.customTag.IndexPage
+%index.html=com.example.web.IndexPage
+com.example.web.IndexPage=/index.html
+com.example.web.customTag.IndexPage=/customTag/index.html

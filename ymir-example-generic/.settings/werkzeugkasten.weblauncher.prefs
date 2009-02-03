@@ -1,6 +1,7 @@
+#Wed Feb 04 01:21:26 JST 2009
+ExportIgnore=^(status\\.properties|\\..*|.*\\.(bak|tmp|ori?g))$
 baseDir=/ymir-example-generic/src/main/webapp
 contextName=/ymir-example-generic
 eclipse.preferences.version=1
-ExportIgnore=^(status\\.properties|\\..*|.*\\.(bak|tmp|ori?g))$
 isDebug=false
 webType=Tomcat6
