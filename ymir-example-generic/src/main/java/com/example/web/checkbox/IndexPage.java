@@ -1,5 +1,7 @@
 package com.example.web.checkbox;
 
+import static java.util.Arrays.asList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,11 +47,7 @@ public class IndexPage extends IndexPageBase {
     @Override
     public void _prerender() {
         // 選択されているチェックボックスの名前をビューDTOに設定します。
-
-        List<String> names = new ArrayList<String>();
-        for (InputTag tag : getForm().getCheckboxInputTags().getCheckedInputs()) {
-            names.add(tag.getContentAsString());
-        }
-        getView().setNames(names);
+        getView().setNames(
+                asList(getForm().getCheckboxInputTags().getCheckedContents()));
     }
 }
