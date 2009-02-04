@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>ラジオボタン</title>
+</head>
+<body tal:define="view self/view">
+  <h1>ラジオボタン</h1>
+<p>ラジオボタンのサンプルです。</p>
+<p>チェックをして「選択」ボタンを押すと、選択された内容が表示されます。また、ボタンを押した後もチェックの状態を保存しています。</p>
+
+<form name="form" action="./index.html">
+  <ul>
+    <li tal:repeat="input self/form/radioInputTags/inputs">
+      <input type="radio" name="fruits" tal:attributes="checked input/checked; value input/value" />
+      <span tal:replace="input/content">りんご</span>
+    </li>
+  </ul>
+  <p><input type="submit" value="選択" /></p>
+</form>
+<div tal:condition="view/name">
+  <p><span tal:replace="view/name">りんご</span>が選択されました。</p>
+</div>
+<div tal:condition="not:view/name">
+  <p>何も選択されていません。</p>
+</div>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
