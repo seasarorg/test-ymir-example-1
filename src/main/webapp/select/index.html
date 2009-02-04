@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>ドロップダウンリスト</title>
+</head>
+<body tal:define="view self/view">
+  <h1>ドロップダウンリスト</h1>
+<p>ドロップダウンリストのサンプルです。</p>
+<p>項目を選択して「選択」ボタンを押すと、選択された内容が表示されます。また、ボタンを押した後も選択状態を保存しています。</p>
+
+<form name="form" action="./index.html">
+  <p>
+    <select name="fruits">
+      <option tal:repeat="option self/form/selectTag/options" tal:attributes="selected option/selected; value option/value; disabled option/disabled" tal:content="option/content">りんご</option>
+    </select>
+  </p>
+  <p><input type="submit" value="選択" /></p>
+</form>
+<div tal:condition="view/name">
+  <p><span tal:replace="view/name">りんご</span>が選択されました。</p>
+</div>
+<div tal:condition="not:view/name">
+  <p>何も選択されていません。</p>
+</div>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>

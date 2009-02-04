@@ -1,8 +1,12 @@
-updateClassesAction.checkedTime./checkbox/index.html=1233681723951
+updateClassesAction.checkedTime./checkbox/index.html=1233738179232
 updateClassesAction.checkedTime./customTag/index.html=1233681636295
-updateClassesAction.checkedTime./index.html=1233679711738
+updateClassesAction.checkedTime./index.html=1233738190873
+updateClassesAction.checkedTime./select/index.html=1233740145734
 updateClassesAction.class.checked.com.example.dto.checkbox.FormDto=true
 updateClassesAction.class.checked.com.example.dto.checkbox.ViewDto=true
+updateClassesAction.class.checked.com.example.dto.select.FormDto=true
+updateClassesAction.class.checked.com.example.dto.select.ViewDto=true
 updateClassesAction.class.checked.com.example.web.IndexPage=true
 updateClassesAction.class.checked.com.example.web.checkbox.IndexPage=true
 updateClassesAction.class.checked.com.example.web.customTag.IndexPage=true
+updateClassesAction.class.checked.com.example.web.select.IndexPage=true
