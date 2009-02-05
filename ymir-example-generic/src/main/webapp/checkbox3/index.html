@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>シンプルなbooleanチェックボックス</title>
+</head>
+<body tal:define="form self/form">
+  <h1>シンプルなbooleanチェックボックス</h1>
+<p>trueまたはfalseを指定させるようなチェックボックスのサンプルです。</p>
+<p>チェックボックスを実現する場合、通常はCheckboxInputTagsクラスやInputTagクラスを使用しますが、単にチェックの状態だけを扱えば良い単純なbooleanチェックボックスなどの場合はこのサンプルのようにシンプルに実現することもできます。</p>
+<p>チェックをして「選択」ボタンを押すと、選択された内容が表示されます。また、ボタンを押した後もチェックの状態を保存しています。</p>
+
+<form name="form" action="./index.html">
+  <ul>
+    <li>
+      <input type="checkbox" name="smoking" value="true" tal:attributes="checked form/smoking" /> たばこを吸う
+    </li>
+    <li>
+      <input type="checkbox" name="drinking" value="true" tal:attributes="checked form/drinking" /> お酒を飲む
+    </li>
+    <li>
+      <input type="checkbox" name="gambling" value="true" tal:attributes="checked form/gambling" /> 賭け事をする
+    </li>
+  <p><input type="submit" value="選択" /></p>
+</form>
+<ul>
+  <li tal:condition="form/smoking">「たばこを吸う」が選択されました。</li>
+  <li tal:condition="form/drinking">「お酒を飲む」が選択されました。</li>
+  <li tal:condition="form/gambling">「賭け事をする」が選択されました。</li>
+</ul>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
