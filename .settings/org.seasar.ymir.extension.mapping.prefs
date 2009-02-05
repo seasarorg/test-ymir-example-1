@@ -1,4 +1,5 @@
 %checkbox%index.html=com.example.web.checkbox.IndexPage
+%checkbox2%index.html=com.example.web.checkbox2.IndexPage
 %customTag%index.html=com.example.web.customTag.IndexPage
 %index.html=com.example.web.IndexPage
 %radio%index.html=com.example.web.radio.IndexPage
@@ -6,6 +7,7 @@
 %select2%index.html=com.example.web.select2.IndexPage
 com.example.web.IndexPage=/index.html
 com.example.web.checkbox.IndexPage=/checkbox/index.html
+com.example.web.checkbox2.IndexPage=/checkbox2/index.html
 com.example.web.customTag.IndexPage=/customTag/index.html
 com.example.web.radio.IndexPage=/radio/index.html
 com.example.web.select.IndexPage=/select/index.html

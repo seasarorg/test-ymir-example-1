@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>booleanチェックボックス</title>
+</head>
+<body tal:define="view self/view">
+  <h1>booleanチェックボックス</h1>
+<p>trueまたはfalseを指定させるようなチェックボックスのサンプルです。</p>
+<p>チェックをして「選択」ボタンを押すと、選択された内容が表示されます。また、ボタンを押した後もチェックの状態を保存しています。</p>
+
+<form name="form" action="./index.html" tal:define="form self/form">
+  <ul>
+    <li tal:define="input form/smokingInputTag">
+      <input type="checkbox" name="smoking" value="true" tal:attributes="checked input/checked" />
+      <span tal:replace="input/content">たばこを吸う</span>
+    </li>
+    <li tal:define="input form/drinkingInputTag">
+      <input type="checkbox" name="drinking" value="true" tal:attributes="checked input/checked" />
+      <span tal:replace="input/content">お酒を飲む</span>
+    </li>
+    <li tal:define="input form/gamblingInputTag">
+      <input type="checkbox" name="gambling" value="true" tal:attributes="checked input/checked" />
+      <span tal:replace="input/content">賭け事をする</span>
+    </li>
+  <p><input type="submit" value="選択" /></p>
+</form>
+<div tal:condition="view/attributes">
+  <p><span tal:repeat="name view/attributes" tal:omit-tag="">「<span tal:replace="name">たばこを吸う</span>」</span>が選択されました。</p>
+</div>
+<div tal:condition="not:view/attributes">
+  <p>何も選択されていません。</p>
+</div>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
