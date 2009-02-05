@@ -18,7 +18,7 @@ public class IndexPageBase extends com.example.web.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public void setFruits(String fruits) {
         this.form.setFruits(fruits);
     }
@@ -44,6 +44,6 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
     public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-
+        
     }
 }
