@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>テキストボックス</title>
+</head>
+<body>
+  <h1>テキストボックス</h1>
+<p>バリデーションチェックつきのテキストボックスのサンプルです。</p>
+<p>yyyyMMdd形式の日付文字列を入力して「決定」ボタンを押すと、選択された内容が表示されます。日付の形式が違う場合はバリデーションエラーになります。その際入力された文字列がテキストボックスに表示されます。</p>
+
+<ul tal:condition="notes">
+  <li tal:repeat="note notes/notes" tal:content="note/%value">MESSAGE</li>
+</ul>
+<form name="form" action="./index.html">
+  <p>yyyyMMdd形式の日付を入力して下さい：<input type="text" name="date" tal:attributes="value param-self/date" /></p>
+  <p><input type="submit" value="決定" /></p>
+</form>
+<p tal:condition="self/date">入力された日付は<span tal:replace="self/date">DATE</span>です。</p>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
