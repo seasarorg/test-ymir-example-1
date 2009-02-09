@@ -1,7 +1,5 @@
 package com.example.web.text;
 
-import org.seasar.ymir.constraint.annotation.Datetime;
-
 @SuppressWarnings("unchecked")
 public class IndexPageBase extends com.example.web.PageBase {
     @org.seasar.ymir.annotation.Meta(name="property",value="form")
@@ -14,8 +12,8 @@ public class IndexPageBase extends com.example.web.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter
-    @Datetime("yyyyMMdd")
+    @org.seasar.ymir.constraint.annotation.Datetime(pattern="",property={},value="yyyyMMdd")
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public void setDate(java.util.Date date) {
         this.form.setDate(date);
     }
@@ -37,6 +35,6 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
     public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-
+        
     }
 }

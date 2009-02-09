@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>セッションIDのURLへの埋め込み</title>
+</head>
+<body>
+  <h1>セッションIDのURLへの埋め込み</h1>
+  <p>一般的に、CookieがOFFであるブラウザからアクセスされた場合にも適切にセッションを維持するためには、ZPTテンプレート内のURLにセッションIDを付与する必要があります。YmirではTAL式にPage式を指定することでURLにセッションIDを付与することができます。</p>
+  <p>ブラウザのCookieをOFFにした状態でこのページにアクセスしてソースを見ると、URLにセッションIDが埋め込まれていることが分かります。</p>
+  <dl>
+    <dt>ZPTテンプレート：</dt>
+    <dd><tt>&lt;a tal:attributes="href page:/index.html"&gt;トップページ&lt;/a&gt;</tt></dd>
+    <dt>レンダリング結果（ソースを見て下さい）：</dt>
+    <dd><a tal:attributes="href page:/index.html">トップページ</a></dd>
+  </dl>
+  <p>また、ページ相対でURLを記述しておけば、通常のHTMLタグ中のURLにも自動的にセッションIDが付与されます。</p>
+  <dl>
+    <dt>ZPTテンプレート：</dt>
+    <dd><tt>&lt;a href="../index.html"&gt;トップページ&lt;/a&gt;</tt></dd>
+    <dt>レンダリング結果（ソースを見て下さい）：</dt>
+    <dd><a href="../index.html">トップページ</a></dd>
+  </dl>
+  <p>絶対URL等にはセッションIDは付与されません。</p>
+  <dl>
+    <dt>ZPTテンプレート：</dt>
+    <dd><tt>&lt;a href="http://ymir.seasar.org/"&gt;Ymirトップページ&lt;/a&gt;</tt></dd>
+    <dt>レンダリング結果（ソースを見て下さい）：</dt>
+    <dd><a href="http://ymir.seasar.org/">Ymirトップページ</a></dd>
+  </dl>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
