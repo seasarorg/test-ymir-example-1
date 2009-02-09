@@ -12,7 +12,7 @@ public class IndexPageBase extends com.example.web.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public void setDrinking(boolean drinking) {
         this.form.setDrinking(drinking);
     }
@@ -27,7 +27,7 @@ public class IndexPageBase extends com.example.web.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public void setGambling(boolean gambling) {
         this.form.setGambling(gambling);
     }
@@ -38,7 +38,7 @@ public class IndexPageBase extends com.example.web.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public void setSmoking(boolean smoking) {
         this.form.setSmoking(smoking);
     }
@@ -60,6 +60,6 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
     public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-
+        
     }
 }
