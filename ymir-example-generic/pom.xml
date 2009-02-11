@@ -23,9 +23,7 @@
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <configuration>
-            <warSourceDirectory>
-              ${basedir}/src/main/web-resource
-            </warSourceDirectory>
+            <warSourceDirectory>${basedir}/src/main/web-resource</warSourceDirectory>
             <webResources>
               <resource>
                 <directory>${basedir}/src/main/webapp</directory>
@@ -50,9 +48,7 @@
               <artifactId>maven-war-plugin</artifactId>
               <version>2.0</version>
               <configuration>
-                <warSourceDirectory>
-                  ${basedir}/src/main/web-resource
-                </warSourceDirectory>
+                <warSourceDirectory>${basedir}/src/main/web-resource</warSourceDirectory>
                 <webResources>
                   <resource>
                     <directory>${basedir}/src/main/webapp</directory>
@@ -62,16 +58,12 @@
                     </excludes>
                   </resource>
                   <resource>
-                    <directory>
-                      ${basedir}/target/generated-resources
-                    </directory>
+                    <directory>${basedir}/target/generated-resources</directory>
                   </resource>
                 </webResources>
                 <archive>
                   <manifest>
-                    <mainClass>
-                      org.seasar.cms.executablewar.Main
-                    </mainClass>
+                    <mainClass>org.seasar.cms.executablewar.Main</mainClass>
                   </manifest>
                 </archive>
               </configuration>
@@ -94,10 +86,8 @@
                   <tasks>
                     <mkdir dir="target/generated-resources" />
                     <!-- put executable war header -->
-                    <resolveArtifact artifactId="executable-war"
-                      property="executable-war.jar" />
-                    <unjar src="${executable-war.jar}"
-                      dest="target/generated-resources">
+                    <resolveArtifact artifactId="executable-war" property="executable-war.jar" />
+                    <unjar src="${executable-war.jar}" dest="target/generated-resources">
                       <patternset>
                         <include name="**/*.class" />
                         <include name="**/*.jar" />
@@ -200,16 +190,26 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
+      <groupId>org.seasar.ymir</groupId>
+      <artifactId>ymir-testing</artifactId>
+      <version>1.0.2-SNAPSHOT</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.2</version>
       <scope>test</scope>
     </dependency>
-  <dependency>
-  <groupId>com.h2database</groupId>
-  <artifactId>h2</artifactId>
-  <version>1.0.78</version>
-  <scope>runtime</scope>
-</dependency>
-</dependencies>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.0.78</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.cms.mailsender</groupId>
+      <artifactId>mailsender</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+  </dependencies>
 </project>
