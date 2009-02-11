@@ -1,7 +1,6 @@
-#Wed Feb 04 01:21:26 JST 2009
+#Wed Feb 11 18:41:59 JST 2009
 ExportIgnore=^(status\\.properties|\\..*|.*\\.(bak|tmp|ori?g))$
 baseDir=/ymir-example-generic/src/main/webapp
 contextName=/ymir-example-generic
 eclipse.preferences.version=1
-isDebug=false
 webType=Tomcat6

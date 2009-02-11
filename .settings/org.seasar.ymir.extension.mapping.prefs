@@ -3,6 +3,7 @@
 %checkbox3%index.html=com.example.web.checkbox3.IndexPage
 %customTag%index.html=com.example.web.customTag.IndexPage
 %index.html=com.example.web.IndexPage
+%mailsender%index.html=com.example.web.mailsender.IndexPage
 %radio%index.html=com.example.web.radio.IndexPage
 %select%index.html=com.example.web.select.IndexPage
 %select2%index.html=com.example.web.select2.IndexPage
@@ -13,6 +14,7 @@ com.example.web.checkbox.IndexPage=/checkbox/index.html
 com.example.web.checkbox2.IndexPage=/checkbox2/index.html
 com.example.web.checkbox3.IndexPage=/checkbox3/index.html
 com.example.web.customTag.IndexPage=/customTag/index.html
+com.example.web.mailsender.IndexPage=/mailsender/index.html
 com.example.web.radio.IndexPage=/radio/index.html
 com.example.web.select.IndexPage=/select/index.html
 com.example.web.select2.IndexPage=/select2/index.html

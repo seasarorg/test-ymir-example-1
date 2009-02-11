@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>メール送信</title>
+</head>
+<body>
+  <h1>メール送信</h1>
+  <p>mailsenderライブラリを使用してメール送信を行なうサンプルです。</p>
+  <p>アプリケーションにメール送信機能を追加する手順は以下の通りです。</p>
+  <el>
+    <li>Viliを使ってプロジェクトに「メール送信フラグメント」を追加する。</li>
+    <li>「ルートパッケージ.mailsender」パッケージに、末尾が「Mailsender」であるインタフェース（または抽象クラス）を作成する（例：TestMailsender）。</li>
+    <li>作成したMailsenderインタフェースに、com.ozacc.mail.Mail型（配列型でもList<Mail>型でも構いません）の引数を持つメソッドを追加する（例：void send(Mail mail)）。
+    <li>メール送信処理を行ないたいクラスにMailsenderインタフェースのプロパティを用意し、MailsenderコンポーネントをDIさせるようにする。</li>
+    <li>Mailsenderコンポーネントのメソッドを呼び出す。</li>
+  </el>
+  <ul tal:condition="notes">
+    <li tal:repeat="note notes/notes" tal:content="note/%value">MESSAGE</li>
+  </ul>
+  <form name="mail" action="./index.html" method="post">
+    <p>宛先：<input type="text" name="to" tal:attributes="value param-self/to" /></p>
+    <p><textarea name="text" cols="60" rows="10" tal:content="param-self/text">本文</textarea></p>
+    <p><input type="submit" name="send" value="送信" /></p>
+  </form>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
