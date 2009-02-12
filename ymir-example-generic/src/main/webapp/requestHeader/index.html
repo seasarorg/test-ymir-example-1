@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>リクエストヘッダの取得</title>
+</head>
+<body>
+  <h1>リクエストヘッダの取得</h1>
+  <p>Ymirではいろいろな情報をPageオブジェクトに設定（これを「インジェクト」と言います）することができます。リクエストヘッダをPageオブジェクトから参照したい場合は、リクエストヘッダを受け取るためのプロパティのSetterに@In(scopeClass = RequestHeaderScope.class)アノテーションを付与して下さい。</p>
+<h2>User-Agentリクエストヘッダの取得例</h2>
+<dl>
+  <dt>Setterの記述例：</dt>
+  <dd><pre>
+@In(name = "User-Agent", scopeClass = RequestHeaderScope.class)
+public void setUserAgent(String userAgent) {
+    this.userAgent = userAgent;
+}
+</pre></dd>
+  <dt>ZPTテンプレートの記述例：</dt>
+  <dd><pre>
+User-Agentは「&lt;span tal:content="self/userAgent"&gt;User-Agent&lt;/span&gt;」です。
+</pre></dd>
+  <dt>取得結果：</dt>
+  <dd>User-Agentは「<span tal:content="self/userAgent">User-Agent</span>」です。</dd>
+</dl>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
