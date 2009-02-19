@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>一覧表示からの詳細画面への遷移（１）</title>
+</head>
+<body>
+  <h1>一覧表示からの詳細画面への遷移（１）</h1>
+  <p>検索結果などを一覧表示し、その中から1つエントリを選択して詳細画面に遷移するようなサンプルです。</p>
+  <table border="1">
+    <tbody>
+      <tr tal:repeat="entry self/entries" tal:attributes="class string:row-hilight-${repeat/entry/odd}">
+        <td tal:content="entry/id">ID</td>
+        <td>
+          <a tal:attributes="href page:./detail.html?id=${entry/id}" tal:content="entry/name">NAME</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
