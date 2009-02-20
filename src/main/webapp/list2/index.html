@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>一覧表示の中でのエントリの編集</title>
+</head>
+<body tal:define="view self/view; form self/form">
+  <h1>一覧表示の中でのエントリの編集</h1>
+  <p>検索結果などを一覧表示し、一覧表示の中でエントリを編集するようなサンプルです。</p>
+  <form name="form" action="./index.html" method="post">
+    <table border="1">
+      <tbody>
+        <tr tal:repeat="entry form/entries" tal:attributes="class string:row-hilight-${repeat/entry/odd}">
+          <td tal:content="entry/id">ID</td>
+          <td>
+            <input type="text" tal:define="name string:entries[${repeat/entry/index}].name" tal:attributes="name name; value param-self/?name" />
+          </td>
+          <td>
+            <input type="submit" value="更新" tal:attributes="name string:update[${repeat/entry/index}]" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  <p tal:condition="view/entry" tal:define="entry view/entry">
+    IDが<span tal:replace="entry/id">ID</span>の果物の名前を「<span tal:replace="entry/name">NAME</span>」に変更しました。
+  </p>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
