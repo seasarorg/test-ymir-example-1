@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>一覧表示の中での編集エントリの選択</title>
+</head>
+<body tal:define="view self/view; form self/form">
+  <h1>一覧表示の中での編集エントリの選択</h1>
+  <p>一覧表示されている編集エントリからチェックしたものを選択するようなサンプルです。</p>
+  <form name="form" action="./index.html" method="post">
+    <table border="1">
+      <tbody>
+        <tr tal:repeat="entry form/entries" tal:attributes="class string:row-hilight-${repeat/entry/odd}">
+          <td>
+            <input type="checkbox" value="true" tal:define="name string:entries[${repeat/entry/index}].checked" tal:attributes="name name; checked self/?name" />
+          </td>
+          <td>
+            <input type="text" tal:define="name string:entries[${repeat/entry/index}].name" tal:attributes="name name; value param-self/?name" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="submit" value="選択" />
+  </form>
+  <div tal:condition="view/entries">
+    <p><span tal:repeat="entry view/entries" tal:omit-tag=""><span tal:condition="not:repeat/entry/start" tal:omit-tag="">、</span><span tal:replace="entry/name">りんご</span></span>が選択されました。</p>
+  </div>
+  <div tal:condition="not:view/entries">
+    <p>何も選択されていません。</p>
+  </div>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
