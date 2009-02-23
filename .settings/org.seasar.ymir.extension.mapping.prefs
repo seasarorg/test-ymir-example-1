@@ -9,6 +9,8 @@
 %list3%index.html=com.example.web.list3.IndexPage
 %mailsender%index.html=com.example.web.mailsender.IndexPage
 %radio%index.html=com.example.web.radio.IndexPage
+%register%confirm.html=com.example.web.register.ConfirmPage
+%register%input.html=com.example.web.register.InputPage
 %requestHeader%index.html=com.example.web.requestHeader.IndexPage
 %select%index.html=com.example.web.select.IndexPage
 %select2%index.html=com.example.web.select2.IndexPage
@@ -25,6 +27,8 @@ com.example.web.list2.IndexPage=/list2/index.html
 com.example.web.list3.IndexPage=/list3/index.html
 com.example.web.mailsender.IndexPage=/mailsender/index.html
 com.example.web.radio.IndexPage=/radio/index.html
+com.example.web.register.ConfirmPage=/register/confirm.html
+com.example.web.register.InputPage=/register/input.html
 com.example.web.requestHeader.IndexPage=/requestHeader/index.html
 com.example.web.select.IndexPage=/select/index.html
 com.example.web.select2.IndexPage=/select2/index.html

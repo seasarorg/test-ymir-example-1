@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>入力→確認→完了画面（Conversation）</title>
+</head>
+<body tal:define="form self/form">
+  <h1>入力→確認→完了画面（Conversation）</h1>
+  <p>Conversation機能を使った入力→確認→完了画面のサンプルです。</p>
+
+  <form name="form" action="./input.html" method="post">
+    <ul>
+      <li>お名前：<input type="text" name="name" tal:attributes="value param-self/name" />
+      <li>ふりがな：<input type="text" name="furigana" tal:attributes="value param-self/furigana" />
+    </ul>
+    <p><input type="submit" name="confirm" value="確認画面へ" />
+  </form>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
