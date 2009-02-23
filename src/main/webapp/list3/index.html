@@ -15,7 +15,7 @@
       <tbody>
         <tr tal:repeat="entry form/entries" tal:attributes="class string:row-hilight-${repeat/entry/odd}">
           <td>
-            <input type="checkbox" value="true" tal:define="name string:entries[${repeat/entry/index}].checked" tal:attributes="name name; checked self/?name" />
+            <input type="checkbox" value="true" tal:define="name string:entries[${repeat/entry/index}].checked" tal:attributes="name name; checked param-self/?name" />
           </td>
           <td>
             <input type="text" tal:define="name string:entries[${repeat/entry/index}].name" tal:attributes="name name; value param-self/?name" />

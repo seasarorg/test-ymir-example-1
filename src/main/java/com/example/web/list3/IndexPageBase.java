@@ -16,7 +16,7 @@ public class IndexPageBase extends com.example.web.list3.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public java.util.List<com.example.dto.list3.EntryDto> getEntries() {
         return this.form.getEntries();
     }
@@ -26,22 +26,22 @@ public class IndexPageBase extends com.example.web.list3.PageBase {
         return new org.seasar.ymir.response.PassthroughResponse();
     }
 
-    public void _get() {
-
-    }
-
     public void _prerender() {
 
     }
 
     @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
     public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-
+        
     }
 
     @org.seasar.ymir.annotation.Meta(name="source",value={"throw ex;","ex"})
     public void _permissionDenied(org.seasar.ymir.constraint.PermissionDeniedException ex)
         throws org.seasar.ymir.constraint.PermissionDeniedException {
         throw ex;
+    }
+
+    public void _get() {
+
     }
 }
