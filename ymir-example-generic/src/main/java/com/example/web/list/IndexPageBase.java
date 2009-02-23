@@ -18,7 +18,6 @@ public class IndexPageBase extends com.example.web.list.PageBase {
 
     @org.seasar.ymir.annotation.Meta(name = "source", value = { "throw ex;",
             "ex" })
-    @org.seasar.ymir.conversation.annotation.Begin(alwaysBegin = true)
     public void _permissionDenied(
             org.seasar.ymir.constraint.PermissionDeniedException ex)
             throws org.seasar.ymir.constraint.PermissionDeniedException {

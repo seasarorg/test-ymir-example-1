@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>入力の確認</title>
+</head>
+<body tal:define="view self/view">
+  <h1>入力の確認</h1>
+  <p>入力内容を確認して、問題なけば「完了」ボタンを押して下さい。修正したい場合は「戻る」ボタンで入力画面に戻って修正して下さい。</p>
+  <form action="./confirm.html" method="post">
+    <ul>
+      <li>お名前：<span tal:replace="view/form/name">NAME</span>
+      <li>ふりがな：<span tal:replace="view/form/furigana">FURIGANA</span>
+    </ul>
+    <p><input type="submit" name="back" value="戻る" />
+    <p><input type="submit" name="complete" value="完了" />
+  </form>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>

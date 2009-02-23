@@ -1,0 +1,39 @@
+package com.example.web.register;
+
+public class ConfirmPageBase extends com.example.web.register.PageBase {
+    protected com.example.dto.register.ViewDto view = new com.example.dto.register.ViewDto();
+
+
+    public com.example.dto.register.ViewDto getView() {
+        return this.view;
+    }
+
+    @org.seasar.ymir.annotation.Meta(name="source",value="return new org.seasar.ymir.response.PassthroughResponse();")
+    public org.seasar.ymir.Response _post_back() {
+        return new org.seasar.ymir.response.PassthroughResponse();
+    }
+
+    @org.seasar.ymir.annotation.Meta(name="source",value="return new org.seasar.ymir.response.PassthroughResponse();")
+    public org.seasar.ymir.Response _post_complete() {
+        return new org.seasar.ymir.response.PassthroughResponse();
+    }
+
+    public void _prerender() {
+
+    }
+
+    @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
+    public void _validationFailed(org.seasar.ymir.message.Notes notes) {
+        
+    }
+
+    @org.seasar.ymir.annotation.Meta(name="source",value={"throw ex;","ex"})
+    public void _permissionDenied(org.seasar.ymir.constraint.PermissionDeniedException ex)
+        throws org.seasar.ymir.constraint.PermissionDeniedException {
+        throw ex;
+    }
+
+    public void _get() {
+
+    }
+}

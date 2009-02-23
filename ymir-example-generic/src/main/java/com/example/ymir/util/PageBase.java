@@ -12,15 +12,15 @@ import org.seasar.ymir.response.PassthroughResponse;
 abstract public class PageBase {
     public static final String PASSTHROUGH = PageUtils.SCHEME_PASSTHROUGH;
 
-    private Request ymirRequest_;
+    private Request ymirRequest;
 
     @Binding(bindingType = BindingType.MUST)
     final public void setYmirRequest(Request ymirRequest) {
-        ymirRequest_ = ymirRequest;
+        this.ymirRequest = ymirRequest;
     }
 
     final public Request getYmirRequest() {
-        return ymirRequest_;
+        return ymirRequest;
     }
 
     final protected void addNote(String key) {
@@ -34,10 +34,10 @@ abstract public class PageBase {
     }
 
     final protected Notes getNotes() {
-        Notes notes = (Notes) ymirRequest_.getAttribute(RequestProcessor.ATTR_NOTES);
+        Notes notes = (Notes) ymirRequest.getAttribute(RequestProcessor.ATTR_NOTES);
         if (notes == null) {
             notes = new Notes();
-            ymirRequest_.setAttribute(RequestProcessor.ATTR_NOTES, notes);
+            ymirRequest.setAttribute(RequestProcessor.ATTR_NOTES, notes);
         }
         return notes;
     }
