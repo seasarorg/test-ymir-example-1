@@ -1,6 +1,5 @@
 package com.example.web.checkbox3;
 
-@SuppressWarnings("unchecked")
 public class IndexPageBase extends com.example.web.PageBase {
     @org.seasar.ymir.annotation.Meta(name="property",value="form")
     protected com.example.dto.checkbox3.FormDto form = new com.example.dto.checkbox3.FormDto();

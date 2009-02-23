@@ -1,6 +1,5 @@
 package com.example.web.text;
 
-@SuppressWarnings("unchecked")
 public class IndexPageBase extends com.example.web.PageBase {
     @org.seasar.ymir.annotation.Meta(name="property",value="form")
     protected com.example.dto.text.FormDto form = new com.example.dto.text.FormDto();

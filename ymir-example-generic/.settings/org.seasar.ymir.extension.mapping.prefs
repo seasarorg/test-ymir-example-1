@@ -16,6 +16,8 @@
 %select2%index.html=com.example.web.select2.IndexPage
 %session%index.html=com.example.web.session.IndexPage
 %text%index.html=com.example.web.text.IndexPage
+%update%confirm.html=com.example.web.update.ConfirmPage
+%update%input.html=com.example.web.update.InputPage
 com.example.web.IndexPage=/index.html
 com.example.web.checkbox.IndexPage=/checkbox/index.html
 com.example.web.checkbox2.IndexPage=/checkbox2/index.html
@@ -34,3 +36,5 @@ com.example.web.select.IndexPage=/select/index.html
 com.example.web.select2.IndexPage=/select2/index.html
 com.example.web.session.IndexPage=/session/index.html
 com.example.web.text.IndexPage=/text/index.html
+com.example.web.update.ConfirmPage=/update/confirm.html
+com.example.web.update.InputPage=/update/input.html

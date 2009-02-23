@@ -1,6 +1,5 @@
 package com.example.web.radio;
 
-@SuppressWarnings("unchecked")
 public class IndexPageBase extends com.example.web.PageBase {
     @org.seasar.ymir.annotation.Meta(name="property",value="form")
     protected com.example.dto.radio.FormDto form = new com.example.dto.radio.FormDto();
