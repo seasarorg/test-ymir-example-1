@@ -1,6 +1,5 @@
 package com.example.web.select2;
 
-@SuppressWarnings("unchecked")
 public class IndexPageBase extends com.example.web.PageBase {
     @org.seasar.ymir.annotation.Meta(name="property",value="form")
     protected com.example.dto.select2.FormDto form = new com.example.dto.select2.FormDto();

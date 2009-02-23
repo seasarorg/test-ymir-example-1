@@ -1,4 +1,4 @@
-package com.example.web.register;
+package com.example.web.update;
 
 import org.seasar.ymir.Response;
 import org.seasar.ymir.conversation.annotation.Conversation;
@@ -6,8 +6,8 @@ import org.seasar.ymir.conversation.annotation.Conversation;
 import com.example.ymir.util.Redirect;
 
 // 確認画面です。
-// 確認画面は入力画面（input）だけから遷移してくるため、followAfterを"input"としています。
-@Conversation(name = "register", phase = "confirm", followAfter = "input")
+// 確認画面は編集画面（input）だけから遷移してくるため、followAfterを"input"としています。
+@Conversation(name = "update", phase = "confirm", followAfter = "input")
 public class ConfirmPage extends ConfirmPageBase {
     // 「戻る」ボタンに対応するアクションです。
     // 戻った際にフォームの内容を初期化してしまわないよう、@Beginアノテーションのついてないアクション
@@ -23,6 +23,15 @@ public class ConfirmPage extends ConfirmPageBase {
     // の遷移先（CompletePage#_get()）に@Endアノテーションを付与してカンバセーションを終了させるようにします。
     @Override
     public Response _post_complete() {
+        // 「完了」ボタンが押されたのでエンティティを更新します。
+
+        // 更新するために、フォームの内容をエンティティに反映させます。
+        formConverter.copyDtoToEntity(form, entity);
+
+        // エンティティを更新します。
+        entityLogic.update(entity);
+
+        // 完了画面に遷移します。
         return Redirect.to(CompletePage.class);
     }
 }

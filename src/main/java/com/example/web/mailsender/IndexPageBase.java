@@ -1,6 +1,5 @@
 package com.example.web.mailsender;
 
-@SuppressWarnings("unchecked")
 public class IndexPageBase extends com.example.web.PageBase {
     @org.seasar.ymir.annotation.Meta(name="property",value="mail")
     protected com.example.dto.mailsender.MailDto mail = new com.example.dto.mailsender.MailDto();
@@ -12,7 +11,7 @@ public class IndexPageBase extends com.example.web.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="mail")
-    @org.seasar.ymir.scope.annotation.RequestParameter
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public void setText(String text) {
         this.mail.setText(text);
     }
@@ -23,7 +22,7 @@ public class IndexPageBase extends com.example.web.PageBase {
     }
 
     @org.seasar.ymir.annotation.Meta(name="formProperty",value="mail")
-    @org.seasar.ymir.scope.annotation.RequestParameter
+    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
     public void setTo(String to) {
         this.mail.setTo(to);
     }

@@ -1,6 +1,5 @@
 package com.example.web.requestHeader;
 
-@SuppressWarnings("unchecked")
 public class IndexPageBase extends com.example.web.PageBase {
     protected String userAgent;
 
@@ -25,6 +24,6 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
     public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-
+        
     }
 }
