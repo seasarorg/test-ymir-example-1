@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>検索画面と詳細画面（サブカンバセーション）</title>
+</head>
+<body tal:define="searchView self/searchView">
+  <h1>検索画面と詳細画面（サブカンバセーション）</h1>
+  <p>サブカンバセーションを使った検索画面と詳細画面のサンプルです。</p>
+  <form name="condition" action="./index.html" method="get">
+    <input type="text" name="name" tal:attributes="value param-self/name" /> <input type="submit" name="search" value="検索" />
+  </form>
+  <div tal:condition="exists:searchView/entries">
+    <p tal:condition="not:searchView/entries">
+      該当するエントリは見つかりませんでした。
+    </p>
+    <ul tal:condition="searchView/entries">
+      <li tal:repeat="entry searchView/entries">
+        <a tal:attributes="href page:./index.html?detail&id=${entry/id}" tal:content="entry/name">NAME</a>
+      </li>
+    </ul>
+  </div>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
