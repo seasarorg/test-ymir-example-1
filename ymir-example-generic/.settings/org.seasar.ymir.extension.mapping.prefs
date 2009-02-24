@@ -12,6 +12,8 @@
 %register%confirm.html=com.example.web.register.ConfirmPage
 %register%input.html=com.example.web.register.InputPage
 %requestHeader%index.html=com.example.web.requestHeader.IndexPage
+%search%detail.html=com.example.web.search.DetailPage
+%search%index.html=com.example.web.search.IndexPage
 %select%index.html=com.example.web.select.IndexPage
 %select2%index.html=com.example.web.select2.IndexPage
 %session%index.html=com.example.web.session.IndexPage
@@ -32,6 +34,8 @@ com.example.web.radio.IndexPage=/radio/index.html
 com.example.web.register.ConfirmPage=/register/confirm.html
 com.example.web.register.InputPage=/register/input.html
 com.example.web.requestHeader.IndexPage=/requestHeader/index.html
+com.example.web.search.DetailPage=/search/detail.html
+com.example.web.search.IndexPage=/search/index.html
 com.example.web.select.IndexPage=/select/index.html
 com.example.web.select2.IndexPage=/select2/index.html
 com.example.web.session.IndexPage=/session/index.html
