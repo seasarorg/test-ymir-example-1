@@ -21,6 +21,8 @@ import com.example.ymir.util.Redirect;
 // 検索画面のためのカンバセーション指定です。
 // acceptBrowsersBackButton = Bool.TRUE とすることで、詳細画面からブラウザバックで検索画面に戻ってきても
 // 不正な遷移エラーとせずに動作するようにしています。
+// acceptBrowsersBackButtonの設定をアプリケーション全体について行ないたい場合は、
+// app.propertiesにcore.conversation.acceptBrowsersBackButtonプロパティを追加して下さい（デフォルトはfalseです）。
 @Conversation(name = "search", acceptBrowsersBackButton = Bool.TRUE)
 public class IndexPage extends IndexPageBase {
     private EntryConverter entryConverter;
