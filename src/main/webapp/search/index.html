@@ -9,6 +9,7 @@
 <body tal:define="searchView self/searchView">
   <h1>検索画面と詳細画面（サブカンバセーション）</h1>
   <p>サブカンバセーションを使った検索画面と詳細画面のサンプルです。</p>
+  <p>（日本語で検索して文字化けした場合は、Tomcatのserver.xmlの設定（useBodyEncodingForURI）を見直して下さい。）</p>
   <form name="condition" action="./index.html" method="get">
     <input type="text" name="name" tal:attributes="value param-self/name" /> <input type="submit" name="search" value="検索" />
   </form>
