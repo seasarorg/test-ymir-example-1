@@ -20,6 +20,9 @@ public class IndexPage extends IndexPageBase {
         // 初期表示でチェックをつけておきたい場合はここで行ないます。
         // initialize()でやってしまうと、初期表示以外でもチェックが残ってしまいます。
         getEntries().get(0).setChecked(true);
+
+        // ここではラジオボタンの初期値を設定しています。
+        getEntries().get(0).getRadioInputTags().setValue(2);
     }
 
     @Override

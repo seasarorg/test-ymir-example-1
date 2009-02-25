@@ -10,20 +10,24 @@ public class EntryDtoBase
 
     protected String name;
 
+    protected net.skirnir.freyja.render.html.RadioInputTags radioInputTags;
+
 
     public EntryDtoBase() {
     }
 
-    public EntryDtoBase(boolean checked, String name) {
+    public EntryDtoBase(boolean checked, String name, net.skirnir.freyja.render.html.RadioInputTags radioInputTags) {
         this.checked = checked;
         this.name = name;
+        this.radioInputTags = radioInputTags;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
         append(sb.append("checked="), checked).append(", ");
-        append(sb.append("name="), name);
+        append(sb.append("name="), name).append(", ");
+        append(sb.append("radioInputTags="), radioInputTags);
         sb.append(')');
         return toString(sb);
     }
@@ -63,5 +67,13 @@ public class EntryDtoBase
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public net.skirnir.freyja.render.html.RadioInputTags getRadioInputTags() {
+        return this.radioInputTags;
+    }
+
+    public void setRadioInputTags(net.skirnir.freyja.render.html.RadioInputTags radioInputTags) {
+        this.radioInputTags = radioInputTags;
     }
 }
