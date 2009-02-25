@@ -69,7 +69,7 @@ public class IndexPage extends IndexPageBase {
     // 検索結果の一覧から詳細画面に遷移するためのアクションです。
     // BeginSubConversationアノテーションによって、詳細画面のためのサブカンバセーションを開始するようにします。
     // reenterによって、サブカンバセーションが終了した際には_get_resumeアクションが呼び出されます。
-    @BeginSubConversation(reenter = "redirect:./index.html?resume")
+    @BeginSubConversation(reenter = SCHEME_REDIRECT + "./index.html?resume")
     public Response _get_detail() {
         return Redirect.to(DetailPage.class, "id", id);
     }
