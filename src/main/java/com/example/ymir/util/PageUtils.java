@@ -8,7 +8,6 @@ import java.util.Map;
 
 import org.seasar.ymir.IllegalClientCodeRuntimeException;
 import org.seasar.ymir.Path;
-import org.seasar.ymir.Request;
 import org.seasar.ymir.YmirContext;
 import org.seasar.ymir.response.scheme.impl.PassthroughStrategy;
 
@@ -43,7 +42,7 @@ public class PageUtils {
 
                 Object value;
                 if (i + 1 < params.length) {
-                    value = params[i + 1];
+                    value= params[i + 1];
                     if (value == null) {
                         throw new IllegalClientCodeRuntimeException(
                                 "parameter value must be non-null value, but params["
@@ -72,8 +71,7 @@ public class PageUtils {
                         .toArray(new String[0]));
             }
         }
-        return new Path(path, parameterMap, getCharacterEncoding())
-                .setAsNoCache(asNoCache).asString();
+        return new Path(path, parameterMap).setAsNoCache(asNoCache).asString();
     }
 
     /**
@@ -145,11 +143,5 @@ public class PageUtils {
         }
 
         return parameterMap;
-    }
-
-    static String getCharacterEncoding() {
-        return ((Request) YmirContext.getYmir().getApplication()
-                .getS2Container().getComponent(Request.class))
-                .getCharacterEncoding();
     }
 }
