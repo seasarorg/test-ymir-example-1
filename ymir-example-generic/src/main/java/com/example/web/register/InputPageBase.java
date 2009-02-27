@@ -28,12 +28,6 @@ public class InputPageBase extends com.example.web.register.PageBase {
 
     }
 
-    @org.seasar.ymir.annotation.Meta(name="source",value={"throw ex;","ex"})
-    public void _permissionDenied(org.seasar.ymir.constraint.PermissionDeniedException ex)
-        throws org.seasar.ymir.constraint.PermissionDeniedException {
-        throw ex;
-    }
-
     @org.seasar.ymir.annotation.Meta(name="source",value="return new org.seasar.ymir.response.PassthroughResponse();")
     public org.seasar.ymir.Response _post_confirm() {
         return new org.seasar.ymir.response.PassthroughResponse();
@@ -41,10 +35,5 @@ public class InputPageBase extends com.example.web.register.PageBase {
 
     public void _prerender() {
 
-    }
-
-    @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
-    public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-        
     }
 }

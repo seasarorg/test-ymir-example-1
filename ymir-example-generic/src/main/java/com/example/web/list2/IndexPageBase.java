@@ -27,12 +27,6 @@ public class IndexPageBase extends com.example.web.list2.PageBase {
 
     }
 
-    @org.seasar.ymir.annotation.Meta(name="source",value={"throw ex;","ex"})
-    public void _permissionDenied(org.seasar.ymir.constraint.PermissionDeniedException ex)
-        throws org.seasar.ymir.constraint.PermissionDeniedException {
-        throw ex;
-    }
-
     @org.seasar.ymir.annotation.Meta(name="source",value={"return new org.seasar.ymir.response.PassthroughResponse();","index"})
     public org.seasar.ymir.Response _post_update(int index) {
         return new org.seasar.ymir.response.PassthroughResponse();
@@ -40,10 +34,5 @@ public class IndexPageBase extends com.example.web.list2.PageBase {
 
     public void _prerender() {
 
-    }
-
-    @org.seasar.ymir.annotation.Meta(name="source",value={"","notes"})
-    public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-        
     }
 }
