@@ -25,17 +25,4 @@ public class DetailPageBase extends com.example.web.list.PageBase {
     public void _prerender() {
 
     }
-
-    @org.seasar.ymir.annotation.Meta(name = "source", value = { "", "notes" })
-    public void _validationFailed(org.seasar.ymir.message.Notes notes) {
-
-    }
-
-    @org.seasar.ymir.annotation.Meta(name = "source", value = { "throw ex;",
-            "ex" })
-    public void _permissionDenied(
-            org.seasar.ymir.constraint.PermissionDeniedException ex)
-            throws org.seasar.ymir.constraint.PermissionDeniedException {
-        throw ex;
-    }
 }

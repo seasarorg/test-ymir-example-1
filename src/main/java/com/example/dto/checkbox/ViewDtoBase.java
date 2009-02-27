@@ -2,12 +2,11 @@ package com.example.dto.checkbox;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
 public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected java.util.List<String> names;
+    protected java.util.List<String> names = new java.util.ArrayList<String>();
 
 
     public ViewDtoBase() {
