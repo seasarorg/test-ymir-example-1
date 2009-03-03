@@ -2,25 +2,28 @@ package com.example.dto.text;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected java.util.Date date;
+    protected java.util.Date date1;
+
+    protected java.util.Date date2;
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(java.util.Date date) {
-        this.date = date;
+    public FormDtoBase(java.util.Date date1, java.util.Date date2) {
+        this.date1 = date1;
+        this.date2 = date2;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("date="), date);
+        append(sb.append("date1="), date1).append(", ");
+        append(sb.append("date2="), date2);
         sb.append(')');
         return toString(sb);
     }
@@ -46,11 +49,19 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    public java.util.Date getDate() {
-        return this.date;
+    public java.util.Date getDate1() {
+        return this.date1;
     }
 
-    public void setDate(java.util.Date date) {
-        this.date = date;
+    public void setDate1(java.util.Date date1) {
+        this.date1 = date1;
+    }
+
+    public java.util.Date getDate2() {
+        return this.date2;
+    }
+
+    public void setDate2(java.util.Date date2) {
+        this.date2 = date2;
     }
 }
