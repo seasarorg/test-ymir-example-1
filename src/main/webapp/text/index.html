@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
   <title>テキストボックス</title>
 </head>
 <body>
@@ -11,14 +12,17 @@
 <p>バリデーションチェックつきのテキストボックスのサンプルです。</p>
 <p>yyyyMMdd形式の日付文字列を入力して「決定」ボタンを押すと、選択された内容が表示されます。日付の形式が違う場合はバリデーションエラーになります。その際入力された文字列がテキストボックスに表示されます。</p>
 
+<p>yyyyMMdd形式の日付を入力して下さい。</p>
 <ul tal:condition="notes">
   <li tal:repeat="note notes/notes" tal:content="note/%value">MESSAGE</li>
 </ul>
 <form name="form" action="./index.html">
-  <p>yyyyMMdd形式の日付を入力して下さい：<input type="text" name="date" tal:attributes="value param-self/date" /></p>
+  <p>日付1：<input type="text" name="date1" tal:attributes="value param-self/date1; class string:error-${notes/contains(date1)}" /><span tal:condition="notes/contains(date1)"> ←<span tal:repeat="note notes/notes(date1)" tal:replace="note/%value">MESSAGE</span></span></p>
+  <p>日付2：<input type="text" name="date2" tal:attributes="value param-self/date2; class string:error-${notes/contains(date2)}" /><span tal:condition="notes/contains(date2)"> ←<span tal:repeat="note notes/notes(date2)" tal:replace="note/%value">MESSAGE</span></span></p>
   <p><input type="submit" value="決定" /></p>
 </form>
-<p tal:condition="self/date">入力された日付は<span tal:replace="self/date">DATE</span>です。</p>
+<p tal:condition="self/date1">入力された日付1は<span tal:replace="self/date1">DATE</span>です。</p>
+<p tal:condition="self/date2">入力された日付2は<span tal:replace="self/date2">DATE</span>です。</p>
 
 <div align="right">
   <a href="../index.html">戻る</a>
