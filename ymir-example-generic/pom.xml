@@ -6,7 +6,7 @@
   <artifactId>ymir-example-generic</artifactId>
   <packaging>war</packaging>
   <name>ymir-example-generic</name>
-  <version>1.0.2</version>
+  <version>1.0.3-SNAPSHOT</version>
   <description></description>
   <build>
     <defaultGoal>package</defaultGoal>
@@ -146,7 +146,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-extension</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.3-SNAPSHOT</version>
       <exclusions>
         <exclusion>
           <groupId>org.seasar.ymir</groupId>
@@ -192,7 +192,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-testing</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.3-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
