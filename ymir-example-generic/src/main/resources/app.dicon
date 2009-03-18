@@ -4,4 +4,7 @@
 <components>
   <!-- Ymir+ZPTにおけるカスタムタグ実装サンプルのためのコンポーネント定義です。 -->
   <component class="com.example.zpt.MathInterceptor" />
+
+  <!-- Ymir+ZPTにおけるJava式に記述可能なファンクションの追加サンプルのためのコンポーネント定義です。 -->
+  <component class="com.example.zpt.UserDefinedFunctions" />
 </components>
