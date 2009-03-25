@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>例外ハンドリング</title>
+</head>
+<body>
+  <h1>例外ハンドリング</h1>
+  <p>Ymirは例外ハンドリングの仕組みを提供しています。</p>
+  <p>例外ハンドラにはローカルハンドラとグローバルハンドラがあります。ローカルハンドラはPageクラス内で発生した例外をハンドリングするためのものです。グローバルハンドラはそれ以外の例外をハンドリングするためのものです。またグローバルハンドラはローカルハンドラの中で発生した例外もハンドリングすることができます。</p>
+  <p>ローカルハンドラはPageクラスが持つメソッドのうち@ExceptionHandlerアノテーションが付与されたものです。</p>
+  <p>@ExceptionHandlerアノテーションのvalue要素で例外型が指定されている場合は、そのメソッドは指定された型に対応するハンドラと見なされます。指定されていない場合は、メソッドがThrowableまたはそのサブクラスの引数を持つ場合、メソッドはその引数型に対応するハンドラと見なされます。引数を持たない場合はThrowable型に対応するハンドラと見なされます。</p>
+  <p>リクエストに対応するアクション毎にハンドラを分けたい場合は、@ExceptionHandlerアノテーションのactionName要素でアクション名を指定して下さい。アクション名が指定されない場合はそのメソッドは全てのアクションに関するハンドラメソッドと見なされます。</p>
+  <p>グローバルハンドラはルートパッケージ以下のhandlerサブパッケージ以下にある「<<例外クラス名>>Handler」という名前のクラスです。これらのクラスはシステムに自動的に認識されますのでコンポーネント登録は不要です。</p>
+  <p>例えばNullPointerExceptionのハンドラクラスの名前はNullPointerExceptionHandlerになります。グローバルハンドラに@ExceptionHandlerアノテーションを付与したメソッドを用意することで、そのメソッドが例外クラスがスローされた時に呼び出されます。</p>
+  <p>例外がスローされた場合、まずローカルハンドラが探索されます。例外クラスに完全に合致するハンドラがない場合は例外クラスの祖先クラスのハンドラが探索されます。見つからない場合はグローバルハンドラが探索されます。ページの処理でない箇所で例外がスローされた場合はローカルハンドラは探索されません。</p>
+  <p>以下の例では、それぞれ特定アクション用のローカルハンドラ、アクション共通のローカルハンドラ、グローバルハンドラが呼ばれるような例外を内部でスローしています。</p>
+  <form action="./index.html" method="post">
+    <p><input type="submit" name="localParticularAction" value="特定アクション用のローカルハンドラが呼び出されるような例外をスローする" /></p>
+    <p><input type="submit" name="localAnyAction" value="アクション共通のローカルハンドラが呼び出されるような例外をスローする" /></p>
+    <p><input type="submit" name="global" value="グローバルハンドラが呼び出されるような例外をスローする" /></p>
+  </form>
+  <p tal:content="self/message">MESSAGE</p>
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>

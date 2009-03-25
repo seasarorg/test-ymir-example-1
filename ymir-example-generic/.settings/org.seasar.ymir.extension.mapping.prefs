@@ -2,6 +2,7 @@
 %checkbox2%index.html=com.example.web.checkbox2.IndexPage
 %checkbox3%index.html=com.example.web.checkbox3.IndexPage
 %customTag%index.html=com.example.web.customTag.IndexPage
+%exceptionHandler%index.html=com.example.web.exceptionHandler.IndexPage
 %function%index.html=com.example.web.function.IndexPage
 %index.html=com.example.web.IndexPage
 %list%detail.html=com.example.web.list.DetailPage
@@ -29,6 +30,7 @@ com.example.web.checkbox.IndexPage=/checkbox/index.html
 com.example.web.checkbox2.IndexPage=/checkbox2/index.html
 com.example.web.checkbox3.IndexPage=/checkbox3/index.html
 com.example.web.customTag.IndexPage=/customTag/index.html
+com.example.web.exceptionHandler.IndexPage=/exceptionHandler/index.html
 com.example.web.function.IndexPage=/function/index.html
 com.example.web.list.DetailPage=/list/detail.html
 com.example.web.list.IndexPage=/list/index.html
