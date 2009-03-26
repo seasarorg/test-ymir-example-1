@@ -6,6 +6,7 @@ public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
     protected java.util.List<String> names = new java.util.ArrayList<String>();
 
 
@@ -45,10 +46,12 @@ public class ViewDtoBase
         return sb.toString();
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
     public java.util.List<String> getNames() {
         return this.names;
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
     public void setNames(java.util.List<String> names) {
         this.names = names;
     }

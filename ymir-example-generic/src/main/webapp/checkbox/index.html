@@ -6,15 +6,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>チェックボックス</title>
 </head>
-<body tal:define="view self/view">
+<body tal:define="view self/view; form self/form">
   <h1>チェックボックス</h1>
 <p>チェックボックスのサンプルです。</p>
 <p>チェックをして「選択」ボタンを押すと、選択された内容が表示されます。また、ボタンを押した後もチェックの状態を保存しています。</p>
 
 <form name="form" action="./index.html">
   <ul>
-    <li tal:repeat="input self/form/checkboxInputTags/inputs">
-      <input type="checkbox" name="fruits" tal:attributes="checked input/checked; value input/value" />
+    <li tal:repeat="input form/fruitsCheckboxInputTags/inputs">
+      <input type="checkbox" name="fruitsCheckboxInputTags.checkedValues" tal:attributes="checked input/checked; value input/value" />
       <span tal:replace="input/content">りんご</span>
     </li>
   </ul>

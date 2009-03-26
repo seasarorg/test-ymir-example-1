@@ -9,12 +9,12 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     public static final String A_get = "_get";
 
-    public void _prerender() {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = {"/exceptionHandler/index.html", "/aaa/index.html", "/ncheckbox/index.html", "/checkbox/index.html"})
+    public void _get() {
 
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/exceptionHandler/index.html")
-    public void _get() {
+    public void _prerender() {
 
     }
 }
