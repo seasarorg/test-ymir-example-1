@@ -2,11 +2,13 @@ package com.example.dto.select;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
-public class ViewDtoBase implements Serializable {
+public class ViewDtoBase
+    implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select/index.html")
     protected String name;
+
 
     public ViewDtoBase() {
     }
@@ -44,10 +46,12 @@ public class ViewDtoBase implements Serializable {
         return sb.toString();
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select/index.html")
     public String getName() {
         return this.name;
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select/index.html")
     public void setName(String name) {
         this.name = name;
     }

@@ -2,11 +2,11 @@ package com.example.dto.radio;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
 public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/radio/index.html")
     protected String name;
 
 
@@ -46,10 +46,12 @@ public class ViewDtoBase
         return sb.toString();
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/radio/index.html")
     public String getName() {
         return this.name;
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/radio/index.html")
     public void setName(String name) {
         this.name = name;
     }

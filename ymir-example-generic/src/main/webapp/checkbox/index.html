@@ -13,8 +13,8 @@
 
 <form name="form" action="./index.html">
   <ul>
-    <li tal:repeat="input form/fruitsCheckboxInputTags/inputs">
-      <input type="checkbox" name="fruitsCheckboxInputTags.checkedValues" tal:attributes="checked input/checked; value input/value" />
+    <li tal:repeat="input form/fruitsCheckbox/inputs">
+      <input type="checkbox" name="fruitsCheckbox.value" tal:attributes="checked input/checked; value input/value" />
       <span tal:replace="input/content">りんご</span>
     </li>
   </ul>

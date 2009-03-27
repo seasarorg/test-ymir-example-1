@@ -19,8 +19,8 @@
           </td>
           <td>
             <p><input type="text" tal:define="name string:entries[${repeat/entry/index}].name" tal:attributes="name name; value param-self/?name" /></p>
-            <p><span tal:repeat="input entry/radioInputTags/inputs">
-              <input type="radio" tal:define="name string:entries[${repeat/entry/index}].radioInputTags.checkedValue" tal:attributes="name name; value input/value; checked input/checked" /> <span tal:replace="input/content">LABEL</span>&nbsp;&nbsp;</span></p>
+            <p><span tal:repeat="input entry/radio/inputs">
+              <input type="radio" tal:define="name string:entries[${repeat/entry/index}].radio.value" tal:attributes="name name; value input/value; checked input/checked" /> <span tal:replace="input/content">LABEL</span>&nbsp;&nbsp;</span></p>
           </td>
         </tr>
       </tbody>
@@ -28,7 +28,7 @@
     <input type="submit" value="選択" />
   </form>
   <div tal:condition="view/entries">
-    <p><span tal:repeat="entry view/entries" tal:omit-tag=""><span tal:condition="not:repeat/entry/start" tal:omit-tag="">、</span><span tal:replace="string:${entry/radioInputTags/checkedContent}の${entry/name}">りんご</span></span>が選択されました。</p>
+    <p><span tal:repeat="entry view/entries" tal:omit-tag=""><span tal:condition="not:repeat/entry/start" tal:omit-tag="">、</span><span tal:replace="string:${entry/radio/checkedContent}の${entry/name}">りんご</span></span>が選択されました。</p>
   </div>
   <div tal:condition="not:view/entries">
     <p>何も選択されていません。</p>

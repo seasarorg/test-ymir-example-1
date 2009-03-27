@@ -7,18 +7,24 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     public static final String PATH = "/checkbox/index.html";
 
-    public static final String P_view = "view";
-
-    public static final String P_form = "form";
+    public static final String A_get = "_get";
 
     public static final String P_fruits = "fruits";
 
     public static final String P_fruitsCheckboxInputTags = "fruitsCheckboxInputTags";
 
+    public static final String P_view = "view";
+
+    public static final String P_form = "form";
+
+    public static final String P_fruitsCheckbox = "fruitsCheckbox";
+
     @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
     protected com.example.dto.checkbox.ViewDto view = new com.example.dto.checkbox.ViewDto();
 
-    @org.seasar.ymir.annotation.Metas({@org.seasar.ymir.annotation.Meta(name = "property", value = "form"), @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")})
+    @org.seasar.ymir.annotation.Metas( {
+            @org.seasar.ymir.annotation.Meta(name = "property", value = "form"),
+            @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html") })
     protected com.example.dto.checkbox.FormDto form = new com.example.dto.checkbox.FormDto();
 
     @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
@@ -31,21 +37,12 @@ public class IndexPageBase extends com.example.web.PageBase {
         return this.form;
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "formProperty", value = "form")
-    public String[] getFruits() {
-        return this.form.getFruits();
-    }
-
-    @org.seasar.ymir.annotation.Meta(name = "formProperty", value = "form")
+    @org.seasar.ymir.annotation.Metas( {
+            @org.seasar.ymir.annotation.Meta(name = "formProperty", value = "form"),
+            @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html") })
     @org.seasar.ymir.scope.annotation.RequestParameter
-    public void setFruits(String[] fruits) {
-        this.form.setFruits(fruits);
-    }
-
-    @org.seasar.ymir.annotation.Metas({@org.seasar.ymir.annotation.Meta(name = "formProperty", value = "form"), @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")})
-    @org.seasar.ymir.scope.annotation.RequestParameter
-    public net.skirnir.freyja.render.html.CheckboxInputTags getFruitsCheckboxInputTags() {
-        return this.form.getFruitsCheckboxInputTags();
+    public net.skirnir.freyja.render.html.Checkbox getFruitsCheckbox() {
+        return this.form.getFruitsCheckbox();
     }
 
     @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")

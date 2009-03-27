@@ -6,15 +6,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>複数選択可能なリストボックス</title>
 </head>
-<body tal:define="view self/view">
+<body tal:define="view self/view; form self/form">
   <h1>複数選択可能なリストボックス</h1>
 <p>複数選択可能なリストボックスのサンプルです。</p>
 <p>項目を選択して「選択」ボタンを押すと、選択された内容が表示されます。また、ボタンを押した後も選択状態を保存しています。</p>
 
 <form name="form" action="./index.html">
   <p>
-    <select name="fruits" size="4" multiple="multiple">
-      <option tal:repeat="option self/form/selectTag/options" tal:attributes="selected option/selected; value option/value; disabled option/disabled" tal:content="option/content">りんご</option>
+    <select name="fruitsSelect.value" size="4" multiple="multiple">
+      <option tal:repeat="option form/fruitsSelect/options" tal:attributes="selected option/selected; value option/value; disabled option/disabled" tal:content="option/content">りんご</option>
     </select>
   </p>
   <p><input type="submit" value="選択" /></p>

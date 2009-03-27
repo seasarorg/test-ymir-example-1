@@ -2,33 +2,23 @@ package com.example.dto.checkbox;
 
 import java.io.Serializable;
 
-public class FormDtoBase
-    implements Serializable {
+public class FormDtoBase implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected net.skirnir.freyja.render.html.CheckboxInputTags checkboxInputTags = new net.skirnir.freyja.render.html.CheckboxInputTags();
-
-    protected String[] fruits = new String[0];
-
     @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
-    protected net.skirnir.freyja.render.html.CheckboxInputTags fruitsCheckboxInputTags = new net.skirnir.freyja.render.html.CheckboxInputTags();
-
+    protected net.skirnir.freyja.render.html.Checkbox fruitsCheckbox = new net.skirnir.freyja.render.html.Checkbox();
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(net.skirnir.freyja.render.html.CheckboxInputTags checkboxInputTags, String[] fruits, net.skirnir.freyja.render.html.CheckboxInputTags fruitsCheckboxInputTags) {
-        this.checkboxInputTags = checkboxInputTags;
-        this.fruits = fruits;
-        this.fruitsCheckboxInputTags = fruitsCheckboxInputTags;
+    public FormDtoBase(net.skirnir.freyja.render.html.Checkbox fruitsCheckbox) {
+        this.fruitsCheckbox = fruitsCheckbox;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("checkboxInputTags="), checkboxInputTags).append(", ");
-        append(sb.append("fruits="), fruits).append(", ");
-        append(sb.append("fruitsCheckboxInputTags="), fruitsCheckboxInputTags);
+        append(sb.append("fruitsCheckbox="), fruitsCheckbox);
         sb.append(')');
         return toString(sb);
     }
@@ -54,24 +44,8 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    public net.skirnir.freyja.render.html.CheckboxInputTags getCheckboxInputTags() {
-        return this.checkboxInputTags;
-    }
-
-    public void setCheckboxInputTags(net.skirnir.freyja.render.html.CheckboxInputTags checkboxInputTags) {
-        this.checkboxInputTags = checkboxInputTags;
-    }
-
-    public String[] getFruits() {
-        return this.fruits;
-    }
-
-    public void setFruits(String[] fruits) {
-        this.fruits = fruits;
-    }
-
     @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
-    public net.skirnir.freyja.render.html.CheckboxInputTags getFruitsCheckboxInputTags() {
-        return this.fruitsCheckboxInputTags;
+    public net.skirnir.freyja.render.html.Checkbox getFruitsCheckbox() {
+        return this.fruitsCheckbox;
     }
 }

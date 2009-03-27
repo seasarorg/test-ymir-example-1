@@ -2,45 +2,35 @@ package com.example.dto.checkbox2;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
-public class FormDtoBase
-    implements Serializable {
+public class FormDtoBase implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected boolean drinking;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected net.skirnir.freyja.render.html.Input smokingInput = new net.skirnir.freyja.render.html.Input();
 
-    protected net.skirnir.freyja.render.html.InputTag drinkingInputTag = new net.skirnir.freyja.render.html.InputTag();
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected net.skirnir.freyja.render.html.Input drinkingInput = new net.skirnir.freyja.render.html.Input();
 
-    protected boolean gambling;
-
-    protected net.skirnir.freyja.render.html.InputTag gamblingInputTag = new net.skirnir.freyja.render.html.InputTag();
-
-    protected boolean smoking;
-
-    protected net.skirnir.freyja.render.html.InputTag smokingInputTag = new net.skirnir.freyja.render.html.InputTag();
-
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected net.skirnir.freyja.render.html.Input gamblingInput = new net.skirnir.freyja.render.html.Input();
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(boolean drinking, net.skirnir.freyja.render.html.InputTag drinkingInputTag, boolean gambling, net.skirnir.freyja.render.html.InputTag gamblingInputTag, boolean smoking, net.skirnir.freyja.render.html.InputTag smokingInputTag) {
-        this.drinking = drinking;
-        this.drinkingInputTag = drinkingInputTag;
-        this.gambling = gambling;
-        this.gamblingInputTag = gamblingInputTag;
-        this.smoking = smoking;
-        this.smokingInputTag = smokingInputTag;
+    public FormDtoBase(net.skirnir.freyja.render.html.Input drinkingInput,
+            net.skirnir.freyja.render.html.Input gamblingInput,
+            net.skirnir.freyja.render.html.Input smokingInput) {
+        this.drinkingInput = drinkingInput;
+        this.gamblingInput = gamblingInput;
+        this.smokingInput = smokingInput;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("drinking="), drinking).append(", ");
-        append(sb.append("drinkingInputTag="), drinkingInputTag).append(", ");
-        append(sb.append("gambling="), gambling).append(", ");
-        append(sb.append("gamblingInputTag="), gamblingInputTag).append(", ");
-        append(sb.append("smoking="), smoking).append(", ");
-        append(sb.append("smokingInputTag="), smokingInputTag);
+        append(sb.append("smokingInput="), smokingInput).append(", ");
+        append(sb.append("drinkingInput="), drinkingInput).append(", ");
+        append(sb.append("gamblingInput="), gamblingInput);
         sb.append(')');
         return toString(sb);
     }
@@ -66,51 +56,18 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    public boolean isDrinking() {
-        return this.drinking;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public net.skirnir.freyja.render.html.Input getSmokingInput() {
+        return this.smokingInput;
     }
 
-    public void setDrinking(boolean drinking) {
-        this.drinking = drinking;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public net.skirnir.freyja.render.html.Input getDrinkingInput() {
+        return this.drinkingInput;
     }
 
-    public net.skirnir.freyja.render.html.InputTag getDrinkingInputTag() {
-        return this.drinkingInputTag;
-    }
-
-    public void setDrinkingInputTag(net.skirnir.freyja.render.html.InputTag drinkingInputTag) {
-        this.drinkingInputTag = drinkingInputTag;
-    }
-
-    public boolean isGambling() {
-        return this.gambling;
-    }
-
-    public void setGambling(boolean gambling) {
-        this.gambling = gambling;
-    }
-
-    public net.skirnir.freyja.render.html.InputTag getGamblingInputTag() {
-        return this.gamblingInputTag;
-    }
-
-    public void setGamblingInputTag(net.skirnir.freyja.render.html.InputTag gamblingInputTag) {
-        this.gamblingInputTag = gamblingInputTag;
-    }
-
-    public boolean isSmoking() {
-        return this.smoking;
-    }
-
-    public void setSmoking(boolean smoking) {
-        this.smoking = smoking;
-    }
-
-    public net.skirnir.freyja.render.html.InputTag getSmokingInputTag() {
-        return this.smokingInputTag;
-    }
-
-    public void setSmokingInputTag(net.skirnir.freyja.render.html.InputTag smokingInputTag) {
-        this.smokingInputTag = smokingInputTag;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public net.skirnir.freyja.render.html.Input getGamblingInput() {
+        return this.gamblingInput;
     }
 }

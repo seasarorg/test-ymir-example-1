@@ -2,12 +2,12 @@ package com.example.dto.checkbox2;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
 public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected java.util.List<String> attributes;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected java.util.List<String> attributes = new java.util.ArrayList<String>();
 
 
     public ViewDtoBase() {
@@ -46,10 +46,12 @@ public class ViewDtoBase
         return sb.toString();
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
     public java.util.List<String> getAttributes() {
         return this.attributes;
     }
 
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
     public void setAttributes(java.util.List<String> attributes) {
         this.attributes = attributes;
     }

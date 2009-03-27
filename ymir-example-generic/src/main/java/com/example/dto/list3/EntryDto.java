@@ -2,8 +2,8 @@ package com.example.dto.list3;
 
 import java.io.Serializable;
 
-import net.skirnir.freyja.render.html.InputTag;
-import net.skirnir.freyja.render.html.RadioInputTags;
+import net.skirnir.freyja.render.html.Input;
+import net.skirnir.freyja.render.html.Radio;
 
 public class EntryDto extends EntryDtoBase implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -12,12 +12,11 @@ public class EntryDto extends EntryDtoBase implements Serializable {
     }
 
     public EntryDto(String name) {
-        super(false, name, new RadioInputTags(new InputTag[] {
-                new InputTag(1, "1つ"), new InputTag(2, "2つ"),
-                new InputTag(3, "3つ"), }).setValue(1));
+        super(false, name, new Radio(new Input[] { new Input(1, "1つ"),
+                new Input(2, "2つ"), new Input(3, "3つ"), }).setCheckedValue(1));
     }
 
-    public EntryDto(String name, RadioInputTags radioInputTags) {
-        super(false, name, radioInputTags);
+    public EntryDto(String name, Radio radio) {
+        super(false, name, radio);
     }
 }

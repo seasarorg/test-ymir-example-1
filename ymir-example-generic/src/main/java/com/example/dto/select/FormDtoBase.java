@@ -2,29 +2,25 @@ package com.example.dto.select;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected String fruits;
-
-    protected net.skirnir.freyja.render.html.SelectTag selectTag;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select/index.html")
+    protected net.skirnir.freyja.render.html.Select fruitsSelect = new net.skirnir.freyja.render.html.Select();
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(String fruits, net.skirnir.freyja.render.html.SelectTag selectTag) {
-        this.fruits = fruits;
-        this.selectTag = selectTag;
+    public FormDtoBase(net.skirnir.freyja.render.html.Select fruitsSelect) {
+        this.fruitsSelect = fruitsSelect;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("fruits="), fruits).append(", ");
-        append(sb.append("selectTag="), selectTag);
+        append(sb.append("fruitsSelect="), fruitsSelect);
         sb.append(')');
         return toString(sb);
     }
@@ -50,19 +46,13 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    public String getFruits() {
-        return this.fruits;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select/index.html")
+    public net.skirnir.freyja.render.html.Select getFruitsSelect() {
+        return this.fruitsSelect;
     }
 
-    public void setFruits(String fruits) {
-        this.fruits = fruits;
-    }
-
-    public net.skirnir.freyja.render.html.SelectTag getSelectTag() {
-        return this.selectTag;
-    }
-
-    public void setSelectTag(net.skirnir.freyja.render.html.SelectTag selectTag) {
-        this.selectTag = selectTag;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select/index.html")
+    public void setFruitsSelect(net.skirnir.freyja.render.html.Select fruitsSelect) {
+        this.fruitsSelect = fruitsSelect;
     }
 }

@@ -2,29 +2,23 @@ package com.example.dto.radio;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
-public class FormDtoBase
-    implements Serializable {
+public class FormDtoBase implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected String fruits;
-
-    protected net.skirnir.freyja.render.html.RadioInputTags radioInputTags;
-
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/radio/index.html")
+    protected net.skirnir.freyja.render.html.Radio fruitsRadio = new net.skirnir.freyja.render.html.Radio();
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(String fruits, net.skirnir.freyja.render.html.RadioInputTags radioInputTags) {
-        this.fruits = fruits;
-        this.radioInputTags = radioInputTags;
+    public FormDtoBase(net.skirnir.freyja.render.html.Radio fruitsRadio) {
+        this.fruitsRadio = fruitsRadio;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("fruits="), fruits).append(", ");
-        append(sb.append("radioInputTags="), radioInputTags);
+        append(sb.append("fruitsRadio="), fruitsRadio);
         sb.append(')');
         return toString(sb);
     }
@@ -50,19 +44,8 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    public String getFruits() {
-        return this.fruits;
-    }
-
-    public void setFruits(String fruits) {
-        this.fruits = fruits;
-    }
-
-    public net.skirnir.freyja.render.html.RadioInputTags getRadioInputTags() {
-        return this.radioInputTags;
-    }
-
-    public void setRadioInputTags(net.skirnir.freyja.render.html.RadioInputTags radioInputTags) {
-        this.radioInputTags = radioInputTags;
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/radio/index.html")
+    public net.skirnir.freyja.render.html.Radio getFruitsRadio() {
+        return this.fruitsRadio;
     }
 }
