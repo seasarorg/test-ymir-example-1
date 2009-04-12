@@ -17,7 +17,7 @@
 		<nature>werkzeugkasten.weblauncher.nature</nature>
 		<nature>net.skirnir.eclipse.maven.mavenAdditionalNature</nature>
 		<nature>org.maven.ide.eclipse_light.maven2Nature</nature>
-		<nature>org.seasar.ymir.eclipse.viliProjectNature</nature>
-		<nature>org.seasar.ymir.eclipse.ymirProjectNature</nature>
+		<nature>org.t2framework.vili.viliProjectNature</nature>
+		<nature>org.seasar.ymir.eclipse.veProjectNature</nature>
 	</natures>
 </projectDescription>

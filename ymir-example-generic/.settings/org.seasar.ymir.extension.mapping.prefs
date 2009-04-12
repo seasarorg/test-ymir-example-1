@@ -9,6 +9,7 @@
 %list%index.html=com.example.web.list.IndexPage
 %list2%index.html=com.example.web.list2.IndexPage
 %list3%index.html=com.example.web.list3.IndexPage
+%list4%index.html=com.example.web.list4.IndexPage
 %mailsender%index.html=com.example.web.mailsender.IndexPage
 %mailsender%sent.html=com.example.web.mailsender.SentPage
 %radio%index.html=com.example.web.radio.IndexPage
@@ -36,6 +37,7 @@ com.example.web.list.DetailPage=/list/detail.html
 com.example.web.list.IndexPage=/list/index.html
 com.example.web.list2.IndexPage=/list2/index.html
 com.example.web.list3.IndexPage=/list3/index.html
+com.example.web.list4.IndexPage=/list4/index.html
 com.example.web.mailsender.IndexPage=/mailsender/index.html
 com.example.web.mailsender.SentPage=/mailsender/sent.html
 com.example.web.radio.IndexPage=/radio/index.html

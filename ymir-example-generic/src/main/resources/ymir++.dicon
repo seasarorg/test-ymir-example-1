@@ -4,4 +4,6 @@
 <components>
   <component name="sessionIdEmbeddingInterceptor"
     class="org.seasar.ymir.zpt.SessionIdEmbeddingInterceptor" />
+  <component name="checkboxInterceptor"
+    class="org.seasar.ymir.zpt.checkbox.CheckboxInterceptor" />
 </components>
