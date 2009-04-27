@@ -2,27 +2,24 @@ package com.example.dto.list3;
 
 import java.io.Serializable;
 
-import net.skirnir.freyja.render.html.Radio;
-import org.seasar.ymir.annotation.Meta;
-
 public class EntryDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
     protected boolean checked;
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
     protected String name;
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
-    protected Radio radio = new net.skirnir.freyja.render.html.Radio();
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
+    protected net.skirnir.freyja.render.html.Radio radio = new net.skirnir.freyja.render.html.Radio();
 
 
     public EntryDtoBase() {
     }
 
-    public EntryDtoBase(boolean checked, String name, Radio radio) {
+    public EntryDtoBase(boolean checked, String name, net.skirnir.freyja.render.html.Radio radio) {
         this.checked = checked;
         this.name = name;
         this.radio = radio;
@@ -59,33 +56,33 @@ public class EntryDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
     public boolean isChecked() {
         return this.checked;
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
     public void setChecked(boolean checked) {
         this.checked = checked;
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
     public String getName() {
         return this.name;
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
     public void setName(String name) {
         this.name = name;
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
-    public Radio getRadio() {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
+    public net.skirnir.freyja.render.html.Radio getRadio() {
         return this.radio;
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
-    public void setRadio(Radio radio) {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
+    public void setRadio(net.skirnir.freyja.render.html.Radio radio) {
         this.radio = radio;
     }
 }

@@ -1,23 +1,18 @@
 package com.example.dto.list2;
 
 import java.io.Serializable;
-import java.util.List;
-
-import org.seasar.ymir.annotation.Meta;
-import org.seasar.ymir.annotation.Metas;
 
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
-    protected List<EntryDto> entries = new org.seasar.ymir.util.FlexibleList<com.example.dto.list2.EntryDto>();
+    protected java.util.List<com.example.dto.list2.EntryDto> entries = new org.seasar.ymir.util.FlexibleList<com.example.dto.list2.EntryDto>();
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(List<EntryDto> entries) {
+    public FormDtoBase(java.util.List<com.example.dto.list2.EntryDto> entries) {
         this.entries = entries;
     }
 
@@ -50,8 +45,7 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    @Metas({@Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "form")})
-    public List<EntryDto> getEntries() {
+    public java.util.List<com.example.dto.list2.EntryDto> getEntries() {
         return this.entries;
     }
 }

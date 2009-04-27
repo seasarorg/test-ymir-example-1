@@ -11,16 +11,16 @@ public class FruitCandidateDtoBase
     implements Serializable, Candidate {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     protected String value;
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     protected boolean selected;
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     protected String name;
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     protected Selector fruitCountSelector = new org.seasar.ymir.render.Selector();
 
 
@@ -66,42 +66,42 @@ public class FruitCandidateDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public String getValue() {
         return this.value;
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public void setValue(String value) {
         this.value = value;
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public boolean isSelected() {
         return this.selected;
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public String getName() {
         return this.name;
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public void setName(String name) {
         this.name = name;
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public Selector getFruitCountSelector() {
         return this.fruitCountSelector;
     }
 
-    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
+    @Meta(name = "bornOf", value = "/list4/index.html")
     public void setFruitCountSelector(Selector fruitCountSelector) {
         this.fruitCountSelector = fruitCountSelector;
     }

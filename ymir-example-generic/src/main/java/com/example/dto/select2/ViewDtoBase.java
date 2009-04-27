@@ -1,22 +1,19 @@
 package com.example.dto.select2;
 
 import java.io.Serializable;
-import java.util.List;
-
-import org.seasar.ymir.annotation.Meta;
 
 public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/select2/index.html", "/update/input.html"})
-    protected List<String> names = new java.util.ArrayList<String>();
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    protected java.util.List<String> names = new java.util.ArrayList<String>();
 
 
     public ViewDtoBase() {
     }
 
-    public ViewDtoBase(List<String> names) {
+    public ViewDtoBase(java.util.List<String> names) {
         this.names = names;
     }
 
@@ -49,13 +46,13 @@ public class ViewDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = {"/select2/index.html", "/update/input.html"})
-    public List<String> getNames() {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    public java.util.List<String> getNames() {
         return this.names;
     }
 
-    @Meta(name = "bornOf", value = {"/select2/index.html", "/update/input.html"})
-    public void setNames(List<String> names) {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    public void setNames(java.util.List<String> names) {
         this.names = names;
     }
 }

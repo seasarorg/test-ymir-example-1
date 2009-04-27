@@ -2,22 +2,18 @@ package com.example.dto.select2;
 
 import java.io.Serializable;
 
-import net.skirnir.freyja.render.html.Select;
-import org.seasar.ymir.annotation.Meta;
-import org.seasar.ymir.annotation.Metas;
-
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/select2/index.html", "/update/input.html"})
-    protected Select fruitsSelect = new net.skirnir.freyja.render.html.Select();
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    protected net.skirnir.freyja.render.html.Select fruitsSelect = new net.skirnir.freyja.render.html.Select();
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(Select fruitsSelect) {
+    public FormDtoBase(net.skirnir.freyja.render.html.Select fruitsSelect) {
         this.fruitsSelect = fruitsSelect;
     }
 
@@ -50,13 +46,13 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    @Metas({@Meta(name = "bornOf", value = {"/select2/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "form")})
-    public Select getFruitsSelect() {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    public net.skirnir.freyja.render.html.Select getFruitsSelect() {
         return this.fruitsSelect;
     }
 
-    @Metas({@Meta(name = "bornOf", value = {"/select2/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "form")})
-    public void setFruitsSelect(Select fruitsSelect) {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    public void setFruitsSelect(net.skirnir.freyja.render.html.Select fruitsSelect) {
         this.fruitsSelect = fruitsSelect;
     }
 }

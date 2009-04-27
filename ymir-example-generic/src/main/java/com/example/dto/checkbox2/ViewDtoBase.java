@@ -1,22 +1,19 @@
 package com.example.dto.checkbox2;
 
 import java.io.Serializable;
-import java.util.List;
-
-import org.seasar.ymir.annotation.Meta;
 
 public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/checkbox2/index.html", "/update/input.html"})
-    protected List<String> attributes = new java.util.ArrayList<String>();
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected java.util.List<String> attributes = new java.util.ArrayList<String>();
 
 
     public ViewDtoBase() {
     }
 
-    public ViewDtoBase(List<String> attributes) {
+    public ViewDtoBase(java.util.List<String> attributes) {
         this.attributes = attributes;
     }
 
@@ -49,13 +46,13 @@ public class ViewDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = {"/checkbox2/index.html", "/update/input.html"})
-    public List<String> getAttributes() {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public java.util.List<String> getAttributes() {
         return this.attributes;
     }
 
-    @Meta(name = "bornOf", value = {"/checkbox2/index.html", "/update/input.html"})
-    public void setAttributes(List<String> attributes) {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public void setAttributes(java.util.List<String> attributes) {
         this.attributes = attributes;
     }
 }

@@ -2,20 +2,17 @@ package com.example.dto.list2;
 
 import java.io.Serializable;
 
-import org.seasar.ymir.annotation.Meta;
-
 public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
-    protected EntryDto entry = new com.example.dto.list2.EntryDto();
+    protected com.example.dto.list2.EntryDto entry = new com.example.dto.list2.EntryDto();
 
 
     public ViewDtoBase() {
     }
 
-    public ViewDtoBase(EntryDto entry) {
+    public ViewDtoBase(com.example.dto.list2.EntryDto entry) {
         this.entry = entry;
     }
 
@@ -48,13 +45,11 @@ public class ViewDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
-    public EntryDto getEntry() {
+    public com.example.dto.list2.EntryDto getEntry() {
         return this.entry;
     }
 
-    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
-    public void setEntry(EntryDto entry) {
+    public void setEntry(com.example.dto.list2.EntryDto entry) {
         this.entry = entry;
     }
 }

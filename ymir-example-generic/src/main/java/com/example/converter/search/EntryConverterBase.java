@@ -8,8 +8,8 @@ import org.seasar.framework.container.annotation.tiger.BindingType;
 import org.seasar.ymir.converter.TypeConversionManager;
 import org.seasar.ymir.message.Messages;
 
-import com.example.dao.search.Entry;
 import com.example.dto.search.EntryDto;
+import com.example.dao.search.Entry;
 
 /**
  * A class to convert Dto objects and entity objects.

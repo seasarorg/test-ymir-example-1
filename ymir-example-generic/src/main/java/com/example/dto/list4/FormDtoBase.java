@@ -11,7 +11,7 @@ public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = "/update/input.html")
+    @Meta(name = "bornOf", value = "/list4/index.html")
     protected Selector fruitSelector = new org.seasar.ymir.render.Selector();
 
 
@@ -51,7 +51,7 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})})
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})
     @RequestParameter
     public Selector getFruitSelector() {
         return this.fruitSelector;

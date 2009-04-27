@@ -1,22 +1,19 @@
 package com.example.dto.list3;
 
 import java.io.Serializable;
-import java.util.List;
-
-import org.seasar.ymir.annotation.Meta;
 
 public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
-    protected List<EntryDto> entries = new java.util.ArrayList<com.example.dto.list3.EntryDto>();
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
+    protected java.util.List<com.example.dto.list3.EntryDto> entries = new java.util.ArrayList<com.example.dto.list3.EntryDto>();
 
 
     public ViewDtoBase() {
     }
 
-    public ViewDtoBase(List<EntryDto> entries) {
+    public ViewDtoBase(java.util.List<com.example.dto.list3.EntryDto> entries) {
         this.entries = entries;
     }
 
@@ -49,13 +46,13 @@ public class ViewDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
-    public List<EntryDto> getEntries() {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
+    public java.util.List<com.example.dto.list3.EntryDto> getEntries() {
         return this.entries;
     }
 
-    @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})
-    public void setEntries(List<EntryDto> entries) {
+    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
+    public void setEntries(java.util.List<com.example.dto.list3.EntryDto> entries) {
         this.entries = entries;
     }
 }

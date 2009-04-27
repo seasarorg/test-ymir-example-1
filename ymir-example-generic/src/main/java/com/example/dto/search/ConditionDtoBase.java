@@ -2,13 +2,10 @@ package com.example.dto.search;
 
 import java.io.Serializable;
 
-import org.seasar.ymir.annotation.Meta;
-
 public class ConditionDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = "/update/input.html")
     protected String name;
 
 
@@ -48,12 +45,10 @@ public class ConditionDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = "/update/input.html")
     public String getName() {
         return this.name;
     }
 
-    @Meta(name = "bornOf", value = "/update/input.html")
     public void setName(String name) {
         this.name = name;
     }
