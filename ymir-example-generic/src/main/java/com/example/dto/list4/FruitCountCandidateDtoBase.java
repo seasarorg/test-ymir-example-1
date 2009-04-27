@@ -9,13 +9,13 @@ public class FruitCountCandidateDtoBase
     implements Serializable, Candidate {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     protected String value;
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     protected boolean selected;
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     protected String label;
 
 
@@ -59,32 +59,32 @@ public class FruitCountCandidateDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public String getValue() {
         return this.value;
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public void setValue(String value) {
         this.value = value;
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public boolean isSelected() {
         return this.selected;
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public String getLabel() {
         return this.label;
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public void setLabel(String label) {
         this.label = label;
     }

@@ -1,19 +1,24 @@
 package com.example.dto.list3;
 
 import java.io.Serializable;
+import java.util.List;
+
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.scope.annotation.RequestParameter;
 
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")
-    protected java.util.List<com.example.dto.list3.EntryDto> entries = new org.seasar.ymir.util.FlexibleList<com.example.dto.list3.EntryDto>();
+    @Meta(name = "bornOf", value = "/update/input.html")
+    protected List<EntryDto> entries = new org.seasar.ymir.util.FlexibleList<com.example.dto.list3.EntryDto>();
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(java.util.List<com.example.dto.list3.EntryDto> entries) {
+    public FormDtoBase(List<EntryDto> entries) {
         this.entries = entries;
     }
 
@@ -46,9 +51,9 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    @org.seasar.ymir.annotation.Metas({@org.seasar.ymir.annotation.Meta(name = "formProperty", value = "form"), @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/list3/index.html")})
-    @org.seasar.ymir.scope.annotation.RequestParameter
-    public java.util.List<com.example.dto.list3.EntryDto> getEntries() {
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/list3/index.html", "/update/input.html"})})
+    @RequestParameter
+    public List<EntryDto> getEntries() {
         return this.entries;
     }
 }

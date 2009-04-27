@@ -2,16 +2,22 @@ package com.example.dto.radio;
 
 import java.io.Serializable;
 
-public class FormDtoBase implements Serializable {
+import net.skirnir.freyja.render.html.Radio;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+
+public class FormDtoBase
+    implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/radio/index.html")
-    protected net.skirnir.freyja.render.html.Radio fruitsRadio = new net.skirnir.freyja.render.html.Radio();
+    @Meta(name = "bornOf", value = {"/radio/index.html", "/update/input.html"})
+    protected Radio fruitsRadio = new net.skirnir.freyja.render.html.Radio();
+
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(net.skirnir.freyja.render.html.Radio fruitsRadio) {
+    public FormDtoBase(Radio fruitsRadio) {
         this.fruitsRadio = fruitsRadio;
     }
 
@@ -44,8 +50,8 @@ public class FormDtoBase implements Serializable {
         return sb.toString();
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/radio/index.html")
-    public net.skirnir.freyja.render.html.Radio getFruitsRadio() {
+    @Metas({@Meta(name = "bornOf", value = {"/radio/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "form")})
+    public Radio getFruitsRadio() {
         return this.fruitsRadio;
     }
 }

@@ -2,13 +2,17 @@ package com.example.dto.update;
 
 import java.io.Serializable;
 
-@org.seasar.ymir.annotation.Meta(name="conversion",value="com.example.dao.update.Entity")
+import org.seasar.ymir.annotation.Meta;
+
+@Meta(name = "conversion", value = "com.example.dao.update.Entity")
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     protected String name;
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     protected String furigana;
 
 
@@ -50,18 +54,22 @@ public class FormDtoBase
         return sb.toString();
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public String getName() {
         return this.name;
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public void setName(String name) {
         this.name = name;
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public String getFurigana() {
         return this.furigana;
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public void setFurigana(String furigana) {
         this.furigana = furigana;
     }

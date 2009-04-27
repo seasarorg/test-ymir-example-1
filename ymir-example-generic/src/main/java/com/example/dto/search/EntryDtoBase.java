@@ -2,13 +2,17 @@ package com.example.dto.search;
 
 import java.io.Serializable;
 
-@org.seasar.ymir.annotation.Meta(name="conversion",value="com.example.dao.search.Entry")
+import org.seasar.ymir.annotation.Meta;
+
+@Meta(name = "conversion", value = "com.example.dao.search.Entry")
 public class EntryDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     protected Integer id;
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     protected String name;
 
 
@@ -50,18 +54,22 @@ public class EntryDtoBase
         return sb.toString();
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public Integer getId() {
         return this.id;
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public void setId(Integer id) {
         this.id = id;
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public String getName() {
         return this.name;
     }
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public void setName(String name) {
         this.name = name;
     }

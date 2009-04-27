@@ -2,12 +2,16 @@ package com.example.dto.list2;
 
 import java.io.Serializable;
 
+import org.seasar.ymir.annotation.Meta;
+
 public class EntryDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
     protected Integer id;
 
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
     protected String name;
 
 
@@ -49,18 +53,22 @@ public class EntryDtoBase
         return sb.toString();
     }
 
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
     public Integer getId() {
         return this.id;
     }
 
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
     public void setId(Integer id) {
         this.id = id;
     }
 
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
     public String getName() {
         return this.name;
     }
 
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
     public void setName(String name) {
         this.name = name;
     }

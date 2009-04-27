@@ -2,16 +2,22 @@ package com.example.dto.checkbox;
 
 import java.io.Serializable;
 
-public class FormDtoBase implements Serializable {
+import net.skirnir.freyja.render.html.Checkbox;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+
+public class FormDtoBase
+    implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
-    protected net.skirnir.freyja.render.html.Checkbox fruitsCheckbox = new net.skirnir.freyja.render.html.Checkbox();
+    @Meta(name = "bornOf", value = {"/checkbox/index.html", "/update/input.html"})
+    protected Checkbox fruitsCheckbox = new net.skirnir.freyja.render.html.Checkbox();
+
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(net.skirnir.freyja.render.html.Checkbox fruitsCheckbox) {
+    public FormDtoBase(Checkbox fruitsCheckbox) {
         this.fruitsCheckbox = fruitsCheckbox;
     }
 
@@ -44,8 +50,8 @@ public class FormDtoBase implements Serializable {
         return sb.toString();
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
-    public net.skirnir.freyja.render.html.Checkbox getFruitsCheckbox() {
+    @Metas({@Meta(name = "bornOf", value = {"/checkbox/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "form")})
+    public Checkbox getFruitsCheckbox() {
         return this.fruitsCheckbox;
     }
 }

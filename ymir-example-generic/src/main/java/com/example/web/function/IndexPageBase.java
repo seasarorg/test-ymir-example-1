@@ -1,18 +1,23 @@
-package com.example.web.update;
+package com.example.web.function;
 
 import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
 
-public class CompletePageBase extends PageBase {
-    public static final String PACKAGE = "com.example.web.update";
+import com.example.web.PageBase;
 
-    public static final String NAME = "complete";
+public class IndexPageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.function";
 
-    public static final String PATH = "/update/complete.html";
+    public static final String NAME = "index";
+
+    public static final String PATH = "/function/index.html";
+
+    public static final String A_get = "_get";
 
     public static final String A_post = "_post";
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public void _get() {
 
     }

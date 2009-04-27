@@ -1,52 +1,83 @@
 package com.example.web.checkbox3;
 
-public class IndexPageBase extends com.example.web.PageBase {
-    @org.seasar.ymir.annotation.Meta(name="property",value="form")
-    protected com.example.dto.checkbox3.FormDto form = new com.example.dto.checkbox3.FormDto();
+import org.seasar.ymir.Response;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.scope.annotation.RequestParameter;
 
+import com.example.dto.checkbox3.FormDto;
+import com.example.web.PageBase;
 
-    @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    public boolean isDrinking() {
-        return this.form.isDrinking();
-    }
+public class IndexPageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.checkbox3";
 
-    @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
-    public void setDrinking(boolean drinking) {
-        this.form.setDrinking(drinking);
-    }
+    public static final String NAME = "index";
 
-    public com.example.dto.checkbox3.FormDto getForm() {
+    public static final String PATH = "/checkbox3/index.html";
+
+    public static final String A_post = "_post";
+
+    public static final String P_form = "form";
+
+    public static final String P_smoking = "smoking";
+
+    public static final String P_drinking = "drinking";
+
+    public static final String P_gambling = "gambling";
+
+    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})})
+    protected FormDto form = new com.example.dto.checkbox3.FormDto();
+
+    @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})
+    public FormDto getForm() {
         return this.form;
     }
 
-    @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    public boolean isGambling() {
-        return this.form.isGambling();
-    }
-
-    @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
-    public void setGambling(boolean gambling) {
-        this.form.setGambling(gambling);
-    }
-
-    @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})})
     public boolean isSmoking() {
         return this.form.isSmoking();
     }
 
-    @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})})
+    @RequestParameter
     public void setSmoking(boolean smoking) {
         this.form.setSmoking(smoking);
     }
 
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})})
+    public boolean isDrinking() {
+        return this.form.isDrinking();
+    }
+
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})})
+    @RequestParameter
+    public void setDrinking(boolean drinking) {
+        this.form.setDrinking(drinking);
+    }
+
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})})
+    public boolean isGambling() {
+        return this.form.isGambling();
+    }
+
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})})
+    @RequestParameter
+    public void setGambling(boolean gambling) {
+        this.form.setGambling(gambling);
+    }
+
+    @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})
     public void _get() {
 
     }
 
+    @Meta(name = "bornOf", value = {"/checkbox3/index.html", "/update/input.html"})
     public void _prerender() {
 
+    }
+
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    public Response _post() {
+        return new org.seasar.ymir.response.PassthroughResponse();
     }
 }

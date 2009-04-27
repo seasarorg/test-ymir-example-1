@@ -1,20 +1,25 @@
 package com.example.dto.text;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import org.seasar.ymir.annotation.Meta;
 
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected java.util.Date date1;
+    @Meta(name = "bornOf", value = "/update/input.html")
+    protected Date date1;
 
-    protected java.util.Date date2;
+    @Meta(name = "bornOf", value = "/update/input.html")
+    protected Date date2;
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(java.util.Date date1, java.util.Date date2) {
+    public FormDtoBase(Date date1, Date date2) {
         this.date1 = date1;
         this.date2 = date2;
     }
@@ -49,19 +54,23 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    public java.util.Date getDate1() {
+    @Meta(name = "bornOf", value = "/update/input.html")
+    public Date getDate1() {
         return this.date1;
     }
 
-    public void setDate1(java.util.Date date1) {
+    @Meta(name = "bornOf", value = "/update/input.html")
+    public void setDate1(Date date1) {
         this.date1 = date1;
     }
 
-    public java.util.Date getDate2() {
+    @Meta(name = "bornOf", value = "/update/input.html")
+    public Date getDate2() {
         return this.date2;
     }
 
-    public void setDate2(java.util.Date date2) {
+    @Meta(name = "bornOf", value = "/update/input.html")
+    public void setDate2(Date date2) {
         this.date2 = date2;
     }
 }

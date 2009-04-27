@@ -9,7 +9,7 @@ public class ViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     protected List<FruitCandidateDto> fruitCandidates = new java.util.ArrayList<com.example.dto.list4.FruitCandidateDto>();
 
 
@@ -49,12 +49,12 @@ public class ViewDtoBase
         return sb.toString();
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public List<FruitCandidateDto> getFruitCandidates() {
         return this.fruitCandidates;
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Meta(name = "bornOf", value = {"/list4/index.html", "/update/input.html"})
     public void setFruitCandidates(List<FruitCandidateDto> fruitCandidates) {
         this.fruitCandidates = fruitCandidates;
     }

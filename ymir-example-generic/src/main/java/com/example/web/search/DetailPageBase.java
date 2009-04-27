@@ -1,42 +1,74 @@
 package com.example.web.search;
 
 import org.seasar.ymir.Response;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.scope.annotation.Inject;
+import org.seasar.ymir.scope.annotation.RequestParameter;
 
-public class DetailPageBase extends com.example.web.search.PageBase {
+import com.example.converter.search.DetailViewConverter;
+import com.example.dto.search.DetailViewDto;
+
+public class DetailPageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.search";
+
+    public static final String NAME = "detail";
+
+    public static final String PATH = "/search/detail.html";
+
+    public static final String A_post = "_post";
+
+    public static final String P_detailView = "detailView";
+
+    public static final String P_detailViewConverter = "detailViewConverter";
+
+    public static final String P_id = "id";
+
+    @Meta(name = "bornOf", value = "/update/input.html")
+    protected DetailViewDto detailView = new com.example.dto.search.DetailViewDto();
+
+    @Meta(name = "bornOf", value = "/update/input.html")
+    protected DetailViewConverter detailViewConverter;
+
     protected Integer id;
 
-    protected com.example.dto.search.DetailViewDto detailView = new com.example.dto.search.DetailViewDto();
+    @Meta(name = "bornOf", value = "/update/input.html")
+    public DetailViewDto getDetailView() {
+        return this.detailView;
+    }
 
-    protected com.example.converter.search.DetailViewConverter detailViewConverter;
+    @Meta(name = "bornOf", value = "/update/input.html")
+    @Inject
+    public void setDetailViewConverter(DetailViewConverter detailViewConverter) {
+        this.detailViewConverter = detailViewConverter;
+    }
 
     public Integer getId() {
         return this.id;
     }
 
-    @org.seasar.ymir.scope.annotation.RequestParameter(actionName = {}, name = "", populateWhereNull = true)
+    @RequestParameter
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public com.example.dto.search.DetailViewDto getDetailView() {
-        return this.detailView;
+    @Meta(name = "bornOf", value = "/update/input.html")
+    public Response _get_back() {
+
+        return null;
     }
 
-    @org.seasar.ymir.scope.annotation.Inject(actionName = {}, name = "", required = true)
-    public void setDetailViewConverter(
-            com.example.converter.search.DetailViewConverter detailViewConverter) {
-        this.detailViewConverter = detailViewConverter;
+    @Meta(name = "bornOf", value = "/update/input.html")
+    public void _prerender() {
+
     }
 
     public void _get() {
 
     }
 
-    public Response _get_back() {
-        return null;
-    }
-
-    public void _prerender() {
-
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    public Response _post() {
+        return new org.seasar.ymir.response.PassthroughResponse();
     }
 }

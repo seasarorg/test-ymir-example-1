@@ -1,38 +1,72 @@
 package com.example.web.list2;
 
-public class IndexPageBase extends com.example.web.list2.PageBase {
-    protected java.util.List<com.example.dto.list2.EntryDto> entries;
+import java.util.List;
 
-    @org.seasar.ymir.annotation.Meta(name="property",value="form")
-    protected com.example.dto.list2.FormDto form = new com.example.dto.list2.FormDto();
+import org.seasar.ymir.Response;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.scope.annotation.RequestParameter;
 
-    protected com.example.dto.list2.ViewDto view = new com.example.dto.list2.ViewDto();
+import com.example.dto.list2.EntryDto;
+import com.example.dto.list2.FormDto;
+import com.example.dto.list2.ViewDto;
 
+public class IndexPageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.list2";
 
-    @org.seasar.ymir.annotation.Meta(name="formProperty",value="form")
-    @org.seasar.ymir.scope.annotation.RequestParameter(actionName={},name="",populateWhereNull=true)
-    public java.util.List<com.example.dto.list2.EntryDto> getEntries() {
-        return this.form.getEntries();
+    public static final String NAME = "index";
+
+    public static final String PATH = "/list2/index.html";
+
+    public static final String A_post = "_post";
+
+    public static final String P_view = "view";
+
+    public static final String P_form = "form";
+
+    public static final String P_entries = "entries";
+
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
+    protected ViewDto view = new com.example.dto.list2.ViewDto();
+
+    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})})
+    protected FormDto form = new com.example.dto.list2.FormDto();
+
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
+    protected List<EntryDto> entries = new org.seasar.ymir.util.FlexibleList<com.example.dto.list2.EntryDto>();
+
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
+    public ViewDto getView() {
+        return this.view;
     }
 
-    public com.example.dto.list2.FormDto getForm() {
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
+    public FormDto getForm() {
         return this.form;
     }
 
-    public com.example.dto.list2.ViewDto getView() {
-        return this.view;
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})})
+    @RequestParameter
+    public List<EntryDto> getEntries() {
+        return this.form.getEntries();
+    }
+
+    @Meta(name = "bornOf", value = {"/list2/index.html", "/update/input.html"})
+    public void _prerender() {
+
     }
 
     public void _get() {
 
     }
 
-    @org.seasar.ymir.annotation.Meta(name="source",value={"return new org.seasar.ymir.response.PassthroughResponse();","index"})
-    public org.seasar.ymir.Response _post_update(int index) {
+    @Meta(name = "source", value = {"return new org.seasar.ymir.response.PassthroughResponse();", "index"})
+    public Response _post_update(int index) {
         return new org.seasar.ymir.response.PassthroughResponse();
     }
 
-    public void _prerender() {
-
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    public Response _post() {
+        return new org.seasar.ymir.response.PassthroughResponse();
     }
 }

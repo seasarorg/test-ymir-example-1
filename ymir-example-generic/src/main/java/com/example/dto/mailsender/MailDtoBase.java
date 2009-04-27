@@ -2,14 +2,18 @@ package com.example.dto.mailsender;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+
 public class MailDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected String text;
-
+    @Meta(name = "bornOf", value = {"/mailsender/index.html", "/update/input.html"})
     protected String to;
+
+    @Meta(name = "bornOf", value = {"/mailsender/index.html", "/update/input.html"})
+    protected String text;
 
 
     public MailDtoBase() {
@@ -23,8 +27,8 @@ public class MailDtoBase
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("text="), text).append(", ");
-        append(sb.append("to="), to);
+        append(sb.append("to="), to).append(", ");
+        append(sb.append("text="), text);
         sb.append(')');
         return toString(sb);
     }
@@ -50,19 +54,23 @@ public class MailDtoBase
         return sb.toString();
     }
 
-    public String getText() {
-        return this.text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
+    @Metas({@Meta(name = "bornOf", value = {"/mailsender/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "mail")})
     public String getTo() {
         return this.to;
     }
 
+    @Metas({@Meta(name = "bornOf", value = {"/mailsender/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "mail")})
     public void setTo(String to) {
         this.to = to;
+    }
+
+    @Metas({@Meta(name = "bornOf", value = {"/mailsender/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "mail")})
+    public String getText() {
+        return this.text;
+    }
+
+    @Metas({@Meta(name = "bornOf", value = {"/mailsender/index.html", "/update/input.html"}), @Meta(name = "formProperty", value = "mail")})
+    public void setText(String text) {
+        this.text = text;
     }
 }
