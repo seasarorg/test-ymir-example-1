@@ -1,6 +1,7 @@
 package com.example.dto.select2;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,12 +33,12 @@ public class ViewDtoBase
     protected StringBuilder append(StringBuilder sb, Object obj) {
         if (obj != null && obj.getClass().isArray()) {
             sb.append('{');
-            int len = java.lang.reflect.Array.getLength(obj);
+            int len = Array.getLength(obj);
             String delim = "";
             for (int i = 0; i < len; i++) {
                 sb.append(delim);
                 delim = ", ";
-                append(sb, java.lang.reflect.Array.get(obj, i));
+                append(sb, Array.get(obj, i));
             }
             sb.append('}');
         } else {

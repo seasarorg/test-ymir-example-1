@@ -1,6 +1,7 @@
 package com.example.dto.list4;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.render.Candidate;
@@ -41,12 +42,12 @@ public class FruitCountCandidateDtoBase
     protected StringBuilder append(StringBuilder sb, Object obj) {
         if (obj != null && obj.getClass().isArray()) {
             sb.append('{');
-            int len = java.lang.reflect.Array.getLength(obj);
+            int len = Array.getLength(obj);
             String delim = "";
             for (int i = 0; i < len; i++) {
                 sb.append(delim);
                 delim = ", ";
-                append(sb, java.lang.reflect.Array.get(obj, i));
+                append(sb, Array.get(obj, i));
             }
             sb.append('}');
         } else {
