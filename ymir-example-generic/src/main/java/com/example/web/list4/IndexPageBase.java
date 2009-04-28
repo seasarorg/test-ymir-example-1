@@ -4,6 +4,7 @@ import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
 import org.seasar.ymir.render.Selector;
+import org.seasar.ymir.response.PassthroughResponse;
 import org.seasar.ymir.scope.annotation.Inject;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
@@ -66,9 +67,9 @@ public class IndexPageBase extends PageBase {
 
     }
 
-    @Metas({@Meta(name = "bornOf", value = "/list4/index.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/list4/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
     @Meta(name = "bornOf", value = "/list4/index.html")

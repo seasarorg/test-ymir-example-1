@@ -3,6 +3,7 @@ package com.example.web.register;
 import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.response.PassthroughResponse;
 
 public class ConfirmPageBase extends PageBase {
     public static final String PACKAGE = "com.example.web.register";
@@ -18,15 +19,15 @@ public class ConfirmPageBase extends PageBase {
     public static final String A_get = "_get";
 
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
-    @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_back() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
-    @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_complete() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
     @Meta(name = "bornOf", value = "/register/confirm.html")

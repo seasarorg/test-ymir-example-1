@@ -5,6 +5,7 @@ import java.util.List;
 import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.response.PassthroughResponse;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.list2.EntryDto;
@@ -51,9 +52,9 @@ public class IndexPageBase extends PageBase {
     }
 
     @Meta(name = "source", value = {"return new org.seasar.ymir.response.PassthroughResponse();", "index"})
-    @Metas({@Meta(name = "bornOf", value = "/list2/index.html"), @Meta(name = "source", value = {"return new org.seasar.ymir.response.PassthroughResponse();", "index"})})
+    @Metas({@Meta(name = "bornOf", value = "/list2/index.html"), @Meta(name = "source", value = {"return new PassthroughResponse();", "index"}, classValue = PassthroughResponse.class)})
     public Response _post_update(int index) {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
     @Meta(name = "bornOf", value = "/list2/index.html")

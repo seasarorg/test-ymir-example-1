@@ -3,6 +3,7 @@ package com.example.web.mailsender;
 import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.response.PassthroughResponse;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.mailsender.MailDto;
@@ -54,9 +55,9 @@ public class IndexPageBase extends PageBase {
     }
 
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
-    @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_send() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
     @Meta(name = "bornOf", value = "/mailsender/index.html")

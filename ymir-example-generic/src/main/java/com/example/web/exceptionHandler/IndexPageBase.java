@@ -3,6 +3,7 @@ package com.example.web.exceptionHandler;
 import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.response.PassthroughResponse;
 
 import com.example.web.PageBase;
 
@@ -31,19 +32,19 @@ public class IndexPageBase extends PageBase {
         return this.message;
     }
 
-    @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_localParticularAction() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
-    @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_localAnyAction() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
-    @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_global() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
     @Meta(name = "bornOf", value = "/exceptionHandler/index.html")

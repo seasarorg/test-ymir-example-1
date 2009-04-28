@@ -3,6 +3,7 @@ package com.example.web.update;
 import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.response.PassthroughResponse;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 public class InputPageBase extends PageBase {
@@ -61,9 +62,9 @@ public class InputPageBase extends PageBase {
     }
 
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
-    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_confirm() {
-        return new org.seasar.ymir.response.PassthroughResponse();
+        return new PassthroughResponse();
     }
 
     @Meta(name = "bornOf", value = "/update/input.html")
