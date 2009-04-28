@@ -11,13 +11,15 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/session/index.html";
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
-
-    }
+    public static final String A_get = "_get";
 
     @Meta(name = "bornOf", value = "/session/index.html")
     public void _prerender() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 }

@@ -11,6 +11,8 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/requestHeader/index.html";
 
+    public static final String A_get = "_get";
+
     public static final String P_userAgent = "userAgent";
 
     @Meta(name = "bornOf", value = "/requestHeader/index.html")
@@ -21,13 +23,13 @@ public class IndexPageBase extends PageBase {
         return this.userAgent;
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    @Meta(name = "bornOf", value = "/requestHeader/index.html")
+    public void _prerender() {
 
     }
 
-    @Meta(name = "bornOf", value = "/requestHeader/index.html")
-    public void _prerender() {
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 }

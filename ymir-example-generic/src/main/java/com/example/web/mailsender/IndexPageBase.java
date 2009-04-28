@@ -15,6 +15,8 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/mailsender/index.html";
 
+    public static final String A_get = "_get";
+
     public static final String P_mail = "mail";
 
     public static final String P_to = "to";
@@ -51,11 +53,6 @@ public class IndexPageBase extends PageBase {
         this.mail.setText(text);
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
-
-    }
-
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
     public Response _post_send() {
@@ -64,6 +61,11 @@ public class IndexPageBase extends PageBase {
 
     @Meta(name = "bornOf", value = "/mailsender/index.html")
     public void _prerender() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 }

@@ -18,6 +18,8 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/list2/index.html";
 
+    public static final String A_get = "_get";
+
     public static final String P_view = "view";
 
     public static final String P_form = "form";
@@ -48,11 +50,6 @@ public class IndexPageBase extends PageBase {
         return this.form.getEntries();
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
-
-    }
-
     @Meta(name = "source", value = {"return new org.seasar.ymir.response.PassthroughResponse();", "index"})
     @Metas({@Meta(name = "bornOf", value = "/list2/index.html"), @Meta(name = "source", value = {"return new org.seasar.ymir.response.PassthroughResponse();", "index"})})
     public Response _post_update(int index) {
@@ -61,6 +58,11 @@ public class IndexPageBase extends PageBase {
 
     @Meta(name = "bornOf", value = "/list2/index.html")
     public void _prerender() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 }

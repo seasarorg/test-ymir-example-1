@@ -15,23 +15,22 @@ public class DetailPageBase extends PageBase {
 
     public static final String PATH = "/search/detail.html";
 
-    public static final String P_detailView = "detailView";
+    public static final String A_get_back = "_get_back";
+
+    public static final String A_get = "_get";
 
     public static final String P_detailViewConverter = "detailViewConverter";
 
     public static final String P_id = "id";
 
-    @Meta(name = "bornOf", value = "/search/detail.html")
-    protected DetailViewDto detailView = new DetailViewDto();
+    public static final String P_detailView = "detailView";
 
     protected DetailViewConverter detailViewConverter;
 
     protected Integer id;
 
     @Meta(name = "bornOf", value = "/search/detail.html")
-    public DetailViewDto getDetailView() {
-        return this.detailView;
-    }
+    protected DetailViewDto detailView = new DetailViewDto();
 
     @Inject
     public void setDetailViewConverter(DetailViewConverter detailViewConverter) {
@@ -45,6 +44,11 @@ public class DetailPageBase extends PageBase {
     @RequestParameter
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Meta(name = "bornOf", value = "/search/detail.html")
+    public DetailViewDto getDetailView() {
+        return this.detailView;
     }
 
     @Meta(name = "bornOf", value = "/search/detail.html")

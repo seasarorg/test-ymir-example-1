@@ -12,25 +12,16 @@ public class InputPageBase extends PageBase {
 
     public static final String PATH = "/update/input.html";
 
-    public static final String P_id = "id";
+    public static final String A_get = "_get";
 
     public static final String P_name = "name";
 
     public static final String P_furigana = "furigana";
 
+    public static final String P_id = "id";
+
     @Meta(name = "bornOf", value = "/index.html")
     protected Integer id;
-
-    @Meta(name = "bornOf", value = "/index.html")
-    public Integer getId() {
-        return this.id;
-    }
-
-    @Meta(name = "bornOf", value = "/index.html")
-    @RequestParameter
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     @Meta(name = "formProperty", value = "form")
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/update/input.html")})
@@ -59,8 +50,14 @@ public class InputPageBase extends PageBase {
     }
 
     @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    public Integer getId() {
+        return this.id;
+    }
 
+    @Meta(name = "bornOf", value = "/index.html")
+    @RequestParameter
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
@@ -71,6 +68,11 @@ public class InputPageBase extends PageBase {
 
     @Meta(name = "bornOf", value = "/update/input.html")
     public void _prerender() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 }

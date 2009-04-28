@@ -10,6 +10,8 @@ public class CompletePageBase extends PageBase {
 
     public static final String PATH = "/register/complete.html";
 
+    public static final String A_get = "_get";
+
     @Meta(name = "bornOf", value = "/register/complete.html")
     @End
     public void _get() {

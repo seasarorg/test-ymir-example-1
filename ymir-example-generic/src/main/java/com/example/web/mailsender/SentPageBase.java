@@ -11,6 +11,8 @@ public class SentPageBase extends PageBase {
 
     public static final String PATH = "/mailsender/sent.html";
 
+    public static final String A_get = "_get";
+
     @Meta(name = "bornOf", value = "/mailsender/sent.html")
     public void _get() {
 
