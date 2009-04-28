@@ -1,21 +1,35 @@
 package com.example.web.register;
 
-public class ConfirmPageBase extends com.example.web.register.PageBase {
-    @org.seasar.ymir.annotation.Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
-    public org.seasar.ymir.Response _post_back() {
+import org.seasar.ymir.Response;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+
+public class ConfirmPageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.register";
+
+    public static final String NAME = "confirm";
+
+    public static final String PATH = "/register/confirm.html";
+
+    @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
+    @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    public Response _post_back() {
         return new org.seasar.ymir.response.PassthroughResponse();
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
-    public org.seasar.ymir.Response _post_complete() {
+    @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
+    @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
+    public Response _post_complete() {
         return new org.seasar.ymir.response.PassthroughResponse();
     }
 
-    public void _prerender() {
-
-    }
-
+    @Meta(name = "bornOf", value = "/register/confirm.html")
     public void _get() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/register/confirm.html")
+    public void _prerender() {
 
     }
 }

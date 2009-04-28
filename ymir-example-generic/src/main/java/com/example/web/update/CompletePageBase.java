@@ -1,8 +1,23 @@
 package com.example.web.update;
 
-public class CompletePageBase extends com.example.web.update.PageBase {
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.conversation.annotation.End;
 
+public class CompletePageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.update";
+
+    public static final String NAME = "complete";
+
+    public static final String PATH = "/update/complete.html";
+
+    @Meta(name = "bornOf", value = "/update/complete.html")
+    @End
     public void _get() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/update/complete.html")
+    public void _prerender() {
 
     }
 }

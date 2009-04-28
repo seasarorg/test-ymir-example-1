@@ -2,24 +2,27 @@ package com.example.dto.checkbox2;
 
 import java.io.Serializable;
 
-public class FormDtoBase implements Serializable {
+import net.skirnir.freyja.render.html.Input;
+import org.seasar.ymir.annotation.Meta;
+
+public class FormDtoBase
+    implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
-    protected net.skirnir.freyja.render.html.Input smokingInput = new net.skirnir.freyja.render.html.Input();
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected Input smokingInput = new Input();
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
-    protected net.skirnir.freyja.render.html.Input drinkingInput = new net.skirnir.freyja.render.html.Input();
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected Input drinkingInput = new Input();
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
-    protected net.skirnir.freyja.render.html.Input gamblingInput = new net.skirnir.freyja.render.html.Input();
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected Input gamblingInput = new Input();
+
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(net.skirnir.freyja.render.html.Input drinkingInput,
-            net.skirnir.freyja.render.html.Input gamblingInput,
-            net.skirnir.freyja.render.html.Input smokingInput) {
+    public FormDtoBase(Input drinkingInput, Input gamblingInput, Input smokingInput) {
         this.drinkingInput = drinkingInput;
         this.gamblingInput = gamblingInput;
         this.smokingInput = smokingInput;
@@ -56,18 +59,18 @@ public class FormDtoBase implements Serializable {
         return sb.toString();
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
-    public net.skirnir.freyja.render.html.Input getSmokingInput() {
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public Input getSmokingInput() {
         return this.smokingInput;
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
-    public net.skirnir.freyja.render.html.Input getDrinkingInput() {
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public Input getDrinkingInput() {
         return this.drinkingInput;
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox2/index.html")
-    public net.skirnir.freyja.render.html.Input getGamblingInput() {
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public Input getGamblingInput() {
         return this.gamblingInput;
     }
 }

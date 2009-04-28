@@ -18,9 +18,9 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/list4/index.html";
 
-    public static final String A_post = "_post";
-
     public static final String A_get = "_get";
+
+    public static final String A_post = "_post";
 
     public static final String P_view = "view";
 
@@ -31,13 +31,10 @@ public class IndexPageBase extends PageBase {
     public static final String P_fruitCandidateConverter = "fruitCandidateConverter";
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    protected ViewDto view = new com.example.dto.list4.ViewDto();
+    protected ViewDto view = new ViewDto();
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})
-    protected FormDto form = new com.example.dto.list4.FormDto();
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    protected Selector fruitSelector = new org.seasar.ymir.render.Selector();
+    protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/list4/index.html")
     protected FruitCandidateConverter fruitCandidateConverter;
@@ -64,14 +61,14 @@ public class IndexPageBase extends PageBase {
         this.fruitCandidateConverter = fruitCandidateConverter;
     }
 
+    @Meta(name = "bornOf", value = {"/index.html", "/list4/index.html"})
+    public void _get() {
+
+    }
+
     @Metas({@Meta(name = "bornOf", value = "/list4/index.html"), @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")})
     public Response _post() {
         return new org.seasar.ymir.response.PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public void _get() {
-
     }
 
     @Meta(name = "bornOf", value = "/list4/index.html")

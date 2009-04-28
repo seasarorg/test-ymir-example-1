@@ -12,7 +12,7 @@ public class FormDtoBase
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    protected Selector fruitSelector = new org.seasar.ymir.render.Selector();
+    protected Selector fruitSelector = new Selector();
 
 
     public FormDtoBase() {

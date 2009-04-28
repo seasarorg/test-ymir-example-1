@@ -2,14 +2,17 @@ package com.example.dto.mailsender;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
+import org.seasar.ymir.annotation.Meta;
+
 public class MailDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected String text;
-
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
     protected String to;
+
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
+    protected String text;
 
 
     public MailDtoBase() {
@@ -23,8 +26,8 @@ public class MailDtoBase
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("text="), text).append(", ");
-        append(sb.append("to="), to);
+        append(sb.append("to="), to).append(", ");
+        append(sb.append("text="), text);
         sb.append(')');
         return toString(sb);
     }
@@ -50,19 +53,23 @@ public class MailDtoBase
         return sb.toString();
     }
 
-    public String getText() {
-        return this.text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
     public String getTo() {
         return this.to;
     }
 
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
     public void setTo(String to) {
         this.to = to;
+    }
+
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
+    public String getText() {
+        return this.text;
+    }
+
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
+    public void setText(String text) {
+        this.text = text;
     }
 }

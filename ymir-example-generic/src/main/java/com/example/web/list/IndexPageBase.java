@@ -1,17 +1,35 @@
 package com.example.web.list;
 
-public class IndexPageBase extends com.example.web.list.PageBase {
-    protected java.util.List<com.example.dto.list.EntryDto> entries;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.seasar.ymir.annotation.Meta;
 
-    public java.util.List<com.example.dto.list.EntryDto> getEntries() {
+import com.example.dto.list.EntryDto;
+
+public class IndexPageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.list";
+
+    public static final String NAME = "index";
+
+    public static final String PATH = "/list/index.html";
+
+    public static final String P_entries = "entries";
+
+    @Meta(name = "bornOf", value = "/list/index.html")
+    protected List<EntryDto> entries = new ArrayList<EntryDto>();
+
+    @Meta(name = "bornOf", value = "/list/index.html")
+    public List<EntryDto> getEntries() {
         return this.entries;
     }
 
+    @Meta(name = "bornOf", value = "/list/detail.html")
     public void _get() {
 
     }
 
+    @Meta(name = "bornOf", value = "/list/index.html")
     public void _prerender() {
 
     }

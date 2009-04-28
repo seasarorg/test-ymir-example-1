@@ -1,6 +1,15 @@
 package com.example.web.checkbox;
 
-public class IndexPageBase extends com.example.web.PageBase {
+import net.skirnir.freyja.render.html.Checkbox;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.scope.annotation.RequestParameter;
+
+import com.example.dto.checkbox.FormDto;
+import com.example.dto.checkbox.ViewDto;
+import com.example.web.PageBase;
+
+public class IndexPageBase extends PageBase {
     public static final String PACKAGE = "com.example.web.checkbox";
 
     public static final String NAME = "index";
@@ -9,48 +18,40 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     public static final String A_get = "_get";
 
-    public static final String P_fruits = "fruits";
-
-    public static final String P_fruitsCheckboxInputTags = "fruitsCheckboxInputTags";
-
     public static final String P_view = "view";
 
     public static final String P_form = "form";
 
     public static final String P_fruitsCheckbox = "fruitsCheckbox";
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
-    protected com.example.dto.checkbox.ViewDto view = new com.example.dto.checkbox.ViewDto();
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
+    protected ViewDto view = new ViewDto();
 
-    @org.seasar.ymir.annotation.Metas( {
-            @org.seasar.ymir.annotation.Meta(name = "property", value = "form"),
-            @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html") })
-    protected com.example.dto.checkbox.FormDto form = new com.example.dto.checkbox.FormDto();
+    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/checkbox/index.html")})
+    protected FormDto form = new FormDto();
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
-    public com.example.dto.checkbox.ViewDto getView() {
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
+    public ViewDto getView() {
         return this.view;
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
-    public com.example.dto.checkbox.FormDto getForm() {
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
+    public FormDto getForm() {
         return this.form;
     }
 
-    @org.seasar.ymir.annotation.Metas( {
-            @org.seasar.ymir.annotation.Meta(name = "formProperty", value = "form"),
-            @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html") })
-    @org.seasar.ymir.scope.annotation.RequestParameter
-    public net.skirnir.freyja.render.html.Checkbox getFruitsCheckbox() {
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox/index.html")})
+    @RequestParameter
+    public Checkbox getFruitsCheckbox() {
         return this.form.getFruitsCheckbox();
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
+    @Meta(name = "bornOf", value = {"/checkbox/index.html", "/index.html"})
     public void _get() {
 
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/checkbox/index.html")
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
     public void _prerender() {
 
     }

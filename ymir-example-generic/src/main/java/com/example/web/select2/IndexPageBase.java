@@ -1,6 +1,15 @@
 package com.example.web.select2;
 
-public class IndexPageBase extends com.example.web.PageBase {
+import net.skirnir.freyja.render.html.Select;
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.scope.annotation.RequestParameter;
+
+import com.example.dto.select2.FormDto;
+import com.example.dto.select2.ViewDto;
+import com.example.web.PageBase;
+
+public class IndexPageBase extends PageBase {
     public static final String PACKAGE = "com.example.web.select2";
 
     public static final String NAME = "index";
@@ -13,34 +22,34 @@ public class IndexPageBase extends com.example.web.PageBase {
 
     public static final String P_fruitsSelect = "fruitsSelect";
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
-    protected com.example.dto.select2.ViewDto view = new com.example.dto.select2.ViewDto();
+    @Meta(name = "bornOf", value = "/select2/index.html")
+    protected ViewDto view = new ViewDto();
 
-    @org.seasar.ymir.annotation.Metas({@org.seasar.ymir.annotation.Meta(name = "property", value = "form"), @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")})
-    protected com.example.dto.select2.FormDto form = new com.example.dto.select2.FormDto();
+    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/select2/index.html")})
+    protected FormDto form = new FormDto();
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
-    public com.example.dto.select2.ViewDto getView() {
+    @Meta(name = "bornOf", value = "/select2/index.html")
+    public ViewDto getView() {
         return this.view;
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
-    public com.example.dto.select2.FormDto getForm() {
+    @Meta(name = "bornOf", value = "/select2/index.html")
+    public FormDto getForm() {
         return this.form;
     }
 
-    @org.seasar.ymir.annotation.Metas({@org.seasar.ymir.annotation.Meta(name = "formProperty", value = "form"), @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")})
-    @org.seasar.ymir.scope.annotation.RequestParameter
-    public net.skirnir.freyja.render.html.Select getFruitsSelect() {
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/select2/index.html")})
+    @RequestParameter
+    public Select getFruitsSelect() {
         return this.form.getFruitsSelect();
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    @Meta(name = "bornOf", value = "/select2/index.html")
     public void _get() {
 
     }
 
-    @org.seasar.ymir.annotation.Meta(name = "bornOf", value = "/select2/index.html")
+    @Meta(name = "bornOf", value = "/select2/index.html")
     public void _prerender() {
 
     }

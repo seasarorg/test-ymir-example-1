@@ -1,6 +1,7 @@
 package com.example.dto.list4;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.seasar.ymir.annotation.Meta;
@@ -10,7 +11,7 @@ public class ViewDtoBase
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    protected List<FruitCandidateDto> fruitCandidates = new java.util.ArrayList<com.example.dto.list4.FruitCandidateDto>();
+    protected List<FruitCandidateDto> fruitCandidates = new ArrayList<FruitCandidateDto>();
 
 
     public ViewDtoBase() {

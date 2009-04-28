@@ -11,11 +11,12 @@ public class IndexPageBase extends PageBase {
 
     public static final String A_get = "_get";
 
-    @Meta(name = "bornOf", value = {"/exceptionHandler/index.html", "/aaa/index.html", "/ncheckbox/index.html", "/checkbox/index.html", "/checkbox2/index.html", "/radio/index.html", "/select/index.html", "/select2/index.html", "/list3/index.html", "/list4/index.html"})
+    @Meta(name = "bornOf", value = {"/aaa/index.html", "/checkbox/index.html", "/checkbox2/index.html", "/exceptionHandler/index.html", "/list3/index.html", "/list4/index.html", "/ncheckbox/index.html", "/radio/index.html", "/select/index.html", "/select2/index.html", "/update/input.html"})
     public void _get() {
 
     }
 
+    @Meta(name = "bornOf", value = "/index.html")
     public void _prerender() {
 
     }

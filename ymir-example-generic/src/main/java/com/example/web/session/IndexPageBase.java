@@ -1,8 +1,23 @@
 package com.example.web.session;
 
-public class IndexPageBase extends com.example.web.PageBase {
+import org.seasar.ymir.annotation.Meta;
 
+import com.example.web.PageBase;
+
+public class IndexPageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.session";
+
+    public static final String NAME = "index";
+
+    public static final String PATH = "/session/index.html";
+
+    @Meta(name = "bornOf", value = "/index.html")
     public void _get() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/session/index.html")
+    public void _prerender() {
 
     }
 }

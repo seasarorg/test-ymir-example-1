@@ -2,16 +2,20 @@ package com.example.dto.checkbox3;
 
 import java.io.Serializable;
 
-@SuppressWarnings("unchecked")
+import org.seasar.ymir.annotation.Meta;
+
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
+    protected boolean smoking;
+
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
     protected boolean drinking;
 
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
     protected boolean gambling;
-
-    protected boolean smoking;
 
 
     public FormDtoBase() {
@@ -26,9 +30,9 @@ public class FormDtoBase
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
+        append(sb.append("smoking="), smoking).append(", ");
         append(sb.append("drinking="), drinking).append(", ");
-        append(sb.append("gambling="), gambling).append(", ");
-        append(sb.append("smoking="), smoking);
+        append(sb.append("gambling="), gambling);
         sb.append(')');
         return toString(sb);
     }
@@ -54,27 +58,33 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    public boolean isDrinking() {
-        return this.drinking;
-    }
-
-    public void setDrinking(boolean drinking) {
-        this.drinking = drinking;
-    }
-
-    public boolean isGambling() {
-        return this.gambling;
-    }
-
-    public void setGambling(boolean gambling) {
-        this.gambling = gambling;
-    }
-
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
     public boolean isSmoking() {
         return this.smoking;
     }
 
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
     public void setSmoking(boolean smoking) {
         this.smoking = smoking;
+    }
+
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
+    public boolean isDrinking() {
+        return this.drinking;
+    }
+
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
+    public void setDrinking(boolean drinking) {
+        this.drinking = drinking;
+    }
+
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
+    public boolean isGambling() {
+        return this.gambling;
+    }
+
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
+    public void setGambling(boolean gambling) {
+        this.gambling = gambling;
     }
 }

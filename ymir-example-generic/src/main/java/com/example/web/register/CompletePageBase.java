@@ -1,8 +1,23 @@
 package com.example.web.register;
 
-public class CompletePageBase extends com.example.web.register.PageBase {
+import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.conversation.annotation.End;
 
+public class CompletePageBase extends PageBase {
+    public static final String PACKAGE = "com.example.web.register";
+
+    public static final String NAME = "complete";
+
+    public static final String PATH = "/register/complete.html";
+
+    @Meta(name = "bornOf", value = "/register/complete.html")
+    @End
     public void _get() {
+
+    }
+
+    @Meta(name = "bornOf", value = "/register/complete.html")
+    public void _prerender() {
 
     }
 }

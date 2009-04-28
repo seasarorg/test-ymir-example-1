@@ -1,18 +1,23 @@
 package com.example.dto.search;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.seasar.ymir.annotation.Meta;
 
 public class SearchViewDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    protected java.util.List<com.example.dto.search.EntryDto> entries;
+    @Meta(name = "bornOf", value = "/search/index.html")
+    protected List<EntryDto> entries = new ArrayList<EntryDto>();
 
 
     public SearchViewDtoBase() {
     }
 
-    public SearchViewDtoBase(java.util.List<com.example.dto.search.EntryDto> entries) {
+    public SearchViewDtoBase(List<EntryDto> entries) {
         this.entries = entries;
     }
 
@@ -45,11 +50,13 @@ public class SearchViewDtoBase
         return sb.toString();
     }
 
-    public java.util.List<com.example.dto.search.EntryDto> getEntries() {
+    @Meta(name = "bornOf", value = "/search/index.html")
+    public List<EntryDto> getEntries() {
         return this.entries;
     }
 
-    public void setEntries(java.util.List<com.example.dto.search.EntryDto> entries) {
+    @Meta(name = "bornOf", value = "/search/index.html")
+    public void setEntries(List<EntryDto> entries) {
         this.entries = entries;
     }
 }

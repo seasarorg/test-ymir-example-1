@@ -21,7 +21,7 @@ public class FruitCandidateDtoBase
     protected String name;
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    protected Selector fruitCountSelector = new org.seasar.ymir.render.Selector();
+    protected Selector fruitCountSelector = new Selector();
 
 
     public FruitCandidateDtoBase() {
