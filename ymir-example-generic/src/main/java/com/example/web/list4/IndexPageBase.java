@@ -62,7 +62,7 @@ public class IndexPageBase extends PageBase {
         this.fruitCandidateConverter = fruitCandidateConverter;
     }
 
-    @Meta(name = "bornOf", value = {"/index.html", "/list4/index.html"})
+    @Meta(name = "bornOf", value = "/index.html")
     public void _get() {
 
     }

@@ -4,17 +4,12 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 
 import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.render.AbstractCandidate;
 import org.seasar.ymir.render.Candidate;
 
-public class FruitCountCandidateDtoBase
+public class FruitCountCandidateDtoBase extends AbstractCandidate
     implements Serializable, Candidate {
     private static final long serialVersionUID = 1L;
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    protected String value;
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    protected boolean selected;
 
     @Meta(name = "bornOf", value = "/list4/index.html")
     protected String label;
@@ -23,17 +18,13 @@ public class FruitCountCandidateDtoBase
     public FruitCountCandidateDtoBase() {
     }
 
-    public FruitCountCandidateDtoBase(String label, boolean selected, String value) {
+    public FruitCountCandidateDtoBase(String label) {
         this.label = label;
-        this.selected = selected;
-        this.value = value;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("value="), value).append(", ");
-        append(sb.append("selected="), selected).append(", ");
         append(sb.append("label="), label);
         sb.append(')');
         return toString(sb);
@@ -58,26 +49,6 @@ public class FruitCountCandidateDtoBase
 
     protected String toString(StringBuilder sb) {
         return sb.toString();
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public String getValue() {
-        return this.value;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public boolean isSelected() {
-        return this.selected;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public void setSelected(boolean selected) {
-        this.selected = selected;
     }
 
     @Meta(name = "bornOf", value = "/list4/index.html")

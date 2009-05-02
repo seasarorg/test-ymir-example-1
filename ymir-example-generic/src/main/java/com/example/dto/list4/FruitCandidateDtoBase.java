@@ -4,19 +4,14 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 
 import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.render.AbstractCandidate;
 import org.seasar.ymir.render.Candidate;
 import org.seasar.ymir.render.Selector;
 
 @Meta(name = "conversion", value = "com.example.dao.list4.Fruit")
-public class FruitCandidateDtoBase
+public class FruitCandidateDtoBase extends AbstractCandidate
     implements Serializable, Candidate {
     private static final long serialVersionUID = 1L;
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    protected String value;
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    protected boolean selected;
 
     @Meta(name = "bornOf", value = "/list4/index.html")
     protected String name;
@@ -28,18 +23,14 @@ public class FruitCandidateDtoBase
     public FruitCandidateDtoBase() {
     }
 
-    public FruitCandidateDtoBase(Selector fruitCountSelector, String name, boolean selected, String value) {
+    public FruitCandidateDtoBase(Selector fruitCountSelector, String name) {
         this.fruitCountSelector = fruitCountSelector;
         this.name = name;
-        this.selected = selected;
-        this.value = value;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("value="), value).append(", ");
-        append(sb.append("selected="), selected).append(", ");
         append(sb.append("name="), name).append(", ");
         append(sb.append("fruitCountSelector="), fruitCountSelector);
         sb.append(')');
@@ -65,26 +56,6 @@ public class FruitCandidateDtoBase
 
     protected String toString(StringBuilder sb) {
         return sb.toString();
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public String getValue() {
-        return this.value;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public boolean isSelected() {
-        return this.selected;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public void setSelected(boolean selected) {
-        this.selected = selected;
     }
 
     @Meta(name = "bornOf", value = "/list4/index.html")
