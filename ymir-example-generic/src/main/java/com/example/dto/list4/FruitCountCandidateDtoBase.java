@@ -25,6 +25,7 @@ public class FruitCountCandidateDtoBase extends AbstractCandidate
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
+        sb.append(super.toString()).append(", ");
         append(sb.append("label="), label);
         sb.append(')');
         return toString(sb);
