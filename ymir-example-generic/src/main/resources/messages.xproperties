@@ -19,8 +19,13 @@ error.constraint.numeric.lessThan=Specify value which is less than {1}: {0}
 error.constraint.required=Specify non-empty value: {0}
 error.constraint.token.tokenRequired=Request has not been processed correctly because of invalid page transition.
 
+label.list4_indexPage.fruitSelector=フルーツ
+label.list4_indexPage.selectedValues=
+error.list4_indexPage.constraint.required+fruitSelector.selectedValues={0}を選んで下さい。
+
 label.text_indexPage.date1=日付1
 label.text_indexPage.date2=日付2
 error.text_indexPage.constraint.datetime={0}にyyyyMMdd形式の日付を指定して下さい。
 
 label.mailsender_indexPage.to=宛先
+

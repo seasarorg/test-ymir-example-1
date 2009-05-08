@@ -10,6 +10,11 @@
 <body tal:define="view self/view; form self/form">
   <h1>一覧表示の中での編集エントリの選択（新）</h1>
   <p>一覧表示されている編集エントリからチェックしたものを選択するようなサンプルです。</p>
+  <p>1つ以上の果物をチェックして「選択」ボタンを押すと、選択されたものが表示されます。</p>
+  <p>何もチェックしないとバリデーションエラーが表示されます。</p>
+  <ul tal:condition="notes/notes">
+    <li tal:repeat="note notes/notes" tal:content="note/%value">NOTE</li>
+  </ul>
   <form name="form" action="./index.html" method="post">
     <table border="1">
       <tbody>
@@ -27,11 +32,13 @@
     </table>
     <input type="submit" value="選択" />
   </form>
-  <div tal:condition="view/fruitCandidates">
-    <p><span tal:repeat="fruitCandidate view/fruitCandidates" tal:omit-tag=""><span tal:condition="not:repeat/fruitCandidate/start" tal:omit-tag="">、</span><span tal:replace="string:${fruitCandidate/fruitCountSelector/selectedCandidate/label}の${fruitCandidate/name}">りんご</span></span>が選択されました。</p>
-  </div>
-  <div tal:condition="not:view/fruitCandidates">
-    <p>何も選択されていません。</p>
+  <div tal:condition="exists:view/fruitCandidates">
+    <div tal:condition="view/fruitCandidates">
+      <p><span tal:repeat="fruitCandidate view/fruitCandidates" tal:omit-tag=""><span tal:condition="not:repeat/fruitCandidate/start" tal:omit-tag="">、</span><span tal:replace="string:${fruitCandidate/fruitCountSelector/selectedCandidate/label}の${fruitCandidate/name}">りんご</span></span>が選択されました。</p>
+    </div>
+    <div tal:condition="not:view/fruitCandidates">
+      <p>何も選択されていません。</p>
+    </div>
   </div>
 
 <div align="right">

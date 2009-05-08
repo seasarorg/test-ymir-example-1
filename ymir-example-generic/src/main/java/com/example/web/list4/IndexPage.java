@@ -3,7 +3,9 @@ package com.example.web.list4;
 import java.util.List;
 
 import org.seasar.ymir.Phase;
+import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Invoke;
+import org.seasar.ymir.constraint.annotation.Required;
 import org.seasar.ymir.scope.annotation.Inject;
 
 import com.example.dto.list4.FruitCandidateDto;
@@ -15,6 +17,12 @@ public class IndexPage extends IndexPageBase {
     @Inject
     public void setLogic(FruitLogic logic) {
         this.logic = logic;
+    }
+
+    public IndexPage() {
+        // fruitCandidatesは結果を表示したい場合にだけ非nullをセットするようにします。
+        // ViewDtoにはデフォルトで空のfruitCandidatesが設定されているのでここでnullにしておきます。
+        getView().setFruitCandidates(null);
     }
 
     @Invoke(Phase.OBJECT_INJECTED)
@@ -31,11 +39,13 @@ public class IndexPage extends IndexPageBase {
         getForm().getFruitSelector().setCandidateList(fruitDtoList);
     }
 
+    @Required("fruitSelector.selectedValues")
     @Override
-    public void _prerender() {
-        // 選択されたエントリだけをビューに格納します。
+    public Response _post() {
         List<FruitCandidateDto> fruitCandidateDtoList = getForm()
                 .getFruitSelector().getSelectedCandidateList();
         getView().setFruitCandidates(fruitCandidateDtoList);
+
+        return super._post();
     }
 }
