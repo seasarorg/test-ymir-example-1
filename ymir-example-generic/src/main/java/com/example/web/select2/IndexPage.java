@@ -5,7 +5,7 @@ import static java.util.Arrays.asList;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.skirnir.freyja.render.html.Option;
+import org.seasar.ymir.render.html.Option;
 
 public class IndexPage extends IndexPageBase {
     @Override

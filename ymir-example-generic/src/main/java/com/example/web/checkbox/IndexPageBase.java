@@ -1,8 +1,8 @@
 package com.example.web.checkbox;
 
-import net.skirnir.freyja.render.html.Checkbox;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.render.Selector;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.checkbox.FormDto;
@@ -22,7 +22,7 @@ public class IndexPageBase extends PageBase {
 
     public static final String P_form = "form";
 
-    public static final String P_fruitsCheckbox = "fruitsCheckbox";
+    public static final String P_fruitSelector = "fruitSelector";
 
     @Meta(name = "bornOf", value = "/checkbox/index.html")
     protected ViewDto view = new ViewDto();
@@ -40,10 +40,10 @@ public class IndexPageBase extends PageBase {
         return this.form;
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
-    public Checkbox getFruitsCheckbox() {
-        return this.form.getFruitsCheckbox();
+    public Selector getFruitSelector() {
+        return this.form.getFruitSelector();
     }
 
     @Meta(name = "bornOf", value = {"/checkbox/index.html", "/index.html"})

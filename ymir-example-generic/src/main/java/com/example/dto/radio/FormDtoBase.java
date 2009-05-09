@@ -3,28 +3,28 @@ package com.example.dto.radio;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-import net.skirnir.freyja.render.html.Radio;
 import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.render.Selector;
 
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/radio/index.html")
-    protected Radio fruitsRadio = new Radio();
+    protected Selector fruitSelector = new Selector();
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(Radio fruitsRadio) {
-        this.fruitsRadio = fruitsRadio;
+    public FormDtoBase(Selector fruitSelector) {
+        this.fruitSelector = fruitSelector;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("fruitsRadio="), fruitsRadio);
+        append(sb.append("fruitSelector="), fruitSelector);
         sb.append(')');
         return toString(sb);
     }
@@ -51,7 +51,7 @@ public class FormDtoBase
     }
 
     @Meta(name = "bornOf", value = "/radio/index.html")
-    public Radio getFruitsRadio() {
-        return this.fruitsRadio;
+    public Selector getFruitSelector() {
+        return this.fruitSelector;
     }
 }

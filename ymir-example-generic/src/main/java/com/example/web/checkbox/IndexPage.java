@@ -1,36 +1,31 @@
 package com.example.web.checkbox;
 
-import static java.util.Arrays.asList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import net.skirnir.freyja.render.html.Input;
+import com.example.dto.checkbox.FruitCandidateDto;
 
 public class IndexPage extends IndexPageBase {
     @Override
     public void _prerender() {
-        // チェックボックスのモデルであるCheckboxInputTagsの準備をします。
+        // チェックボックスのモデルであるFruitCandidateDtoの準備をします。
 
-        List<Input> list = new ArrayList<Input>();
+        List<FruitCandidateDto> list = new ArrayList<FruitCandidateDto>();
 
-        Input input = new Input();
-        input.setInputValue("apple").setContent("りんご");
-        list.add(input);
+        list.add(new FruitCandidateDto("apple", "りんご"));
+        list.add(new FruitCandidateDto("orange", "みかん"));
+        list.add(new FruitCandidateDto("grape", "ぶどう"));
 
-        input = new Input();
-        input.setInputValue("orange").setContent("みかん");
-        list.add(input);
-
-        input = new Input();
-        input.setInputValue("grape").setContent("ぶどう");
-        list.add(input);
-
-        getForm().getFruitsCheckbox().setInputs(list);
+        getForm().getFruitSelector().setCandidateList(list);
 
         // 選択されているチェックボックスの名前をビューDTOに設定します。
 
-        getView().setNames(
-                asList(getForm().getFruitsCheckbox().getCheckedContents()));
+        List<String> nameList = new ArrayList<String>();
+        List<FruitCandidateDto> dtoList = getForm().getFruitSelector()
+                .getSelectedCandidateList();
+        for (FruitCandidateDto dto : dtoList) {
+            nameList.add(dto.getName());
+        }
+        getView().setNames(nameList);
     }
 }

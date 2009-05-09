@@ -1,8 +1,8 @@
 package com.example.web.checkbox2;
 
-import net.skirnir.freyja.render.html.Input;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.render.html.Input;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.checkbox2.FormDto;
@@ -31,7 +31,8 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
     protected ViewDto view = new ViewDto();
 
-    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
+    @Metas( { @Meta(name = "property", value = "form"),
+            @Meta(name = "bornOf", value = "/checkbox2/index.html") })
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
@@ -44,25 +45,28 @@ public class IndexPageBase extends PageBase {
         return this.form;
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
+    @Metas( { @Meta(name = "formProperty", value = "form"),
+            @Meta(name = "bornOf", value = "/checkbox2/index.html") })
     @RequestParameter
     public Input getSmokingInput() {
         return this.form.getSmokingInput();
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
+    @Metas( { @Meta(name = "formProperty", value = "form"),
+            @Meta(name = "bornOf", value = "/checkbox2/index.html") })
     @RequestParameter
     public Input getDrinkingInput() {
         return this.form.getDrinkingInput();
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
+    @Metas( { @Meta(name = "formProperty", value = "form"),
+            @Meta(name = "bornOf", value = "/checkbox2/index.html") })
     @RequestParameter
     public Input getGamblingInput() {
         return this.form.getGamblingInput();
     }
 
-    @Meta(name = "bornOf", value = {"/checkbox2/index.html", "/index.html"})
+    @Meta(name = "bornOf", value = { "/checkbox2/index.html", "/index.html" })
     public void _get() {
 
     }

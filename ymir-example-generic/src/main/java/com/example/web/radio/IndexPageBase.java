@@ -1,8 +1,8 @@
 package com.example.web.radio;
 
-import net.skirnir.freyja.render.html.Radio;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.render.Selector;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.radio.FormDto;
@@ -16,11 +16,13 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/radio/index.html";
 
+    public static final String A_get = "_get";
+
     public static final String P_view = "view";
 
     public static final String P_form = "form";
 
-    public static final String P_fruitsRadio = "fruitsRadio";
+    public static final String P_fruitSelector = "fruitSelector";
 
     @Meta(name = "bornOf", value = "/radio/index.html")
     protected ViewDto view = new ViewDto();
@@ -38,10 +40,10 @@ public class IndexPageBase extends PageBase {
         return this.form;
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/radio/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/radio/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
-    public Radio getFruitsRadio() {
-        return this.form.getFruitsRadio();
+    public Selector getFruitSelector() {
+        return this.form.getFruitSelector();
     }
 
     @Meta(name = "bornOf", value = "/radio/index.html")

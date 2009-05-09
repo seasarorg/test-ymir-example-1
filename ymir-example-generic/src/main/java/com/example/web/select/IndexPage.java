@@ -3,7 +3,7 @@ package com.example.web.select;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.skirnir.freyja.render.html.Option;
+import org.seasar.ymir.render.html.Option;
 
 public class IndexPage extends IndexPageBase {
     private static final String VALUE_UNSELECTED = "";

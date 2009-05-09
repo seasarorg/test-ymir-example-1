@@ -2,7 +2,7 @@ package com.example.dto.checkbox2;
 
 import java.io.Serializable;
 
-import net.skirnir.freyja.render.html.Input;
+import org.seasar.ymir.render.html.Input;
 
 public class FormDto extends FormDtoBase implements Serializable {
     private static final long serialVersionUID = 1L;

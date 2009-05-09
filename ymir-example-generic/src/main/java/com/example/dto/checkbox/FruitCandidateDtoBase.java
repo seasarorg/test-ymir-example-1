@@ -1,33 +1,32 @@
-package com.example.dto.list3;
+package com.example.dto.checkbox;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;
-import java.util.List;
 
 import org.seasar.ymir.annotation.Meta;
-import org.seasar.ymir.annotation.Metas;
-import org.seasar.ymir.scope.annotation.RequestParameter;
-import org.seasar.ymir.util.FlexibleList;
+import org.seasar.ymir.render.AbstractCandidate;
+import org.seasar.ymir.render.Candidate;
 
-public class FormDtoBase
-    implements Serializable {
+public class FruitCandidateDtoBase extends AbstractCandidate
+    implements Serializable, Candidate {
     private static final long serialVersionUID = 1L;
 
-    @Meta(name = "bornOf", value = "/list3/index.html")
-    protected List<EntryDto> entries = new FlexibleList<EntryDto>();
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
+    protected String name;
 
 
-    public FormDtoBase() {
+    public FruitCandidateDtoBase() {
     }
 
-    public FormDtoBase(List<EntryDto> entries) {
-        this.entries = entries;
+    public FruitCandidateDtoBase(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("entries="), entries);
+        sb.append(super.toString()).append(", ");
+        append(sb.append("name="), name);
         sb.append(')');
         return toString(sb);
     }
@@ -53,9 +52,13 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/list3/index.html")})
-    @RequestParameter
-    public List<EntryDto> getEntries() {
-        return this.entries;
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
+    public String getName() {
+        return this.name;
+    }
+
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
+    public void setName(String name) {
+        this.name = name;
     }
 }

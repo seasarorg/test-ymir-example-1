@@ -13,9 +13,9 @@
 
 <form name="form" action="./index.html">
   <ul>
-    <li tal:repeat="input form/fruitsRadio/inputs">
-      <input type="radio" name="fruitsRadio.value" tal:attributes="checked input/checked; value input/value" />
-      <span tal:replace="input/content">りんご</span>
+    <li tal:repeat="candidate form/fruitSelector/candidates">
+      <input type="radio" name="fruitSelector.selectedValues" tal:attributes="checked candidate/selected; value candidate/value" />
+      <span tal:replace="candidate/name">りんご</span>
     </li>
   </ul>
   <p><input type="submit" value="選択" /></p>

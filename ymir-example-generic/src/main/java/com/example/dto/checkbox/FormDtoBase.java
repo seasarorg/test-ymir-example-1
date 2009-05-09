@@ -3,28 +3,28 @@ package com.example.dto.checkbox;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-import net.skirnir.freyja.render.html.Checkbox;
 import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.render.Selector;
 
 public class FormDtoBase
     implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/checkbox/index.html")
-    protected Checkbox fruitsCheckbox = new Checkbox();
+    protected Selector fruitSelector = new Selector();
 
 
     public FormDtoBase() {
     }
 
-    public FormDtoBase(Checkbox fruitsCheckbox) {
-        this.fruitsCheckbox = fruitsCheckbox;
+    public FormDtoBase(Selector fruitSelector) {
+        this.fruitSelector = fruitSelector;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("fruitsCheckbox="), fruitsCheckbox);
+        append(sb.append("fruitSelector="), fruitSelector);
         sb.append(')');
         return toString(sb);
     }
@@ -51,7 +51,7 @@ public class FormDtoBase
     }
 
     @Meta(name = "bornOf", value = "/checkbox/index.html")
-    public Checkbox getFruitsCheckbox() {
-        return this.fruitsCheckbox;
+    public Selector getFruitSelector() {
+        return this.fruitSelector;
     }
 }
