@@ -26,6 +26,7 @@
 %update%complete.html=com.example.web.update.CompletePage
 %update%confirm.html=com.example.web.update.ConfirmPage
 %update%input.html=com.example.web.update.InputPage
+%upload%index.html=com.example.web.upload.IndexPage
 com.example.web.IndexPage=/index.html
 com.example.web.checkbox.IndexPage=/checkbox/index.html
 com.example.web.checkbox2.IndexPage=/checkbox2/index.html
@@ -54,3 +55,4 @@ com.example.web.text.IndexPage=/text/index.html
 com.example.web.update.CompletePage=/update/complete.html
 com.example.web.update.ConfirmPage=/update/confirm.html
 com.example.web.update.InputPage=/update/input.html
+com.example.web.upload.IndexPage=/upload/index.html
