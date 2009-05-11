@@ -40,7 +40,7 @@ public class IndexPageBase extends PageBase {
         return this.form;
     }
 
-    @Metas({@Meta(name = "bornOf", value = "/radio/index.html"), @Meta(name = "formProperty", value = "form")})
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/radio/index.html")})
     @RequestParameter
     public Selector getFruitSelector() {
         return this.form.getFruitSelector();

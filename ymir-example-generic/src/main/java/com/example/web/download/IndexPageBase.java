@@ -13,7 +13,7 @@ public class IndexPageBase extends PageBase {
 
     public static final String A_get = "_get";
 
-    @Meta(name = "bornOf", value = "/download/index.html")
+    @Meta(name = "bornOf", value = {"/download/index.html", "/index.html"})
     public void _get() {
 
     }

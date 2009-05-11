@@ -6,11 +6,13 @@ import java.lang.reflect.Array;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.render.html.Select;
 
-public class FormDtoBase implements Serializable {
+public class FormDtoBase
+    implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/select/index.html")
     protected Select fruitsSelect = new Select();
+
 
     public FormDtoBase() {
     }

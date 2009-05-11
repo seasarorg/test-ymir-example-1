@@ -6,7 +6,8 @@ import java.lang.reflect.Array;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.render.html.Input;
 
-public class FormDtoBase implements Serializable {
+public class FormDtoBase
+    implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
@@ -18,11 +19,11 @@ public class FormDtoBase implements Serializable {
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
     protected Input gamblingInput = new Input();
 
+
     public FormDtoBase() {
     }
 
-    public FormDtoBase(Input drinkingInput, Input gamblingInput,
-            Input smokingInput) {
+    public FormDtoBase(Input drinkingInput, Input gamblingInput, Input smokingInput) {
         this.drinkingInput = drinkingInput;
         this.gamblingInput = gamblingInput;
         this.smokingInput = smokingInput;

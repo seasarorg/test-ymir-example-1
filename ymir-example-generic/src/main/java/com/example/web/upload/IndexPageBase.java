@@ -18,9 +18,9 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/upload/index.html";
 
-    public static final String A_post = "_post";
-
     public static final String A_get = "_get";
+
+    public static final String A_post = "_post";
 
     public static final String P_file = "file";
 
@@ -38,15 +38,15 @@ public class IndexPageBase extends PageBase {
         this.file = file;
     }
 
+    @Meta(name = "bornOf", value = {"/index.html", "/upload/index.html"})
+    public void _get() {
+
+    }
+
     @Metas({@Meta(name = "bornOf", value = "/upload/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post()
         throws IOException {
         return new PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/upload/index.html")
-    public void _get() {
-
     }
 
     @Meta(name = "bornOf", value = "/upload/index.html")
