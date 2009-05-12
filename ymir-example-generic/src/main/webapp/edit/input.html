@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>商品情報の編集</title>
+</head>
+<body tal:define="form self/form">
+  <h1>商品情報の編集</h1>
+  <ul tal:condition="notes">
+    <li tal:repeat="note notes/notes" tal:content="note/%value">NOTE</li>
+  </ul>
+  <form name="form" action="./input.html" method="post">
+    <table>
+      <tbody>
+        <tr>
+          <th>名前</th>
+          <td>
+            <input type="text" name="name" tal:attributes="value param-self/name" />
+          </td>
+        </tr>
+        <tr>
+          <th>説明</th>
+          <td>
+            <textarea name="description" cols="40" rows="3" tal:content="param-self/description"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th>タイプ</th>
+          <td>
+            <select name="productTypeSelect.value">
+              <option tal:repeat="option form/productTypeSelect/options" tal:attributes="value option/value; selected option/selected" tal:content="option/content">タイプ1</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><input type="submit" name="next" value="次へ" /></p>
+  </form>
+
+<div align="right">
+  <a href="./index.html?id=1">最初に戻る</a>
+</div>
+<div align="right">
+  <a href="../index.html">一覧に戻る</a>
+</div>
+</body>
+</html>

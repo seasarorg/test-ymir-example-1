@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>編集内容の確認</title>
+</head>
+<body tal:define="form self/form">
+  <h1>編集内容の確認</h1>
+  <form name="form" action="./confirm.html" method="post">
+    <table>
+      <tbody>
+        <tr>
+          <th>名前</th>
+          <td tal:content="form/name">名前</td>
+        </tr>
+        <tr>
+          <th>説明</th>
+          <td>
+            <pre tal:content="form/description">説明</pre>
+          </td>
+        </tr>
+        <tr>
+          <th>タイプ</th>
+          <td tal:content="form/productTypeSelect.selectedContent">タイプ</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <input type="submit" name="previous" value="戻る" />
+      <input type="submit" name="next" value="次へ" />
+    </p>
+  </form>
+
+<div align="right">
+  <a href="./index.html?id=1">最初に戻る</a>
+</div>
+<div align="right">
+  <a href="../index.html">一覧に戻る</a>
+</div>
+</body>
+</html>

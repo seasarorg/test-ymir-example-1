@@ -30,3 +30,6 @@ error.text_indexPage.constraint.datetime={0}にyyyyMMdd形式の日付を指定�
 label.mailsender_indexPage.to=宛先
 
 error.upload_indexPage.constraint.required+file=ファイルを指定して下さい。
+
+label.edit_inputPage.name=名前
+label.edit_inputPage.description=説明
