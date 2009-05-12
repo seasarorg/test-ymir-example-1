@@ -45,15 +45,15 @@ public class InputPageBase extends PageBase {
         this.form.setFurigana(furigana);
     }
 
+    @Meta(name = "bornOf", value = "/register/input.html")
+    public void _prerender() {
+
+    }
+
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/register/input.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_confirm() {
         return new PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/register/input.html")
-    public void _prerender() {
-
     }
 
     @Meta(name = "bornOf", value = "/index.html")

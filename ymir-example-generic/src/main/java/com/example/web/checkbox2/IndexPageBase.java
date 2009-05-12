@@ -67,7 +67,7 @@ public class IndexPageBase extends PageBase {
 
     }
 
-    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    @Meta(name = "bornOf", value = {"/checkbox2/index.html", "/index.html"})
     public void _prerender() {
 
     }

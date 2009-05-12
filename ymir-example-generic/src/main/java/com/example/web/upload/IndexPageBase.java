@@ -43,14 +43,14 @@ public class IndexPageBase extends PageBase {
 
     }
 
+    @Meta(name = "bornOf", value = "/upload/index.html")
+    public void _prerender() {
+
+    }
+
     @Metas({@Meta(name = "bornOf", value = "/upload/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post()
         throws IOException {
         return new PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/upload/index.html")
-    public void _prerender() {
-
     }
 }

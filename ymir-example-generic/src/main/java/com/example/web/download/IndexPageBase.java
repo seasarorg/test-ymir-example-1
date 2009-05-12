@@ -18,7 +18,7 @@ public class IndexPageBase extends PageBase {
 
     }
 
-    @Meta(name = "bornOf", value = "/download/index.html")
+    @Meta(name = "bornOf", value = {"/download/index.html", "/index.html"})
     public void _prerender() {
 
     }

@@ -18,7 +18,7 @@ public class IndexPageBase extends PageBase {
 
     }
 
-    @Meta(name = "bornOf", value = "/function/index.html")
+    @Meta(name = "bornOf", value = {"/function/index.html", "/index.html"})
     public void _prerender() {
 
     }

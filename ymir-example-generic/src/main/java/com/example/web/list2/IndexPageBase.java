@@ -51,15 +51,15 @@ public class IndexPageBase extends PageBase {
         return this.form.getEntries();
     }
 
+    @Meta(name = "bornOf", value = "/list2/index.html")
+    public void _prerender() {
+
+    }
+
     @Meta(name = "source", value = {"return new org.seasar.ymir.response.PassthroughResponse();", "index"})
     @Metas({@Meta(name = "bornOf", value = "/list2/index.html"), @Meta(name = "source", value = {"return new PassthroughResponse();", "index"}, classValue = PassthroughResponse.class)})
     public Response _post_update(int index) {
         return new PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/list2/index.html")
-    public void _prerender() {
-
     }
 
     @Meta(name = "bornOf", value = "/index.html")

@@ -67,12 +67,12 @@ public class IndexPageBase extends PageBase {
     }
 
     @Meta(name = "bornOf", value = "/search/index.html")
-    public void _get_search() {
+    public void _prerender() {
 
     }
 
     @Meta(name = "bornOf", value = "/search/index.html")
-    public void _prerender() {
+    public void _get_search() {
 
     }
 }

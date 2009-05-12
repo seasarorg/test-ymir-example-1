@@ -43,7 +43,7 @@ public class DetailPageBase extends PageBase {
 
     }
 
-    @Meta(name = "bornOf", value = "/list/detail.html")
+    @Meta(name = "bornOf", value = {"/list/detail.html", "/list/index.html"})
     public void _prerender() {
 
     }

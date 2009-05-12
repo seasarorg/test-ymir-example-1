@@ -16,7 +16,7 @@ public class IndexPageBase extends PageBase {
 
     }
 
-    @Meta(name = "bornOf", value = "/customTag/index.html")
+    @Meta(name = "bornOf", value = {"/customTag/index.html", "/index.html"})
     public void _prerender() {
 
     }

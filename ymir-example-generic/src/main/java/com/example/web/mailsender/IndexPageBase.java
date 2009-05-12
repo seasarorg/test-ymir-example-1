@@ -54,15 +54,15 @@ public class IndexPageBase extends PageBase {
         this.mail.setText(text);
     }
 
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
+    public void _prerender() {
+
+    }
+
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_send() {
         return new PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/mailsender/index.html")
-    public void _prerender() {
-
     }
 
     @Meta(name = "bornOf", value = "/index.html")
