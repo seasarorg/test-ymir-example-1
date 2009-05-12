@@ -28,12 +28,12 @@ public class IndexPageBase extends PageBase {
         this.id = id;
     }
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/index.html"})
     public void _get() {
 
     }
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/index.html"})
     public void _prerender() {
 
     }

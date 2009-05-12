@@ -23,25 +23,30 @@ public class InputPageBase extends PageBase {
 
     public static final String A_post_next = "_post_next";
 
+    public static final String P_form = "form";
+
     public static final String P_name = "name";
 
     public static final String P_description = "description";
+
+    public static final String P_productTypeSelect = "productTypeSelect";
 
     public static final String P_formConverter = "formConverter";
 
     public static final String P_id = "id";
 
-    public static final String P_form = "form";
-
-    public static final String P_productTypeSelect = "productTypeSelect";
+    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/edit/input.html")})
+    protected FormDto form = new FormDto();
 
     protected FormConverter formConverter;
 
     @Meta(name = "bornOf", value = "/edit/index.html")
     protected Integer id;
 
-    @Metas({@Meta(name = "bornOf", value = "/edit/input.html"), @Meta(name = "property", value = "form")})
-    protected FormDto form = new FormDto();
+    @Meta(name = "bornOf", value = "/edit/input.html")
+    public FormDto getForm() {
+        return this.form;
+    }
 
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/edit/input.html")})
     public String getName() {
@@ -65,6 +70,12 @@ public class InputPageBase extends PageBase {
         this.form.setDescription(description);
     }
 
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/edit/input.html")})
+    @RequestParameter
+    public Select getProductTypeSelect() {
+        return this.form.getProductTypeSelect();
+    }
+
     @Inject
     public void setFormConverter(FormConverter formConverter) {
         this.formConverter = formConverter;
@@ -79,17 +90,6 @@ public class InputPageBase extends PageBase {
     @RequestParameter
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Meta(name = "bornOf", value = "/edit/input.html")
-    public FormDto getForm() {
-        return this.form;
-    }
-
-    @Metas({@Meta(name = "bornOf", value = "/edit/input.html"), @Meta(name = "formProperty", value = "form")})
-    @RequestParameter
-    public Select getProductTypeSelect() {
-        return this.form.getProductTypeSelect();
     }
 
     @Meta(name = "bornOf", value = {"/edit/index.html", "/edit/input.html"})
