@@ -26,6 +26,6 @@ public class ConfirmPage extends ConfirmPageBase {
     public Response _post_next() {
         productLogic.update(formConverter.copyDtoToEntity(form, product));
 
-        return Redirect.to("complete.html");
+        return Redirect.to(CompletePage.class);
     }
 }
