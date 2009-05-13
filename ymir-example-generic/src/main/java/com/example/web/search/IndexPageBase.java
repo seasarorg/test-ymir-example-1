@@ -14,16 +14,13 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/search/index.html";
 
-    public static final String P_searchView = "searchView";
-
     public static final String P_condition = "condition";
-
-    public static final String P_name = "name";
 
     public static final String P_id = "id";
 
-    @Meta(name = "bornOf", value = "/search/index.html")
-    protected SearchViewDto searchView = new SearchViewDto();
+    public static final String P_name = "name";
+
+    public static final String P_searchView = "searchView";
 
     @Meta(name = "property", value = "condition")
     @Metas({@Meta(name = "property", value = "condition"), @Meta(name = "bornOf", value = "/search/index.html")})
@@ -33,8 +30,17 @@ public class IndexPageBase extends PageBase {
     protected Integer id;
 
     @Meta(name = "bornOf", value = "/search/index.html")
-    public SearchViewDto getSearchView() {
-        return this.searchView;
+    protected SearchViewDto searchView = new SearchViewDto();
+
+    @Meta(name = "bornOf", value = "/search/index.html")
+    public Integer getId() {
+        return this.id;
+    }
+
+    @Meta(name = "bornOf", value = "/search/index.html")
+    @RequestParameter
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Meta(name = "formProperty", value = "condition")
@@ -51,14 +57,8 @@ public class IndexPageBase extends PageBase {
     }
 
     @Meta(name = "bornOf", value = "/search/index.html")
-    public Integer getId() {
-        return this.id;
-    }
-
-    @Meta(name = "bornOf", value = "/search/index.html")
-    @RequestParameter
-    public void setId(Integer id) {
-        this.id = id;
+    public SearchViewDto getSearchView() {
+        return this.searchView;
     }
 
     @Meta(name = "bornOf", value = "/search/index.html")
@@ -67,12 +67,12 @@ public class IndexPageBase extends PageBase {
     }
 
     @Meta(name = "bornOf", value = "/search/index.html")
-    public void _prerender() {
+    public void _get_search() {
 
     }
 
     @Meta(name = "bornOf", value = "/search/index.html")
-    public void _get_search() {
+    public void _prerender() {
 
     }
 }

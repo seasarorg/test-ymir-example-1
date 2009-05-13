@@ -11,13 +11,13 @@ public class FormDtoBase
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
-    protected Input smokingInput = new Input();
-
-    @Meta(name = "bornOf", value = "/checkbox2/index.html")
     protected Input drinkingInput = new Input();
 
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
     protected Input gamblingInput = new Input();
+
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    protected Input smokingInput = new Input();
 
 
     public FormDtoBase() {
@@ -32,9 +32,9 @@ public class FormDtoBase
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("smokingInput="), smokingInput).append(", ");
         append(sb.append("drinkingInput="), drinkingInput).append(", ");
-        append(sb.append("gamblingInput="), gamblingInput);
+        append(sb.append("gamblingInput="), gamblingInput).append(", ");
+        append(sb.append("smokingInput="), smokingInput);
         sb.append(')');
         return toString(sb);
     }
@@ -61,11 +61,6 @@ public class FormDtoBase
     }
 
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
-    public Input getSmokingInput() {
-        return this.smokingInput;
-    }
-
-    @Meta(name = "bornOf", value = "/checkbox2/index.html")
     public Input getDrinkingInput() {
         return this.drinkingInput;
     }
@@ -73,5 +68,10 @@ public class FormDtoBase
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
     public Input getGamblingInput() {
         return this.gamblingInput;
+    }
+
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public Input getSmokingInput() {
+        return this.smokingInput;
     }
 }

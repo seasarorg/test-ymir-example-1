@@ -16,22 +16,17 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/select2/index.html";
 
-    public static final String P_view = "view";
-
     public static final String P_form = "form";
 
     public static final String P_fruitsSelect = "fruitsSelect";
 
-    @Meta(name = "bornOf", value = "/select2/index.html")
-    protected ViewDto view = new ViewDto();
+    public static final String P_view = "view";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/select2/index.html")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/select2/index.html")
-    public ViewDto getView() {
-        return this.view;
-    }
+    protected ViewDto view = new ViewDto();
 
     @Meta(name = "bornOf", value = "/select2/index.html")
     public FormDto getForm() {
@@ -42,6 +37,11 @@ public class IndexPageBase extends PageBase {
     @RequestParameter
     public Select getFruitsSelect() {
         return this.form.getFruitsSelect();
+    }
+
+    @Meta(name = "bornOf", value = "/select2/index.html")
+    public ViewDto getView() {
+        return this.view;
     }
 
     @Meta(name = "bornOf", value = "/select2/index.html")

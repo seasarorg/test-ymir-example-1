@@ -23,13 +23,13 @@ public class IndexPageBase extends PageBase {
         return this.userAgent;
     }
 
-    @Meta(name = "bornOf", value = "/requestHeader/index.html")
-    public void _prerender() {
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    @Meta(name = "bornOf", value = "/requestHeader/index.html")
+    public void _prerender() {
 
     }
 }

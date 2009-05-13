@@ -14,13 +14,13 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/exceptionHandler/index.html";
 
-    public static final String A_post_localParticularAction = "_post_localParticularAction";
-
-    public static final String A_post_localAnyAction = "_post_localAnyAction";
+    public static final String A_get = "_get";
 
     public static final String A_post_global = "_post_global";
 
-    public static final String A_get = "_get";
+    public static final String A_post_localAnyAction = "_post_localAnyAction";
+
+    public static final String A_post_localParticularAction = "_post_localParticularAction";
 
     public static final String P_message = "message";
 
@@ -32,8 +32,13 @@ public class IndexPageBase extends PageBase {
         return this.message;
     }
 
+    @Meta(name = "bornOf", value = "/exceptionHandler/index.html")
+    public void _get() {
+
+    }
+
     @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
-    public Response _post_localParticularAction() {
+    public Response _post_global() {
         return new PassthroughResponse();
     }
 
@@ -43,13 +48,8 @@ public class IndexPageBase extends PageBase {
     }
 
     @Metas({@Meta(name = "bornOf", value = "/exceptionHandler/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
-    public Response _post_global() {
+    public Response _post_localParticularAction() {
         return new PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/exceptionHandler/index.html")
-    public void _get() {
-
     }
 
     @Meta(name = "bornOf", value = "/exceptionHandler/index.html")

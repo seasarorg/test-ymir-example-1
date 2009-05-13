@@ -18,22 +18,17 @@ public class IndexPageBase extends PageBase {
 
     public static final String A_get = "_get";
 
-    public static final String P_view = "view";
-
     public static final String P_form = "form";
 
     public static final String P_fruitSelector = "fruitSelector";
 
-    @Meta(name = "bornOf", value = "/checkbox/index.html")
-    protected ViewDto view = new ViewDto();
+    public static final String P_view = "view";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/checkbox/index.html")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/checkbox/index.html")
-    public ViewDto getView() {
-        return this.view;
-    }
+    protected ViewDto view = new ViewDto();
 
     @Meta(name = "bornOf", value = "/checkbox/index.html")
     public FormDto getForm() {
@@ -44,6 +39,11 @@ public class IndexPageBase extends PageBase {
     @RequestParameter
     public Selector getFruitSelector() {
         return this.form.getFruitSelector();
+    }
+
+    @Meta(name = "bornOf", value = "/checkbox/index.html")
+    public ViewDto getView() {
+        return this.view;
     }
 
     @Meta(name = "bornOf", value = {"/checkbox/index.html", "/index.html"})

@@ -10,10 +10,10 @@ public class MailDtoBase
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/mailsender/index.html")
-    protected String to;
+    protected String text;
 
     @Meta(name = "bornOf", value = "/mailsender/index.html")
-    protected String text;
+    protected String to;
 
 
     public MailDtoBase() {
@@ -27,8 +27,8 @@ public class MailDtoBase
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("to="), to).append(", ");
-        append(sb.append("text="), text);
+        append(sb.append("text="), text).append(", ");
+        append(sb.append("to="), to);
         sb.append(')');
         return toString(sb);
     }
@@ -55,16 +55,6 @@ public class MailDtoBase
     }
 
     @Meta(name = "bornOf", value = "/mailsender/index.html")
-    public String getTo() {
-        return this.to;
-    }
-
-    @Meta(name = "bornOf", value = "/mailsender/index.html")
-    public void setTo(String to) {
-        this.to = to;
-    }
-
-    @Meta(name = "bornOf", value = "/mailsender/index.html")
     public String getText() {
         return this.text;
     }
@@ -72,5 +62,15 @@ public class MailDtoBase
     @Meta(name = "bornOf", value = "/mailsender/index.html")
     public void setText(String text) {
         this.text = text;
+    }
+
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
+    public String getTo() {
+        return this.to;
+    }
+
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
+    public void setTo(String to) {
+        this.to = to;
     }
 }

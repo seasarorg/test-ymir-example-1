@@ -13,13 +13,13 @@ public class IndexPageBase extends PageBase {
 
     public static final String A_get = "_get";
 
-    @Meta(name = "bornOf", value = "/session/index.html")
-    public void _prerender() {
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    @Meta(name = "bornOf", value = "/session/index.html")
+    public void _prerender() {
 
     }
 }

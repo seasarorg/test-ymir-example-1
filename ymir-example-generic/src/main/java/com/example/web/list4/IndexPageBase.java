@@ -19,20 +19,17 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/list4/index.html";
 
-    public static final String A_post = "_post";
-
     public static final String A_get = "_get";
 
-    public static final String P_view = "view";
+    public static final String A_post = "_post";
 
     public static final String P_form = "form";
 
-    public static final String P_fruitSelector = "fruitSelector";
-
     public static final String P_fruitCandidateConverter = "fruitCandidateConverter";
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    protected ViewDto view = new ViewDto();
+    public static final String P_fruitSelector = "fruitSelector";
+
+    public static final String P_view = "view";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})
     protected FormDto form = new FormDto();
@@ -41,13 +38,17 @@ public class IndexPageBase extends PageBase {
     protected FruitCandidateConverter fruitCandidateConverter;
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    public ViewDto getView() {
-        return this.view;
-    }
+    protected ViewDto view = new ViewDto();
 
     @Meta(name = "bornOf", value = "/list4/index.html")
     public FormDto getForm() {
         return this.form;
+    }
+
+    @Meta(name = "bornOf", value = "/list4/index.html")
+    @Inject
+    public void setFruitCandidateConverter(FruitCandidateConverter fruitCandidateConverter) {
+        this.fruitCandidateConverter = fruitCandidateConverter;
     }
 
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})
@@ -57,13 +58,12 @@ public class IndexPageBase extends PageBase {
     }
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    @Inject
-    public void setFruitCandidateConverter(FruitCandidateConverter fruitCandidateConverter) {
-        this.fruitCandidateConverter = fruitCandidateConverter;
+    public ViewDto getView() {
+        return this.view;
     }
 
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public void _prerender() {
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 
@@ -72,8 +72,8 @@ public class IndexPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    @Meta(name = "bornOf", value = "/list4/index.html")
+    public void _prerender() {
 
     }
 }

@@ -12,11 +12,16 @@ public class ConfirmPageBase extends PageBase {
 
     public static final String PATH = "/update/confirm.html";
 
+    public static final String A_get = "_get";
+
     public static final String A_post_back = "_post_back";
 
     public static final String A_post_complete = "_post_complete";
 
-    public static final String A_get = "_get";
+    @Meta(name = "bornOf", value = "/update/confirm.html")
+    public void _get() {
+
+    }
 
     @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/update/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
@@ -28,11 +33,6 @@ public class ConfirmPageBase extends PageBase {
     @Metas({@Meta(name = "bornOf", value = "/update/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_complete() {
         return new PassthroughResponse();
-    }
-
-    @Meta(name = "bornOf", value = "/update/confirm.html")
-    public void _get() {
-
     }
 
     @Meta(name = "bornOf", value = "/update/confirm.html")

@@ -16,20 +16,25 @@ public class ConfirmPageBase extends PageBase {
 
     public static final String PATH = "/edit/confirm.html";
 
-    public static final String A_post_previous = "_post_previous";
+    public static final String A_get = "_get";
 
     public static final String A_post_next = "_post_next";
 
-    public static final String A_get = "_get";
-
-    public static final String P_formConverter = "formConverter";
+    public static final String A_post_previous = "_post_previous";
 
     public static final String P_form = "form";
 
-    protected FormConverter formConverter;
+    public static final String P_formConverter = "formConverter";
 
     @Metas({@Meta(name = "bornOf", value = "/edit/confirm.html"), @Meta(name = "property", value = "form")})
     protected FormDto form = new FormDto();
+
+    protected FormConverter formConverter;
+
+    @Meta(name = "bornOf", value = "/edit/confirm.html")
+    public FormDto getForm() {
+        return this.form;
+    }
 
     @Inject
     public void setFormConverter(FormConverter formConverter) {
@@ -37,13 +42,8 @@ public class ConfirmPageBase extends PageBase {
     }
 
     @Meta(name = "bornOf", value = "/edit/confirm.html")
-    public FormDto getForm() {
-        return this.form;
-    }
+    public void _get() {
 
-    @Metas({@Meta(name = "bornOf", value = "/edit/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
-    public Response _post_previous() {
-        return new PassthroughResponse();
     }
 
     @Metas({@Meta(name = "bornOf", value = "/edit/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
@@ -51,9 +51,9 @@ public class ConfirmPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/edit/confirm.html")
-    public void _get() {
-
+    @Metas({@Meta(name = "bornOf", value = "/edit/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
+    public Response _post_previous() {
+        return new PassthroughResponse();
     }
 
     @Meta(name = "bornOf", value = "/edit/confirm.html")

@@ -15,22 +15,9 @@ public class InputPageBase extends PageBase {
 
     public static final String A_get = "_get";
 
-    public static final String P_name = "name";
-
     public static final String P_furigana = "furigana";
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/register/input.html")})
-    public String getName() {
-        return this.form.getName();
-    }
-
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/register/input.html")})
-    @RequestParameter
-    public void setName(String name) {
-        this.form.setName(name);
-    }
+    public static final String P_name = "name";
 
     @Meta(name = "formProperty", value = "form")
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/register/input.html")})
@@ -45,8 +32,21 @@ public class InputPageBase extends PageBase {
         this.form.setFurigana(furigana);
     }
 
-    @Meta(name = "bornOf", value = "/register/input.html")
-    public void _prerender() {
+    @Meta(name = "formProperty", value = "form")
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/register/input.html")})
+    public String getName() {
+        return this.form.getName();
+    }
+
+    @Meta(name = "formProperty", value = "form")
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/register/input.html")})
+    @RequestParameter
+    public void setName(String name) {
+        this.form.setName(name);
+    }
+
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 
@@ -56,8 +56,8 @@ public class InputPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    @Meta(name = "bornOf", value = "/register/input.html")
+    public void _prerender() {
 
     }
 }

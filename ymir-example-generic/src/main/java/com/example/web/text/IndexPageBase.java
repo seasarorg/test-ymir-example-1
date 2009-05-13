@@ -17,11 +17,11 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/text/index.html";
 
-    public static final String P_form = "form";
-
     public static final String P_date1 = "date1";
 
     public static final String P_date2 = "date2";
+
+    public static final String P_form = "form";
 
     @Meta(name = "property", value = "form")
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/text/index.html")})

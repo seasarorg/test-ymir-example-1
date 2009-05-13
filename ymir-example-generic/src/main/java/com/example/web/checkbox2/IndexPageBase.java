@@ -18,25 +18,26 @@ public class IndexPageBase extends PageBase {
 
     public static final String A_get = "_get";
 
-    public static final String P_view = "view";
+    public static final String P_drinkingInput = "drinkingInput";
 
     public static final String P_form = "form";
 
-    public static final String P_smokingInput = "smokingInput";
-
-    public static final String P_drinkingInput = "drinkingInput";
-
     public static final String P_gamblingInput = "gamblingInput";
 
-    @Meta(name = "bornOf", value = "/checkbox2/index.html")
-    protected ViewDto view = new ViewDto();
+    public static final String P_smokingInput = "smokingInput";
+
+    public static final String P_view = "view";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
-    public ViewDto getView() {
-        return this.view;
+    protected ViewDto view = new ViewDto();
+
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
+    @RequestParameter
+    public Input getDrinkingInput() {
+        return this.form.getDrinkingInput();
     }
 
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
@@ -46,20 +47,19 @@ public class IndexPageBase extends PageBase {
 
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
     @RequestParameter
+    public Input getGamblingInput() {
+        return this.form.getGamblingInput();
+    }
+
+    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
+    @RequestParameter
     public Input getSmokingInput() {
         return this.form.getSmokingInput();
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
-    @RequestParameter
-    public Input getDrinkingInput() {
-        return this.form.getDrinkingInput();
-    }
-
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
-    @RequestParameter
-    public Input getGamblingInput() {
-        return this.form.getGamblingInput();
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public ViewDto getView() {
+        return this.view;
     }
 
     @Meta(name = "bornOf", value = {"/checkbox2/index.html", "/index.html"})

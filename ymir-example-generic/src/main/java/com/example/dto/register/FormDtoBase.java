@@ -10,10 +10,10 @@ public class FormDtoBase
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/register/input.html")
-    protected String name;
+    protected String furigana;
 
     @Meta(name = "bornOf", value = "/register/input.html")
-    protected String furigana;
+    protected String name;
 
 
     public FormDtoBase() {
@@ -27,8 +27,8 @@ public class FormDtoBase
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("name="), name).append(", ");
-        append(sb.append("furigana="), furigana);
+        append(sb.append("furigana="), furigana).append(", ");
+        append(sb.append("name="), name);
         sb.append(')');
         return toString(sb);
     }
@@ -55,16 +55,6 @@ public class FormDtoBase
     }
 
     @Meta(name = "bornOf", value = "/register/input.html")
-    public String getName() {
-        return this.name;
-    }
-
-    @Meta(name = "bornOf", value = "/register/input.html")
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Meta(name = "bornOf", value = "/register/input.html")
     public String getFurigana() {
         return this.furigana;
     }
@@ -72,5 +62,15 @@ public class FormDtoBase
     @Meta(name = "bornOf", value = "/register/input.html")
     public void setFurigana(String furigana) {
         this.furigana = furigana;
+    }
+
+    @Meta(name = "bornOf", value = "/register/input.html")
+    public String getName() {
+        return this.name;
+    }
+
+    @Meta(name = "bornOf", value = "/register/input.html")
+    public void setName(String name) {
+        this.name = name;
     }
 }

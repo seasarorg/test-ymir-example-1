@@ -14,10 +14,10 @@ public class FruitCandidateDtoBase extends AbstractCandidate
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    protected String name;
+    protected Selector fruitCountSelector = new Selector();
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    protected Selector fruitCountSelector = new Selector();
+    protected String name;
 
 
     public FruitCandidateDtoBase() {
@@ -32,8 +32,8 @@ public class FruitCandidateDtoBase extends AbstractCandidate
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
         sb.append(super.toString()).append(", ");
-        append(sb.append("name="), name).append(", ");
-        append(sb.append("fruitCountSelector="), fruitCountSelector);
+        append(sb.append("fruitCountSelector="), fruitCountSelector).append(", ");
+        append(sb.append("name="), name);
         sb.append(')');
         return toString(sb);
     }
@@ -60,16 +60,6 @@ public class FruitCandidateDtoBase extends AbstractCandidate
     }
 
     @Meta(name = "bornOf", value = "/list4/index.html")
-    public String getName() {
-        return this.name;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Meta(name = "bornOf", value = "/list4/index.html")
     public Selector getFruitCountSelector() {
         return this.fruitCountSelector;
     }
@@ -77,5 +67,15 @@ public class FruitCandidateDtoBase extends AbstractCandidate
     @Meta(name = "bornOf", value = "/list4/index.html")
     public void setFruitCountSelector(Selector fruitCountSelector) {
         this.fruitCountSelector = fruitCountSelector;
+    }
+
+    @Meta(name = "bornOf", value = "/list4/index.html")
+    public String getName() {
+        return this.name;
+    }
+
+    @Meta(name = "bornOf", value = "/list4/index.html")
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -21,28 +21,18 @@ public class IndexPageBase extends PageBase {
 
     public static final String A_get = "_get";
 
-    public static final String P_view = "view";
+    public static final String P_entries = "entries";
 
     public static final String P_form = "form";
 
-    public static final String P_entries = "entries";
-
-    @Meta(name = "bornOf", value = "/list2/index.html")
-    protected ViewDto view = new ViewDto();
+    public static final String P_view = "view";
 
     @Meta(name = "property", value = "form")
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/list2/index.html")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/list2/index.html")
-    public ViewDto getView() {
-        return this.view;
-    }
-
-    @Meta(name = "bornOf", value = "/list2/index.html")
-    public FormDto getForm() {
-        return this.form;
-    }
+    protected ViewDto view = new ViewDto();
 
     @Meta(name = "formProperty", value = "form")
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/list2/index.html")})
@@ -52,7 +42,17 @@ public class IndexPageBase extends PageBase {
     }
 
     @Meta(name = "bornOf", value = "/list2/index.html")
-    public void _prerender() {
+    public FormDto getForm() {
+        return this.form;
+    }
+
+    @Meta(name = "bornOf", value = "/list2/index.html")
+    public ViewDto getView() {
+        return this.view;
+    }
+
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 
@@ -62,8 +62,8 @@ public class IndexPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    @Meta(name = "bornOf", value = "/list2/index.html")
+    public void _prerender() {
 
     }
 }

@@ -12,10 +12,10 @@ public class FormDtoBase
     private static final long serialVersionUID = 1L;
 
     @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
-    protected String name;
+    protected String description;
 
     @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
-    protected String description;
+    protected String name;
 
     @Meta(name = "bornOf", value = "/edit/input.html")
     protected Select productTypeSelect = new Select();
@@ -33,8 +33,8 @@ public class FormDtoBase
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder().append('(');
-        append(sb.append("name="), name).append(", ");
         append(sb.append("description="), description).append(", ");
+        append(sb.append("name="), name).append(", ");
         append(sb.append("productTypeSelect="), productTypeSelect);
         sb.append(')');
         return toString(sb);
@@ -62,16 +62,6 @@ public class FormDtoBase
     }
 
     @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
-    public String getName() {
-        return this.name;
-    }
-
-    @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
     public String getDescription() {
         return this.description;
     }
@@ -79,6 +69,16 @@ public class FormDtoBase
     @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
+    public String getName() {
+        return this.name;
+    }
+
+    @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Meta(name = "bornOf", value = "/edit/input.html")

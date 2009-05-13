@@ -20,26 +20,13 @@ public class IndexPageBase extends PageBase {
 
     public static final String P_mail = "mail";
 
-    public static final String P_to = "to";
-
     public static final String P_text = "text";
+
+    public static final String P_to = "to";
 
     @Meta(name = "property", value = "mail")
     @Metas({@Meta(name = "property", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
     protected MailDto mail = new MailDto();
-
-    @Meta(name = "formProperty", value = "mail")
-    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
-    public String getTo() {
-        return this.mail.getTo();
-    }
-
-    @Meta(name = "formProperty", value = "mail")
-    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
-    @RequestParameter
-    public void setTo(String to) {
-        this.mail.setTo(to);
-    }
 
     @Meta(name = "formProperty", value = "mail")
     @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
@@ -54,8 +41,21 @@ public class IndexPageBase extends PageBase {
         this.mail.setText(text);
     }
 
-    @Meta(name = "bornOf", value = "/mailsender/index.html")
-    public void _prerender() {
+    @Meta(name = "formProperty", value = "mail")
+    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
+    public String getTo() {
+        return this.mail.getTo();
+    }
+
+    @Meta(name = "formProperty", value = "mail")
+    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
+    @RequestParameter
+    public void setTo(String to) {
+        this.mail.setTo(to);
+    }
+
+    @Meta(name = "bornOf", value = "/index.html")
+    public void _get() {
 
     }
 
@@ -65,8 +65,8 @@ public class IndexPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/index.html")
-    public void _get() {
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
+    public void _prerender() {
 
     }
 }
