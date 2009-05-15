@@ -2,6 +2,7 @@ package com.example.web.select;
 
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.render.html.Select;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
@@ -42,6 +43,14 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/select/index.html")
     public ViewDto getView() {
         return this.view;
+    }
+
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
     }
 
     @Meta(name = "bornOf", value = "/select/index.html")

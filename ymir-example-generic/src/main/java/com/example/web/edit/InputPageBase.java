@@ -4,6 +4,8 @@ import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
 import org.seasar.ymir.conversation.annotation.Begin;
+import org.seasar.ymir.id.action.GetAction;
+import org.seasar.ymir.id.action.PostAction;
 import org.seasar.ymir.render.html.Select;
 import org.seasar.ymir.response.PassthroughResponse;
 import org.seasar.ymir.scope.annotation.Inject;
@@ -18,10 +20,6 @@ public class InputPageBase extends PageBase {
     public static final String NAME = "input";
 
     public static final String PATH = "/edit/input.html";
-
-    public static final String A_get = "_get";
-
-    public static final String A_post_next = "_post_next";
 
     public static final String P_description = "description";
 
@@ -42,6 +40,9 @@ public class InputPageBase extends PageBase {
 
     @Meta(name = "bornOf", value = "/edit/index.html")
     protected Integer id;
+
+    @Meta(name = "bornOf", value = "/edit/input.html")
+    protected Select productTypeSelect = new Select();
 
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/edit/input.html")})
     public String getDescription() {
@@ -92,10 +93,39 @@ public class InputPageBase extends PageBase {
         return this.form.getProductTypeSelect();
     }
 
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
+    }
+
     @Meta(name = "bornOf", value = {"/edit/index.html", "/edit/input.html"})
     @Begin
     public void _get() {
 
+    }
+
+    public static interface _get_backed extends GetAction {
+        public static final String NAME = "_get_backed";
+
+        public static final String KEY = "backed";
+
+        public static final Class<? extends GetAction> method = _get_backed.class;
+    }
+
+    @Meta(name = "bornOf", value = "request:/edit/input.html")
+    public void _get_backed() {
+
+    }
+
+    public static interface _post_next extends PostAction {
+        public static final String NAME = "_post_next";
+
+        public static final String KEY = "next";
+
+        public static final Class<? extends PostAction> method = _post_next.class;
     }
 
     @Metas({@Meta(name = "bornOf", value = "/edit/input.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})

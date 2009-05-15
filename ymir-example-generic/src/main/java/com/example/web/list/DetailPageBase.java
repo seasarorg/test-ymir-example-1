@@ -1,6 +1,7 @@
 package com.example.web.list;
 
 import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.list.EntryDto;
@@ -36,6 +37,14 @@ public class DetailPageBase extends PageBase {
     @RequestParameter
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
     }
 
     @Meta(name = "bornOf", value = "/list/index.html")

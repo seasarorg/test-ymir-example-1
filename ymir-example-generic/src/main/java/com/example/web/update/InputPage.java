@@ -12,7 +12,7 @@ import com.example.ymir.util.Redirect;
 // 編集画面は確認画面（confirm）だけから遷移してくるため、followAfterを"confirm"としています。
 @Conversation(name = "update", phase = "input", followAfter = "confirm")
 public class InputPage extends InputPageBase {
-    @Validator("_get")
+    @Validator(_get.NAME)
     public void validate() {
         if (id == null) {
             throw new IllegalPageStateRuntimeException("id is empty");
@@ -33,10 +33,5 @@ public class InputPage extends InputPageBase {
     @Override
     public Response _post_confirm() {
         return Redirect.to(ConfirmPage.class);
-    }
-
-    // 確認画面から戻ってくるためのアクションです。
-    // 戻った際にカンバセーションスコープに保存されているフォームを破棄してしまわないようにこうしています。
-    public void _get_retry() {
     }
 }

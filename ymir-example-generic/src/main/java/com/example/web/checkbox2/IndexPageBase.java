@@ -2,6 +2,7 @@ package com.example.web.checkbox2;
 
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.render.html.Input;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
@@ -15,8 +16,6 @@ public class IndexPageBase extends PageBase {
     public static final String NAME = "index";
 
     public static final String PATH = "/checkbox2/index.html";
-
-    public static final String A_get = "_get";
 
     public static final String P_drinkingInput = "drinkingInput";
 
@@ -60,6 +59,14 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/checkbox2/index.html")
     public ViewDto getView() {
         return this.view;
+    }
+
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
     }
 
     @Meta(name = "bornOf", value = {"/checkbox2/index.html", "/index.html"})

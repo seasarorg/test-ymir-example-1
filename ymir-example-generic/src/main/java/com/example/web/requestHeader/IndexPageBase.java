@@ -1,6 +1,7 @@
 package com.example.web.requestHeader;
 
 import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.id.action.GetAction;
 
 import com.example.web.PageBase;
 
@@ -11,8 +12,6 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/requestHeader/index.html";
 
-    public static final String A_get = "_get";
-
     public static final String P_userAgent = "userAgent";
 
     @Meta(name = "bornOf", value = "/requestHeader/index.html")
@@ -21,6 +20,14 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/requestHeader/index.html")
     public String getUserAgent() {
         return this.userAgent;
+    }
+
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
     }
 
     @Meta(name = "bornOf", value = "/index.html")

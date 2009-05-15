@@ -19,9 +19,4 @@ public class InputPage extends InputPageBase {
     public Response _post_confirm() {
         return Redirect.to(ConfirmPage.class);
     }
-
-    // 確認画面から戻ってくるためのアクションです。
-    // 戻った際にカンバセーションスコープに保存されているフォームを破棄してしまわないようにこうしています。
-    public void _get_retry() {
-    }
 }

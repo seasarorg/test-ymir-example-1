@@ -2,6 +2,7 @@ package com.example.web.edit;
 
 import org.seasar.ymir.Response;
 import org.seasar.ymir.constraint.annotation.Required;
+import org.seasar.ymir.constraint.annotation.Validator;
 import org.seasar.ymir.conversation.annotation.Begin;
 import org.seasar.ymir.conversation.annotation.Conversation;
 import org.seasar.ymir.conversation.impl.ConversationScope;
@@ -25,17 +26,18 @@ public class InputPage extends InputPageBase {
         this.form = form;
     }
 
+    @Validator(_get.NAME)
+    public void validate() {
+        if (id == null) {
+            throw new IllegalArgumentException("id is empty");
+        }
+    }
+
     @Override
     @Begin
     public void _get() {
-        if (id == null) {
-            throw new IllegalStateException();
-        }
         product = productLogic.getProduct(id);
         formConverter.copyEntityToDto(product, form);
-    }
-
-    public void _get_backed() {
     }
 
     @Override

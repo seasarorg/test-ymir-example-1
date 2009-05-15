@@ -2,6 +2,7 @@ package com.example.web.search;
 
 import org.seasar.ymir.Response;
 import org.seasar.ymir.annotation.Meta;
+import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.scope.annotation.Inject;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
@@ -14,10 +15,6 @@ public class DetailPageBase extends PageBase {
     public static final String NAME = "detail";
 
     public static final String PATH = "/search/detail.html";
-
-    public static final String A_get = "_get";
-
-    public static final String A_get_back = "_get_back";
 
     public static final String P_detailView = "detailView";
 
@@ -51,9 +48,25 @@ public class DetailPageBase extends PageBase {
         this.id = id;
     }
 
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
+    }
+
     @Meta(name = "bornOf", value = "/search/detail.html")
     public void _get() {
 
+    }
+
+    public static interface _get_back extends GetAction {
+        public static final String NAME = "_get_back";
+
+        public static final String KEY = "back";
+
+        public static final Class<? extends GetAction> method = _get_back.class;
     }
 
     @Meta(name = "bornOf", value = "/search/detail.html")

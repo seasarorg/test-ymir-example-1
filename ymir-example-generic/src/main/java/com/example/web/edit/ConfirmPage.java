@@ -7,6 +7,7 @@ import org.seasar.ymir.conversation.impl.ConversationScope;
 import org.seasar.ymir.scope.annotation.In;
 
 import com.example.dto.edit.FormDto;
+import com.example.web.edit.InputPageBase._get_backed;
 import com.example.ymir.util.Redirect;
 
 @Conversation(name = "edit", phase = ConfirmPage.NAME)
@@ -18,7 +19,7 @@ public class ConfirmPage extends ConfirmPageBase {
 
     @Override
     public Response _post_previous() {
-        return Redirect.to(InputPage.class, "backed");
+        return Redirect.to(InputPage.class, _get_backed.method);
     }
 
     @Override

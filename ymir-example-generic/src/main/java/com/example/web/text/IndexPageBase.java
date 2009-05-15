@@ -5,6 +5,7 @@ import java.util.Date;
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
 import org.seasar.ymir.constraint.annotation.Datetime;
+import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.text.FormDto;
@@ -53,6 +54,14 @@ public class IndexPageBase extends PageBase {
     @RequestParameter
     public void setDate2(Date date2) {
         this.form.setDate2(date2);
+    }
+
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
     }
 
     @Meta(name = "bornOf", value = "/text/index.html")

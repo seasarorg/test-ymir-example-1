@@ -2,6 +2,7 @@ package com.example.web.checkbox3;
 
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.checkbox3.FormDto;
@@ -68,6 +69,14 @@ public class IndexPageBase extends PageBase {
     @RequestParameter
     public void setSmoking(boolean smoking) {
         this.form.setSmoking(smoking);
+    }
+
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
     }
 
     @Meta(name = "bornOf", value = "/index.html")

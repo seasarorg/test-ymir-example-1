@@ -2,6 +2,7 @@ package com.example.web.search;
 
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.annotation.Metas;
+import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.dto.search.ConditionDto;
@@ -61,9 +62,25 @@ public class IndexPageBase extends PageBase {
         return this.searchView;
     }
 
+    public static interface _get extends GetAction {
+        public static final String NAME = "_get";
+
+        public static final String KEY = "";
+
+        public static final Class<? extends GetAction> method = _get.class;
+    }
+
     @Meta(name = "bornOf", value = "/search/index.html")
     public void _get() {
 
+    }
+
+    public static interface _get_search extends GetAction {
+        public static final String NAME = "_get_search";
+
+        public static final String KEY = "search";
+
+        public static final Class<? extends GetAction> method = _get_search.class;
     }
 
     @Meta(name = "bornOf", value = "/search/index.html")

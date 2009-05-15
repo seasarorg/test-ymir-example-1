@@ -3,6 +3,7 @@ package com.example.web.update;
 import org.seasar.ymir.Response;
 import org.seasar.ymir.conversation.annotation.Conversation;
 
+import com.example.web.update.InputPageBase._get_retry;
 import com.example.ymir.util.Redirect;
 
 // 確認画面です。
@@ -14,7 +15,7 @@ public class ConfirmPage extends ConfirmPageBase {
     // （InputPage#_get_retry()）に遷移するようにしています。
     @Override
     public Response _post_back() {
-        return Redirect.to(InputPage.class, "retry");
+        return Redirect.to(InputPage.class, _get_retry.method);
     }
 
     // 「完了」ボタンに対応するアクションです。

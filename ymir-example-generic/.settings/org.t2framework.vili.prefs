@@ -1,4 +1,4 @@
-#Mon Apr 13 00:13:53 JST 2009
+#Fri May 15 11:57:45 JST 2009
 actions=<actions />\r\n
 databaseDriverClassName=org.h2.Driver
 databaseName=H2 Database Engine
@@ -8,7 +8,7 @@ databaseURL=jdbc\:h2\:file\:%WEBAPP%/WEB-INF/h2/h2
 databaseUser=sa
 eclipse.preferences.version=1
 rootPackageName=com.example
-skeleton=<skeleton>\r\n  <groupId>org.seasar.ymir.vili.skeleton</groupId>\r\n  <artifactId>java-skeleton-web</artifactId>\r\n  <version>1.0.2-1-SNAPSHOT</version>\r\n  <fragments>\r\n    <fragment>\r\n      <groupId>org.seasar.ymir.vili.skeleton</groupId>\r\n      <artifactId>s2.4-fragment-generic</artifactId>\r\n      <version>1.0.0-0-SNAPSHOT</version>\r\n    </fragment>\r\n    <fragment>\r\n      <groupId>org.seasar.ymir.vili.skeleton</groupId>\r\n      <artifactId>ymir-fragment-generic</artifactId>\r\n      <version>1.0.2-0-SNAPSHOT</version>\r\n    </fragment>\r\n  </fragments>\r\n</skeleton>\r\n
+skeleton=<skeleton>\r\n  <groupId>org.seasar.ymir.vili.skeleton</groupId>\r\n  <artifactId>java-skeleton-web</artifactId>\r\n  <version>1.0.2-1-SNAPSHOT</version>\r\n  <fragments>\r\n    <fragment>\r\n      <groupId>org.seasar.ymir.vili.skeleton</groupId>\r\n      <artifactId>s2.4-fragment-generic</artifactId>\r\n      <version>1.0.0-0-SNAPSHOT</version>\r\n    </fragment>\r\n    <fragment>\r\n      <groupId>org.seasar.ymir.vili.skeleton</groupId>\r\n      <artifactId>ymir-fragment-generic</artifactId>\r\n      <version>1.0.2-0-SNAPSHOT</version>\r\n    </fragment>\r\n    <fragment>\r\n      <groupId>org.seasar.ymir.vili.skeleton</groupId>\r\n      <artifactId>ymir-fragment-utility</artifactId>\r\n      <version>1.0.3-0-SNAPSHOT</version>\r\n    </fragment>\r\n  </fragments>\r\n</skeleton>\r\n
 template.projectSpecificSettingsEnabled=false
 useDatabase=true
 viewEncoding=UTF-8
