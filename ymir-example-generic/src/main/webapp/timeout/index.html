@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>セッションタイムアウト</title>
+</head>
+<body>
+  <h1>セッションタイムアウト</h1>
+  <p>セッションタイムアウトのサンプルです。</p>
+  <p>ログイン中にセッションがタイムアウトすると、通常はセッションからログイン情報が取得できなくなって権限エラーが発生しますが、未ログインのケースと、ログインしていたがセッションがタイムアウトしたケースを区別したい時があります。</p>
+  <p>このサンプルでは、ログインしていない状態でログイン後の画面にアクセス（以下のフォームでログインする前に「ログインが必要な画面」リンクをクリック）すると権限エラー、ログインしていたがセッションがタイムアウトした場合にログイン後の画面にアクセス（以下のフォームでログインした後に一定時間経過してから「ログインが必要な画面を再度表示する」をクリック）するとタイムアウトエラーが発生します。</p>
+  <p><a href="./logined.html">ログインが必要な画面</a></p>
+  <form action="./index.html" method="post">
+    <p><input type="submit" name="login" value="ログインする" />
+  </form>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>

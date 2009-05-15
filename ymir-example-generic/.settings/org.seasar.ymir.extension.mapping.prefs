@@ -27,6 +27,8 @@
 %select2%index.html=com.example.web.select2.IndexPage
 %session%index.html=com.example.web.session.IndexPage
 %text%index.html=com.example.web.text.IndexPage
+%timeout%index.html=com.example.web.timeout.IndexPage
+%timeout%logined.html=com.example.web.timeout.LoginedPage
 %update%complete.html=com.example.web.update.CompletePage
 %update%confirm.html=com.example.web.update.ConfirmPage
 %update%input.html=com.example.web.update.InputPage
@@ -60,6 +62,8 @@ com.example.web.select.IndexPage=/select/index.html
 com.example.web.select2.IndexPage=/select2/index.html
 com.example.web.session.IndexPage=/session/index.html
 com.example.web.text.IndexPage=/text/index.html
+com.example.web.timeout.IndexPage=/timeout/index.html
+com.example.web.timeout.LoginedPage=/timeout/logined.html
 com.example.web.update.CompletePage=/update/complete.html
 com.example.web.update.ConfirmPage=/update/confirm.html
 com.example.web.update.InputPage=/update/input.html
