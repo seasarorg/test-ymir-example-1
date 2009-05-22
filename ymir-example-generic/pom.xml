@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>ymir-example-generic</artifactId>
   <packaging>war</packaging>
   <name>ymir-example-generic</name>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.4-SNAPSHOT</version>
   <description></description>
   <build>
     <defaultGoal>package</defaultGoal>
@@ -36,8 +38,12 @@
               <artifactId>maven-war-plugin</artifactId>
               <version>2.1-alpha-2</version>
               <configuration>
-                <warSourceDirectory>${basedir}/src/main/webapp-it</warSourceDirectory>
-                <packagingExcludes>WEB-INF/lib/ymir-extension-*.jar</packagingExcludes>
+                <warSourceDirectory>
+                  ${basedir}/src/main/webapp-it
+                </warSourceDirectory>
+                <packagingExcludes>
+                  WEB-INF/lib/ymir-extension-*.jar
+                </packagingExcludes>
                 <webResources>
                   <resource>
                     <directory>${basedir}/src/main/webapp</directory>
@@ -62,8 +68,12 @@
               <artifactId>maven-war-plugin</artifactId>
               <version>2.1-alpha-2</version>
               <configuration>
-                <warSourceDirectory>${basedir}/src/main/webapp-release</warSourceDirectory>
-                <packagingExcludes>WEB-INF/lib/ymir-extension-*.jar</packagingExcludes>
+                <warSourceDirectory>
+                  ${basedir}/src/main/webapp-release
+                </warSourceDirectory>
+                <packagingExcludes>
+                  WEB-INF/lib/ymir-extension-*.jar
+                </packagingExcludes>
                 <webResources>
                   <resource>
                     <directory>${basedir}/src/main/webapp</directory>
@@ -88,8 +98,12 @@
               <artifactId>maven-war-plugin</artifactId>
               <version>2.1-alpha-2</version>
               <configuration>
-                <warSourceDirectory>${basedir}/src/main/webapp-it</warSourceDirectory>
-                <packagingExcludes>WEB-INF/lib/ymir-extension-*.jar</packagingExcludes>
+                <warSourceDirectory>
+                  ${basedir}/src/main/webapp-it
+                </warSourceDirectory>
+                <packagingExcludes>
+                  WEB-INF/lib/ymir-extension-*.jar
+                </packagingExcludes>
                 <webResources>
                   <resource>
                     <directory>${basedir}/src/main/webapp</directory>
@@ -127,8 +141,10 @@
                   <tasks>
                     <mkdir dir="target/generated-resources" />
                     <!-- put executable war header -->
-                    <resolveArtifact artifactId="executable-war" property="executable-war.jar" />
-                    <unjar src="${executable-war.jar}" dest="target/generated-resources">
+                    <resolveArtifact artifactId="executable-war"
+                      property="executable-war.jar" />
+                    <unjar src="${executable-war.jar}"
+                      dest="target/generated-resources">
                       <patternset>
                         <include name="**/*.class" />
                         <include name="**/*.jar" />
@@ -187,7 +203,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-extension</artifactId>
-      <version>1.0.3-SNAPSHOT</version>
+      <version>1.0.4-SNAPSHOT</version>
       <exclusions>
         <exclusion>
           <groupId>org.seasar.ymir</groupId>
@@ -233,7 +249,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-testing</artifactId>
-      <version>1.0.3-SNAPSHOT</version>
+      <version>1.0.4-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
