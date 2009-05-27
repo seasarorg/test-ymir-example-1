@@ -33,3 +33,7 @@ error.upload_indexPage.constraint.required+file=ファイルを指定して下�
 
 label.edit_inputPage.name=名前
 label.edit_inputPage.description=説明
+
+label.included_loginPage.userId=ユーザID
+label.included_loginPage.password=パスワード
+error.included_loginPage.loginFailed=ユーザIDまたはパスワードが違います。

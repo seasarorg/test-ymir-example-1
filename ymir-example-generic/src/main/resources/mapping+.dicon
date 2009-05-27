@@ -41,4 +41,19 @@
       <arg>"/${1}/${2}.html"</arg>
     </initMethod>
   </component>
+  <component name="level2DeniedPathMapping"
+    class="org.seasar.ymir.impl.DeniedYmirPathMapping">
+    <arg>
+      "/([a-zA-Z][a-zA-Z0-9]*)/([a-zA-Z][a-zA-Z0-9]*)\\..*\\.html"
+    </arg>
+  </component>
+  <component name="includedDeniedPathMapping" class="org.seasar.ymir.impl.YmirPathMapping">
+    <arg>true</arg>
+    <arg>"/_included/([a-zA-Z][a-zA-Z0-9]*)\\.html"</arg>
+    <arg>"included_${1}Page"</arg>
+    <initMethod name="setReverseMapping">
+      <arg>"included_([a-zA-Z][a-zA-Z0-9]*)Page"</arg>
+      <arg>"/_included/${1}.html"</arg>
+    </initMethod>
+  </component>
 </components>

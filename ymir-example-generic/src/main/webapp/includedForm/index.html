@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>インクルードされたフォーム</title>
+</head>
+<body>
+  <h1>インクルードされたフォーム</h1>
+  <p>独立した部品として用意したフォームをインクルードするような画面のサンプルです。</p>
+  <p>このサンプルでは独立した部品として作られているログインフォーム（HTMLテンプレートのソースはプロジェクトの src/main/webapp/_included/login.html です）をインクルードすることでログインフォームを表示しています。ログイン処理は画面のPageクラスとは独立したログイン用の部品Pageクラス（com.example.web.included.LoginPage）のメソッドで処理されます。</p>
+  <p>ユーザID「user」、パスワード「pass」で正常にログインできます。それ以外の場合はエラーメッセージが表示されます。フォームが空のまま「ログイン」ボタンを押してもエラーメッセージが表示されます。</p>
+
+  <div tal:replace="structure include-body:/_included/login.html">LOGIN</div>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
