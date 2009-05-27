@@ -27,6 +27,8 @@ public class IndexPageBase extends PageBase {
 
     public static final String P_fruitSelector = "fruitSelector";
 
+    public static final String P_fruitSelector_selectedValues = "fruitSelector.selectedValues";
+
     public static final String P_view = "view";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})

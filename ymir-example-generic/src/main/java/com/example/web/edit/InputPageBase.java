@@ -33,6 +33,8 @@ public class InputPageBase extends PageBase {
 
     public static final String P_productTypeSelect = "productTypeSelect";
 
+    public static final String P_productTypeSelect_value = "productTypeSelect.value";
+
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/edit/input.html")})
     protected FormDto form = new FormDto();
 
@@ -40,9 +42,6 @@ public class InputPageBase extends PageBase {
 
     @Meta(name = "bornOf", value = "/edit/index.html")
     protected Integer id;
-
-    @Meta(name = "bornOf", value = "/edit/input.html")
-    protected Select productTypeSelect = new Select();
 
     @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/edit/input.html")})
     public String getDescription() {

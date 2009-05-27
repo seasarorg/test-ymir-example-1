@@ -22,7 +22,7 @@ public class IndexPageBase extends PageBase {
         public static final Class<? extends GetAction> method = _get.class;
     }
 
-    @Meta(name = "bornOf", value = "/timeout/index.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/timeout/index.html"})
     public void _get() {
 
     }
@@ -35,9 +35,7 @@ public class IndexPageBase extends PageBase {
         public static final Class<? extends PostAction> method = _post_login.class;
     }
 
-    @Metas( {
-            @Meta(name = "bornOf", value = "/timeout/index.html"),
-            @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class) })
+    @Metas({@Meta(name = "bornOf", value = "/timeout/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_login() {
         return new PassthroughResponse();
     }

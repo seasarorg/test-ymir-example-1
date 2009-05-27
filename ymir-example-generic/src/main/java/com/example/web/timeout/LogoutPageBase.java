@@ -19,9 +19,13 @@ public class LogoutPageBase extends PageBase {
         public static final Class<? extends GetAction> method = _get.class;
     }
 
-    @Metas( { @Meta(name = "bornOf", value = "/timeout/logout.html"),
-            @Meta(name = "source", value = "return \"redirect:index.html\";") })
+    @Metas({@Meta(name = "bornOf", value = {"/timeout/logined.html", "/timeout/logout.html"}), @Meta(name = "source", value = "return \"redirect:index.html\";")})
     public String _get() {
         return "redirect:index.html";
+    }
+
+    @Meta(name = "bornOf", value = "/timeout/logined.html")
+    public void _prerender() {
+
     }
 }
