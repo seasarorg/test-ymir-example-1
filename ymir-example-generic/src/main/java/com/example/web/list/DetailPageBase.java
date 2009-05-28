@@ -13,8 +13,7 @@ public class DetailPageBase extends PageBase {
 
     public static final String PATH = "/list/detail.html";
 
-    public static final String P_entry = "entry";
-
+    @Meta(name = "bornOf", value = "/list/index.html")
     public static final String P_id = "id";
 
     @Meta(name = "bornOf", value = "/list/detail.html")

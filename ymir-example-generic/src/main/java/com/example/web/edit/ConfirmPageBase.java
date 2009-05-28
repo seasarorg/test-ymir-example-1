@@ -18,10 +18,6 @@ public class ConfirmPageBase extends PageBase {
 
     public static final String PATH = "/edit/confirm.html";
 
-    public static final String P_form = "form";
-
-    public static final String P_formConverter = "formConverter";
-
     @Metas({@Meta(name = "bornOf", value = "/edit/confirm.html"), @Meta(name = "property", value = "form")})
     protected FormDto form = new FormDto();
 

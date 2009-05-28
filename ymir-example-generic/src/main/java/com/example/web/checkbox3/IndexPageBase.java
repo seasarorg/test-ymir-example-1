@@ -15,12 +15,13 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/checkbox3/index.html";
 
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
     public static final String P_drinking = "drinking";
 
-    public static final String P_form = "form";
-
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
     public static final String P_gambling = "gambling";
 
+    @Meta(name = "bornOf", value = "/checkbox3/index.html")
     public static final String P_smoking = "smoking";
 
     @Meta(name = "property", value = "form")

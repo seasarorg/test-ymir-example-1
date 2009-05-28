@@ -16,10 +16,6 @@ public class DetailPageBase extends PageBase {
 
     public static final String PATH = "/search/detail.html";
 
-    public static final String P_detailView = "detailView";
-
-    public static final String P_detailViewConverter = "detailViewConverter";
-
     public static final String P_id = "id";
 
     @Meta(name = "bornOf", value = "/search/detail.html")

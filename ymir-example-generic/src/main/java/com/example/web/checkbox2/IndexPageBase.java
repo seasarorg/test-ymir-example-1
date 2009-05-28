@@ -17,15 +17,14 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/checkbox2/index.html";
 
-    public static final String P_drinkingInput = "drinkingInput";
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public static final String P_drinkingInput$value = "drinkingInput.value";
 
-    public static final String P_form = "form";
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public static final String P_gamblingInput$value = "gamblingInput.value";
 
-    public static final String P_gamblingInput = "gamblingInput";
-
-    public static final String P_smokingInput = "smokingInput";
-
-    public static final String P_view = "view";
+    @Meta(name = "bornOf", value = "/checkbox2/index.html")
+    public static final String P_smokingInput$value = "smokingInput.value";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/checkbox2/index.html")})
     protected FormDto form = new FormDto();

@@ -12,8 +12,6 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/requestHeader/index.html";
 
-    public static final String P_userAgent = "userAgent";
-
     @Meta(name = "bornOf", value = "/requestHeader/index.html")
     protected String userAgent;
 

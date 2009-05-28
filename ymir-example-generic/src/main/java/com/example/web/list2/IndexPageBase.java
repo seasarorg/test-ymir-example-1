@@ -23,10 +23,6 @@ public class IndexPageBase extends PageBase {
 
     public static final String P_entries = "entries";
 
-    public static final String P_form = "form";
-
-    public static final String P_view = "view";
-
     @Meta(name = "property", value = "form")
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/list2/index.html")})
     protected FormDto form = new FormDto();

@@ -18,10 +18,10 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/mailsender/index.html";
 
-    public static final String P_mail = "mail";
-
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
     public static final String P_text = "text";
 
+    @Meta(name = "bornOf", value = "/mailsender/index.html")
     public static final String P_to = "to";
 
     @Meta(name = "property", value = "mail")

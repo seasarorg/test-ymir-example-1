@@ -15,10 +15,13 @@ public class InputPageBase extends PageBase {
 
     public static final String PATH = "/update/input.html";
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public static final String P_furigana = "furigana";
 
+    @Meta(name = "bornOf", value = "/index.html")
     public static final String P_id = "id";
 
+    @Meta(name = "bornOf", value = "/update/input.html")
     public static final String P_name = "name";
 
     @Meta(name = "bornOf", value = "/index.html")

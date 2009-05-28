@@ -21,19 +21,17 @@ public class InputPageBase extends PageBase {
 
     public static final String PATH = "/edit/input.html";
 
+    @Meta(name = "bornOf", value = "/edit/input.html")
     public static final String P_description = "description";
 
-    public static final String P_form = "form";
-
-    public static final String P_formConverter = "formConverter";
-
+    @Meta(name = "bornOf", value = "/edit/index.html")
     public static final String P_id = "id";
 
+    @Meta(name = "bornOf", value = "/edit/input.html")
     public static final String P_name = "name";
 
-    public static final String P_productTypeSelect = "productTypeSelect";
-
-    public static final String P_productTypeSelect_value = "productTypeSelect.value";
+    @Meta(name = "bornOf", value = "/edit/input.html")
+    public static final String P_productTypeSelect$value = "productTypeSelect.value";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/edit/input.html")})
     protected FormDto form = new FormDto();

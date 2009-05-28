@@ -17,13 +17,8 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/select/index.html";
 
-    public static final String P_form = "form";
-
-    public static final String P_fruitsSelect = "fruitsSelect";
-
-    public static final String P_fruitsSelect_value = "fruitsSelect.value";
-
-    public static final String P_view = "view";
+    @Meta(name = "bornOf", value = "/select/index.html")
+    public static final String P_fruitsSelect$value = "fruitsSelect.value";
 
     @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/select/index.html")})
     protected FormDto form = new FormDto();

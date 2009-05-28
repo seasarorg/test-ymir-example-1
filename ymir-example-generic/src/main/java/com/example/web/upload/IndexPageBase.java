@@ -20,6 +20,7 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/upload/index.html";
 
+    @Meta(name = "bornOf", value = "/upload/index.html")
     public static final String P_file = "file";
 
     @Meta(name = "bornOf", value = "/upload/index.html")

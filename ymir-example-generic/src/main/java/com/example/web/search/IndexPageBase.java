@@ -15,13 +15,11 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/search/index.html";
 
-    public static final String P_condition = "condition";
-
+    @Meta(name = "bornOf", value = "/search/index.html")
     public static final String P_id = "id";
 
+    @Meta(name = "bornOf", value = "/search/index.html")
     public static final String P_name = "name";
-
-    public static final String P_searchView = "searchView";
 
     @Meta(name = "property", value = "condition")
     @Metas({@Meta(name = "property", value = "condition"), @Meta(name = "bornOf", value = "/search/index.html")})

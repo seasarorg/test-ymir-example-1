@@ -15,8 +15,6 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/list/index.html";
 
-    public static final String P_entries = "entries";
-
     @Meta(name = "bornOf", value = "/list/index.html")
     protected List<EntryDto> entries = new ArrayList<EntryDto>();
 

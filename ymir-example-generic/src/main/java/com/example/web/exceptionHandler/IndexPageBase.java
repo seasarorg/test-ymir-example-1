@@ -16,8 +16,6 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/exceptionHandler/index.html";
 
-    public static final String P_message = "message";
-
     @Meta(name = "bornOf", value = "/exceptionHandler/index.html")
     protected String message;
 

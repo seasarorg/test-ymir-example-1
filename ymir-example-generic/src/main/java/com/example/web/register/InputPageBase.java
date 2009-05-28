@@ -15,8 +15,10 @@ public class InputPageBase extends PageBase {
 
     public static final String PATH = "/register/input.html";
 
+    @Meta(name = "bornOf", value = "/register/input.html")
     public static final String P_furigana = "furigana";
 
+    @Meta(name = "bornOf", value = "/register/input.html")
     public static final String P_name = "name";
 
     @Meta(name = "formProperty", value = "form")
