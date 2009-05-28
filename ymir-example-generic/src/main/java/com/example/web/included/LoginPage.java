@@ -11,6 +11,10 @@ import com.example.web.PageBase;
 
 /**
  * ログインフォームのための処理をするためのPageクラスです。
+ * ところでインクルードされるPageクラスに対応するHTMLは、ブラウザから直接アクセスできないように
+ * した方が望ましいです。
+ * そのための設定を src/main/resources/mapping+.dicon に追記してありますので
+ * 参照してみて下さい（includedDeniedPathMappingという名前のコンポーネントです）。
  */
 public class LoginPage extends PageBase {
     /**
