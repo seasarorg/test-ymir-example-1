@@ -27,14 +27,12 @@ public class InputPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/index.html")
     protected Integer id;
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/update/input.html")})
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "formProperty", value = "form")})
     public String getFurigana() {
         return this.form.getFurigana();
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/update/input.html")})
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public void setFurigana(String furigana) {
         this.form.setFurigana(furigana);
@@ -51,14 +49,12 @@ public class InputPageBase extends PageBase {
         this.id = id;
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/update/input.html")})
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "formProperty", value = "form")})
     public String getName() {
         return this.form.getName();
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/update/input.html")})
+    @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public void setName(String name) {
         this.form.setName(name);
@@ -98,7 +94,6 @@ public class InputPageBase extends PageBase {
         public static final Class<? extends PostAction> method = _post_confirm.class;
     }
 
-    @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/update/input.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_confirm() {
         return new PassthroughResponse();

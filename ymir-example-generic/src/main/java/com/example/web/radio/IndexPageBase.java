@@ -20,7 +20,7 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/radio/index.html")
     public static final String P_fruitSelector$selectedValues = "fruitSelector.selectedValues";
 
-    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/radio/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/radio/index.html"), @Meta(name = "property", value = "form")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/radio/index.html")
@@ -31,7 +31,7 @@ public class IndexPageBase extends PageBase {
         return this.form;
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/radio/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/radio/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public Selector getFruitSelector() {
         return this.form.getFruitSelector();

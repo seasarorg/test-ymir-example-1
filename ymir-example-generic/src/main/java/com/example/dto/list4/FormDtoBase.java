@@ -52,7 +52,7 @@ public class FormDtoBase
         return sb.toString();
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/list4/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public Selector getFruitSelector() {
         return this.fruitSelector;

@@ -24,31 +24,26 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/mailsender/index.html")
     public static final String P_to = "to";
 
-    @Meta(name = "property", value = "mail")
-    @Metas({@Meta(name = "property", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "property", value = "mail")})
     protected MailDto mail = new MailDto();
 
-    @Meta(name = "formProperty", value = "mail")
-    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "formProperty", value = "mail")})
     public String getText() {
         return this.mail.getText();
     }
 
-    @Meta(name = "formProperty", value = "mail")
-    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "formProperty", value = "mail")})
     @RequestParameter
     public void setText(String text) {
         this.mail.setText(text);
     }
 
-    @Meta(name = "formProperty", value = "mail")
-    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "formProperty", value = "mail")})
     public String getTo() {
         return this.mail.getTo();
     }
 
-    @Meta(name = "formProperty", value = "mail")
-    @Metas({@Meta(name = "formProperty", value = "mail"), @Meta(name = "bornOf", value = "/mailsender/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "formProperty", value = "mail")})
     @RequestParameter
     public void setTo(String to) {
         this.mail.setTo(to);
@@ -75,7 +70,6 @@ public class IndexPageBase extends PageBase {
         public static final Class<? extends PostAction> method = _post_send.class;
     }
 
-    @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/mailsender/index.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_send() {
         return new PassthroughResponse();

@@ -23,15 +23,13 @@ public class IndexPageBase extends PageBase {
 
     public static final String P_entries = "entries";
 
-    @Meta(name = "property", value = "form")
-    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/list2/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/list2/index.html"), @Meta(name = "property", value = "form")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/list2/index.html")
     protected ViewDto view = new ViewDto();
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/list2/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/list2/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public List<EntryDto> getEntries() {
         return this.form.getEntries();
@@ -68,7 +66,6 @@ public class IndexPageBase extends PageBase {
         public static final Class<? extends PostAction> method = _post_update.class;
     }
 
-    @Meta(name = "source", value = {"return new org.seasar.ymir.response.PassthroughResponse();", "index"})
     @Metas({@Meta(name = "bornOf", value = "/list2/index.html"), @Meta(name = "source", value = {"return new PassthroughResponse();", "index"}, classValue = PassthroughResponse.class)})
     public Response _post_update(int index) {
         return new PassthroughResponse();

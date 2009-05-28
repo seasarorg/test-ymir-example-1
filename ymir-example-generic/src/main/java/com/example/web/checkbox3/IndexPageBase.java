@@ -24,18 +24,15 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/checkbox3/index.html")
     public static final String P_smoking = "smoking";
 
-    @Meta(name = "property", value = "form")
-    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/checkbox3/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox3/index.html"), @Meta(name = "property", value = "form")})
     protected FormDto form = new FormDto();
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox3/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox3/index.html"), @Meta(name = "formProperty", value = "form")})
     public boolean isDrinking() {
         return this.form.isDrinking();
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox3/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox3/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public void setDrinking(boolean drinking) {
         this.form.setDrinking(drinking);
@@ -46,27 +43,23 @@ public class IndexPageBase extends PageBase {
         return this.form;
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox3/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox3/index.html"), @Meta(name = "formProperty", value = "form")})
     public boolean isGambling() {
         return this.form.isGambling();
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox3/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox3/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public void setGambling(boolean gambling) {
         this.form.setGambling(gambling);
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox3/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox3/index.html"), @Meta(name = "formProperty", value = "form")})
     public boolean isSmoking() {
         return this.form.isSmoking();
     }
 
-    @Meta(name = "formProperty", value = "form")
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/checkbox3/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox3/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public void setSmoking(boolean smoking) {
         this.form.setSmoking(smoking);

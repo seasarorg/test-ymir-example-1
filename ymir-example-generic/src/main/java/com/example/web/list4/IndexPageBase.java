@@ -26,7 +26,7 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/list4/index.html")
     public static final String P_fruitSelector$selectedValues = "fruitSelector.selectedValues";
 
-    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/list4/index.html"), @Meta(name = "property", value = "form")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/list4/index.html")
@@ -46,7 +46,7 @@ public class IndexPageBase extends PageBase {
         this.fruitCandidateConverter = fruitCandidateConverter;
     }
 
-    @Metas({@Meta(name = "formProperty", value = "form"), @Meta(name = "bornOf", value = "/list4/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/list4/index.html"), @Meta(name = "formProperty", value = "form")})
     @RequestParameter
     public Selector getFruitSelector() {
         return this.form.getFruitSelector();

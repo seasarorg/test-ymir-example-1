@@ -20,7 +20,7 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/checkbox/index.html")
     public static final String P_fruitSelector$selectedValues = "fruitSelector.selectedValues";
 
-    @Metas({@Meta(name = "property", value = "form"), @Meta(name = "bornOf", value = "/checkbox/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/checkbox/index.html"), @Meta(name = "property", value = "form")})
     protected FormDto form = new FormDto();
 
     @Meta(name = "bornOf", value = "/checkbox/index.html")

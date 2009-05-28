@@ -35,7 +35,6 @@ public class ConfirmPageBase extends PageBase {
         public static final Class<? extends PostAction> method = _post_back.class;
     }
 
-    @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_back() {
         return new PassthroughResponse();
@@ -49,7 +48,6 @@ public class ConfirmPageBase extends PageBase {
         public static final Class<? extends PostAction> method = _post_complete.class;
     }
 
-    @Meta(name = "source", value = "return new org.seasar.ymir.response.PassthroughResponse();")
     @Metas({@Meta(name = "bornOf", value = "/register/confirm.html"), @Meta(name = "source", value = "return new PassthroughResponse();", classValue = PassthroughResponse.class)})
     public Response _post_complete() {
         return new PassthroughResponse();

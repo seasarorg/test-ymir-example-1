@@ -21,8 +21,7 @@ public class IndexPageBase extends PageBase {
     @Meta(name = "bornOf", value = "/search/index.html")
     public static final String P_name = "name";
 
-    @Meta(name = "property", value = "condition")
-    @Metas({@Meta(name = "property", value = "condition"), @Meta(name = "bornOf", value = "/search/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/search/index.html"), @Meta(name = "property", value = "condition")})
     protected ConditionDto condition = new ConditionDto();
 
     @Meta(name = "bornOf", value = "/search/index.html")
@@ -42,14 +41,12 @@ public class IndexPageBase extends PageBase {
         this.id = id;
     }
 
-    @Meta(name = "formProperty", value = "condition")
-    @Metas({@Meta(name = "formProperty", value = "condition"), @Meta(name = "bornOf", value = "/search/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/search/index.html"), @Meta(name = "formProperty", value = "condition")})
     public String getName() {
         return this.condition.getName();
     }
 
-    @Meta(name = "formProperty", value = "condition")
-    @Metas({@Meta(name = "formProperty", value = "condition"), @Meta(name = "bornOf", value = "/search/index.html")})
+    @Metas({@Meta(name = "bornOf", value = "/search/index.html"), @Meta(name = "formProperty", value = "condition")})
     @RequestParameter
     public void setName(String name) {
         this.condition.setName(name);
