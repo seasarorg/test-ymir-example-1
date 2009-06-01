@@ -11,20 +11,20 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/edit/index.html";
 
-    @Meta(name = "bornOf", value = "/edit/complete.html")
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
     public static final String P_id = "id";
 
-    @Meta(name = "bornOf", value = "/edit/complete.html")
-    protected String id;
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
+    protected Integer id;
 
-    @Meta(name = "bornOf", value = "/edit/complete.html")
-    public String getId() {
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
+    public Integer getId() {
         return this.id;
     }
 
-    @Meta(name = "bornOf", value = "/edit/complete.html")
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
     @RequestParameter
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -36,12 +36,12 @@ public class IndexPageBase extends PageBase {
         public static final Class<? extends GetAction> method = _get.class;
     }
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/index.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/edit/input2.html", "/index.html"})
     public void _get() {
 
     }
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/index.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/edit/input2.html", "/index.html"})
     public void _prerender() {
 
     }

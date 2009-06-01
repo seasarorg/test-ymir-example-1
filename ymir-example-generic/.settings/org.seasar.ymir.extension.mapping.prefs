@@ -1,3 +1,4 @@
+%_included%login.html=com.example.web.included.LoginPage
 %checkbox%index.html=com.example.web.checkbox.IndexPage
 %checkbox2%index.html=com.example.web.checkbox2.IndexPage
 %checkbox3%index.html=com.example.web.checkbox3.IndexPage
@@ -7,9 +8,9 @@
 %edit%confirm.html=com.example.web.edit.ConfirmPage
 %edit%index.html=com.example.web.edit.IndexPage
 %edit%input.html=com.example.web.edit.InputPage
+%edit%input2.html=com.example.web.edit.Input2Page
 %exceptionHandler%index.html=com.example.web.exceptionHandler.IndexPage
 %function%index.html=com.example.web.function.IndexPage
-%_included%login.html=com.example.web.included.LoginPage
 %includedForm%index.html=com.example.web.includedForm.IndexPage
 %index.html=com.example.web.IndexPage
 %list%detail.html=com.example.web.list.DetailPage
@@ -44,6 +45,7 @@ com.example.web.download.IndexPage=/download/index.html
 com.example.web.edit.CompletePage=/edit/complete.html
 com.example.web.edit.ConfirmPage=/edit/confirm.html
 com.example.web.edit.IndexPage=/edit/index.html
+com.example.web.edit.Input2Page=/edit/input2.html
 com.example.web.edit.InputPage=/edit/input.html
 com.example.web.exceptionHandler.IndexPage=/exceptionHandler/index.html
 com.example.web.function.IndexPage=/function/index.html

@@ -4,31 +4,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>商品情報の編集</title>
+  <title>商品情報の編集（2）</title>
 </head>
 <body tal:define="form self/form">
-  <h1>商品情報の編集</h1>
+  <h1>商品情報の編集（2）</h1>
   <ul tal:condition="notes">
     <li tal:repeat="note notes/notes" tal:content="note/%value">NOTE</li>
   </ul>
-  <form name="form" action="./input.html" method="post">
+  <form name="form" action="./input2.html" method="post">
     <table>
       <tbody>
         <tr>
-          <th>名前</th>
+          <th>タイプ</th>
           <td>
-            <input type="text" name="name" tal:attributes="value param-self/name" />
-          </td>
-        </tr>
-        <tr>
-          <th>説明</th>
-          <td>
-            <textarea name="description" cols="40" rows="3" tal:content="param-self/description"></textarea>
+            <select name="productTypeSelect.value">
+              <option tal:repeat="option form/productTypeSelect/options" tal:attributes="value option/value; selected option/selected" tal:content="option/content">タイプ1</option>
+            </select>
           </td>
         </tr>
       </tbody>
     </table>
-    <p><input type="submit" name="next" value="次へ" /></p>
+    <p><input type="submit" name="previous" value="戻る" /> <input type="submit" name="next" value="次へ" /></p>
   </form>
 
 <div align="right">

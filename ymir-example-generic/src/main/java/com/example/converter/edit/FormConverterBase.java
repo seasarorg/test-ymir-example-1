@@ -134,9 +134,9 @@ public class FormConverterBase {
      * Copies Product entity to FormDto instance.
      * <p>This methods copies the following properties automatically:</p>
      * <ul>
-     *   <li>name</li>
-     *   <li>description</li>
      *   <li>productType</li>
+     *   <li>description</li>
+     *   <li>name</li>
      * </ul>
      * 
      * @param entity Source object.
@@ -144,9 +144,9 @@ public class FormConverterBase {
      * @return The first argument of this method.
      */
     public FormDto copyEntityToDto(Product entity, FormDto dto) {
-        reflectNameToDto(entity, dto);
-        reflectDescriptionToDto(entity, dto);
         reflectProductTypeToDto(entity, dto);
+        reflectDescriptionToDto(entity, dto);
+        reflectNameToDto(entity, dto);
 
         return dto;
     }
@@ -155,9 +155,9 @@ public class FormConverterBase {
      * Copies a List of Product entity to a List of FormDto.
      * <p>This methods copies the following properties automatically:</p>
      * <ul>
-     *   <li>name</li>
-     *   <li>description</li>
      *   <li>productType</li>
+     *   <li>description</li>
+     *   <li>name</li>
      * </ul>
      * 
      * @param entityList Source List.
@@ -172,23 +172,23 @@ public class FormConverterBase {
     }
 
     /**
-     * Copies 'name' property of Product entity to FormDto instance's 'name' property.
+     * Copies 'productType' property of Product entity to FormDto instance's 'productTypeSelect' property.
      * 
      * @param entity Source object.
      * @param dto Destination object.
      */
-    protected void reflectNameToDto(Product entity, FormDto dto) {
-        dto.setName(extractNameFromEntity(entity));
+    protected void reflectProductTypeToDto(Product entity, FormDto dto) {
+        dto.getProductTypeSelect().setSelectedValue(extractProductTypeFromEntity(entity));
     }
 
     /**
-     * Extracts 'name' property of Product entity in order to copy to FormDto instance's 'name' property.
+     * Extracts 'productType' property of Product entity in order to copy to FormDto instance's 'productTypeSelect' property.
      * 
      * @param entity Source object.
      * @return Extracted value.
      */
-    protected String extractNameFromEntity(Product entity) {
-        return convert(entity.getName(), String.class);
+    protected String extractProductTypeFromEntity(Product entity) {
+        return convert(entity.getProductType(), String.class);
     }
 
     /**
@@ -212,23 +212,23 @@ public class FormConverterBase {
     }
 
     /**
-     * Copies 'productType' property of Product entity to FormDto instance's 'productTypeSelect' property.
+     * Copies 'name' property of Product entity to FormDto instance's 'name' property.
      * 
      * @param entity Source object.
      * @param dto Destination object.
      */
-    protected void reflectProductTypeToDto(Product entity, FormDto dto) {
-        dto.getProductTypeSelect().setSelectedValue(extractProductTypeFromEntity(entity));
+    protected void reflectNameToDto(Product entity, FormDto dto) {
+        dto.setName(extractNameFromEntity(entity));
     }
 
     /**
-     * Extracts 'productType' property of Product entity in order to copy to FormDto instance's 'productTypeSelect' property.
+     * Extracts 'name' property of Product entity in order to copy to FormDto instance's 'name' property.
      * 
      * @param entity Source object.
      * @return Extracted value.
      */
-    protected String extractProductTypeFromEntity(Product entity) {
-        return convert(entity.getProductType(), String.class);
+    protected String extractNameFromEntity(Product entity) {
+        return convert(entity.getName(), String.class);
     }
 
     /**

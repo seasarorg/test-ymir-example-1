@@ -12,7 +12,7 @@ import org.seasar.ymir.scope.annotation.Out;
 import com.example.dto.edit.FormDto;
 import com.example.ymir.util.Redirect;
 
-@Conversation(name = "edit", phase = InputPage.NAME, followAfter = ConfirmPage.NAME)
+@Conversation(name = "edit", phase = InputPage.NAME, followAfter = Input2Page.NAME)
 public class InputPage extends InputPageBase {
     // 各PageクラスのBaseクラスには、formフィールドやformフィールドのためのGetter/Setterが必要に応じて
     // 自動生成されています。
@@ -43,7 +43,7 @@ public class InputPage extends InputPageBase {
     @Override
     @Required( { P_name, P_description })
     public Response _post_next() {
-        return Redirect.to(ConfirmPage.class);
+        return Redirect.to(Input2Page.class);
     }
 
     @Out(ConversationScope.class)
