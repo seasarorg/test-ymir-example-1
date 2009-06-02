@@ -11,7 +11,6 @@ import org.seasar.ymir.scope.annotation.Inject;
 import org.seasar.ymir.scope.annotation.RequestParameter;
 
 import com.example.converter.edit.FormConverter;
-import com.example.dto.edit.FormDto;
 
 public class Input2PageBase extends PageBase {
     public static final String PACKAGE = "com.example.web.edit";
@@ -23,15 +22,7 @@ public class Input2PageBase extends PageBase {
     @Meta(name = "bornOf", value = "/edit/input2.html")
     public static final String P_productTypeSelect$value = "productTypeSelect.value";
 
-    @Metas({@Meta(name = "bornOf", value = "/edit/input2.html"), @Meta(name = "property", value = "form")})
-    protected FormDto form = new FormDto();
-
     protected FormConverter formConverter;
-
-    @Meta(name = "bornOf", value = "/edit/input2.html")
-    public FormDto getForm() {
-        return this.form;
-    }
 
     @Inject
     public void setFormConverter(FormConverter formConverter) {

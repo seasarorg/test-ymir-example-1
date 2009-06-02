@@ -9,7 +9,6 @@ import org.seasar.ymir.response.PassthroughResponse;
 import org.seasar.ymir.scope.annotation.Inject;
 
 import com.example.converter.edit.FormConverter;
-import com.example.dto.edit.FormDto;
 
 public class ConfirmPageBase extends PageBase {
     public static final String PACKAGE = "com.example.web.edit";
@@ -18,15 +17,7 @@ public class ConfirmPageBase extends PageBase {
 
     public static final String PATH = "/edit/confirm.html";
 
-    @Metas({@Meta(name = "bornOf", value = "/edit/confirm.html"), @Meta(name = "property", value = "form")})
-    protected FormDto form = new FormDto();
-
     protected FormConverter formConverter;
-
-    @Meta(name = "bornOf", value = "/edit/confirm.html")
-    public FormDto getForm() {
-        return this.form;
-    }
 
     @Inject
     public void setFormConverter(FormConverter formConverter) {
