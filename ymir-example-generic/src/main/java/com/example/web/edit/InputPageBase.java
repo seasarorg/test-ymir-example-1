@@ -6,7 +6,6 @@ import org.seasar.ymir.annotation.Metas;
 import org.seasar.ymir.conversation.annotation.Begin;
 import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.id.action.PostAction;
-import org.seasar.ymir.render.html.Select;
 import org.seasar.ymir.response.PassthroughResponse;
 import org.seasar.ymir.scope.annotation.Inject;
 import org.seasar.ymir.scope.annotation.RequestParameter;
@@ -28,9 +27,6 @@ public class InputPageBase extends PageBase {
 
     @Meta(name = "bornOf", value = "/edit/input.html")
     public static final String P_name = "name";
-
-    @Meta(name = "bornOf", value = "/edit/input.html")
-    public static final String P_productTypeSelect$value = "productTypeSelect.value";
 
     protected FormConverter formConverter;
 
@@ -73,12 +69,6 @@ public class InputPageBase extends PageBase {
     @RequestParameter
     public void setName(String name) {
         this.form.setName(name);
-    }
-
-    @Metas({@Meta(name = "bornOf", value = "/edit/input.html"), @Meta(name = "formProperty", value = "form")})
-    @RequestParameter
-    public Select getProductTypeSelect() {
-        return this.form.getProductTypeSelect();
     }
 
     public static interface _get extends GetAction {

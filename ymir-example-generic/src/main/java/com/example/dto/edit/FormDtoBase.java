@@ -17,7 +17,7 @@ public class FormDtoBase
     @Meta(name = "bornOf", value = {"/edit/confirm.html", "/edit/input.html"})
     protected String name;
 
-    @Meta(name = "bornOf", value = {"/edit/input.html", "/edit/input2.html"})
+    @Meta(name = "bornOf", value = "/edit/input2.html")
     protected Select productTypeSelect = new Select();
 
 
@@ -81,12 +81,12 @@ public class FormDtoBase
         this.name = name;
     }
 
-    @Meta(name = "bornOf", value = {"/edit/input.html", "/edit/input2.html"})
+    @Meta(name = "bornOf", value = "/edit/input2.html")
     public Select getProductTypeSelect() {
         return this.productTypeSelect;
     }
 
-    @Meta(name = "bornOf", value = {"/edit/input.html", "/edit/input2.html"})
+    @Meta(name = "bornOf", value = "/edit/input2.html")
     public void setProductTypeSelect(Select productTypeSelect) {
         this.productTypeSelect = productTypeSelect;
     }

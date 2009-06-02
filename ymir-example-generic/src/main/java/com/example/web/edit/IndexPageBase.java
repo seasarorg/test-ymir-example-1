@@ -11,18 +11,18 @@ public class IndexPageBase extends PageBase {
 
     public static final String PATH = "/edit/index.html";
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/input.html", "/edit/input2.html"})
     public static final String P_id = "id";
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/input.html", "/edit/input2.html"})
     protected Integer id;
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/input.html", "/edit/input2.html"})
     public Integer getId() {
         return this.id;
     }
 
-    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/input2.html"})
+    @Meta(name = "bornOf", value = {"/edit/complete.html", "/edit/confirm.html", "/edit/input.html", "/edit/input2.html"})
     @RequestParameter
     public void setId(Integer id) {
         this.id = id;
