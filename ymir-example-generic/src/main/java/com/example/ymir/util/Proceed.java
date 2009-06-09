@@ -1,11 +1,11 @@
 package com.example.ymir.util;
 
+import java.util.Map;
+
 import org.seasar.ymir.Response;
 import org.seasar.ymir.id.action.Action;
 import org.seasar.ymir.id.action.GetAction;
 import org.seasar.ymir.response.ProceedResponse;
-
-import com.example.ymir.util.PageUtils;
 
 public class Proceed {
     protected Proceed() {
@@ -26,6 +26,14 @@ public class Proceed {
         }
 
         return new ProceedResponse(PageUtils.constructPath(path, false, pms));
+    }
+
+    /**
+     * @since 1.0.3-1
+     */
+    public static Response to(String path, Map<String, String[]> parameterMap) {
+        return new ProceedResponse(PageUtils.constructPath(path, false,
+                parameterMap));
     }
 
     public static Response to(Class<?> pageClass) {
@@ -62,5 +70,14 @@ public class Proceed {
 
         return new ProceedResponse(PageUtils.constructPath(pageClass, false,
                 pms));
+    }
+
+    /**
+     * @since 1.0.3-1
+     */
+    public static Response to(Class<?> pageClass,
+            Map<String, String[]> parameterMap) {
+        return new ProceedResponse(PageUtils.constructPath(pageClass, false,
+                parameterMap));
     }
 }
