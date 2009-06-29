@@ -8,7 +8,6 @@ import java.util.Map;
 
 import org.seasar.ymir.IllegalClientCodeRuntimeException;
 import org.seasar.ymir.Path;
-import org.seasar.ymir.Request;
 import org.seasar.ymir.YmirContext;
 import org.seasar.ymir.response.scheme.impl.PassthroughStrategy;
 
@@ -181,8 +180,6 @@ public class PageUtils {
     }
 
     static String getCharacterEncoding() {
-        return ((Request) YmirContext.getYmir().getApplication()
-                .getS2Container().getComponent(Request.class))
-                .getCharacterEncoding();
+        return "UTF-8";
     }
 }
