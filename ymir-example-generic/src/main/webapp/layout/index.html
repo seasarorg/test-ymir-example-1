@@ -1,0 +1,40 @@
+<html metal:use-macro="/WEB-INF/html/layout/layout.html">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title metal:fill-slot="header-title">レイアウト機能</title>
+</head>
+<body>
+  <h1 metal:fill-slot="body-title">レイアウト機能</h1>
+  <div metal:fill-slot="body-content">
+<p>ZPTのmetal属性を使うとレイアウト機能を実現することができます。
+</p>
+<p>ここでの例の場合、いくつかのページ共通のレイアウトを/WEB-INF/html/layout/layout.htmlというファイルとして作成してあります。
+layout.htmlでは、「metal:define-macro」属性を使ってhtml要素ブロックをマクロとして定義しています。マクロ名は「layout」です。
+</p>
+<p>マクロを使う側のページ（index.html。このページ）には、先ほど定義したマクロを使うための「metal:use-macro」属性が埋め込まれています。
+use-macroではマクロが定義されているZPTテンプレートのパス（ここでは「/WEB-INF/html/layout/layout.html」）を指定します。
+パスのテンプレート名部分（ここでは「layout.html」から拡張子を取り除いたもの（「layout」）をマクロ名として、指定されたZPTテンプレート内が検索されます。
+その結果、layout.htmlでmetal:define-macro="layout"という属性がつけられたマクロが見つかり、
+マクロが評価された上でindex.html中のでmetal:use-macro="..."とした箇所に埋め込まれます。
+</p>
+<p>「マクロの評価」とは、マクロ中の「metal:define-slot」属性を持つ要素（これを「スロット」と言います）のボディをマクロ参照元の「metal:fill-slot」属性を持つ要素のボディで置き換えることを表します。
+例えばindex.htmlのmetal:use-macro属性がつけられたブロックの中では、
+<ul>
+  <li>metal:fill-slot="header-title"</li>
+  <li>metal:fill-slot="body-title"</li>
+  <li>metal:fill-slot="body-content"</li>
+</ul>
+という3つのmetal:fill-slot属性があります。それぞれの属性を持つ要素のボディがマクロ中の対応する場所に埋め込まれます。
+</p>
+<p>なおxml宣言やDOCTYPE宣言をマクロ側で指定できるよう、metal:define-macro属性を持つ要素の直前に定数ブロック（tal属性やmetal属性がついていない一連の要素）がある場合は、
+それらもマクロの評価結果として展開されます。
+この画面（index.html）のZPTソースにはxml宣言やDOCTYPE宣言は存在しませんが、
+この画面に埋め込まれているマクロ（layout.html)側でmetal:define-macro属性を持つ要素の直前にxml宣言やDOCTYPE宣言が存在するため、
+これがこの画面でも展開されます。
+（この画面のレンダリング結果である最終的なHTMLのソースを見ると、xml宣言やDOCTYPE宣言が埋め込まれていることが分かります。）
+  </div>
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
