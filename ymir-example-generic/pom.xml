@@ -205,24 +205,57 @@
   </pluginRepositories>
   <dependencies>
     <dependency>
+      <groupId>org.seasar.cms.s2-pluggable</groupId>
+      <artifactId>s2-pluggable</artifactId>
+      <version>0.0.12</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.seasar.container</groupId>
+          <artifactId>s2-framework</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.cms.s2-classbuilder</groupId>
+      <artifactId>s2-classbuilder</artifactId>
+      <version>0.0.9</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.seasar.container</groupId>
+          <artifactId>s2-framework</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.container</groupId>
+      <artifactId>s2-extension</artifactId>
+      <version>2.4.39</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seasar.container</groupId>
+      <artifactId>s2-tiger</artifactId>
+      <version>2.4.39</version>
+    </dependency>
+    <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-extension</artifactId>
       <version>1.0.6-SNAPSHOT</version>
       <exclusions>
         <exclusion>
-          <groupId>org.seasar.ymir</groupId>
-          <artifactId>ymir-beantable</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.seasar.dao</groupId>
-      <artifactId>s2-dao-tiger</artifactId>
-      <version>1.0.47</version>
-      <exclusions>
-        <exclusion>
           <groupId>org.seasar.container</groupId>
           <artifactId>s2-extension</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.seasar.container</groupId>
+          <artifactId>s2-tiger</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.seasar.cms.s2-pluggable</groupId>
+          <artifactId>s2-pluggable</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.seasar.cms.s2-classbuilder</groupId>
+          <artifactId>s2-classbuilder</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -254,6 +287,7 @@
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-testing</artifactId>
       <version>1.0.6-SNAPSHOT</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
