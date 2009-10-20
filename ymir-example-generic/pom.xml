@@ -8,7 +8,7 @@
   <artifactId>ymir-example-generic</artifactId>
   <packaging>war</packaging>
   <name>ymir-example-generic</name>
-  <version>1.0.6-SNAPSHOT</version>
+  <version>1.0.6</version>
   <description></description>
   <build>
     <defaultGoal>package</defaultGoal>
@@ -207,7 +207,7 @@
     <dependency>
       <groupId>org.seasar.cms.s2-pluggable</groupId>
       <artifactId>s2-pluggable</artifactId>
-      <version>0.0.12</version>
+      <version>0.0.13</version>
       <exclusions>
         <exclusion>
           <groupId>org.seasar.container</groupId>
@@ -218,7 +218,7 @@
     <dependency>
       <groupId>org.seasar.cms.s2-classbuilder</groupId>
       <artifactId>s2-classbuilder</artifactId>
-      <version>0.0.9</version>
+      <version>0.0.10</version>
       <exclusions>
         <exclusion>
           <groupId>org.seasar.container</groupId>
@@ -239,7 +239,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-extension</artifactId>
-      <version>1.0.6-SNAPSHOT</version>
+      <version>1.0.6</version>
       <exclusions>
         <exclusion>
           <groupId>org.seasar.container</groupId>
@@ -286,7 +286,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-testing</artifactId>
-      <version>1.0.6-SNAPSHOT</version>
+      <version>1.0.6</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -304,7 +304,7 @@
     <dependency>
       <groupId>org.seasar.cms.mailsender</groupId>
       <artifactId>mailsender</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
     </dependency>
   </dependencies>
 </project>
