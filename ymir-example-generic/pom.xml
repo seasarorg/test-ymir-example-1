@@ -8,7 +8,7 @@
   <artifactId>ymir-example-generic</artifactId>
   <packaging>war</packaging>
   <name>ymir-example-generic</name>
-  <version>1.0.6</version>
+  <version>1.0.7-SNAPSHOT</version>
   <description></description>
   <build>
     <defaultGoal>package</defaultGoal>
@@ -218,7 +218,7 @@
     <dependency>
       <groupId>org.seasar.cms.s2-classbuilder</groupId>
       <artifactId>s2-classbuilder</artifactId>
-      <version>0.0.10</version>
+      <version>0.0.11-SNAPSHOT</version>
       <exclusions>
         <exclusion>
           <groupId>org.seasar.container</groupId>
@@ -239,7 +239,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-extension</artifactId>
-      <version>1.0.6</version>
+      <version>1.0.7-SNAPSHOT</version>
       <exclusions>
         <exclusion>
           <groupId>org.seasar.container</groupId>
@@ -286,7 +286,7 @@
     <dependency>
       <groupId>org.seasar.ymir</groupId>
       <artifactId>ymir-testing</artifactId>
-      <version>1.0.6</version>
+      <version>1.0.7-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>
