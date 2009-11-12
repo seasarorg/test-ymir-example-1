@@ -17,8 +17,8 @@
   <li tal:repeat="note notes/notes" tal:content="note/%value">MESSAGE</li>
 </ul>
 <form name="form" action="./index.html">
-  <p>日付1：<input type="text" name="date1" tal:attributes="value param-self/date1; class decorate:date1 with error" /><span tal:condition="notes/contains(date1)"> ←<span tal:repeat="note notes/notes(date1)" tal:replace="note/%value">MESSAGE</span></span></p>
-  <p>日付2：<input type="text" name="date2" tal:attributes="value param-self/date2; class decorate:date2 with error" /><span tal:condition="notes/contains(date2)"> ←<span tal:repeat="note notes/notes(date2)" tal:replace="note/%value">MESSAGE</span></span></p>
+  <p>日付1：<input type="text" name="date1" tal:attributes="value param-self/date1; class decorate-by-notes:date1 with error" /><span tal:condition="notes/contains(date1)"> ←<span tal:repeat="note notes/notes(date1)" tal:replace="note/%value">MESSAGE</span></span></p>
+  <p>日付2：<input type="text" name="date2" tal:attributes="value param-self/date2; class decorate-by-notes:date2 with error" /><span tal:condition="notes/contains(date2)"> ←<span tal:repeat="note notes/notes(date2)" tal:replace="note/%value">MESSAGE</span></span></p>
   <p><input type="submit" value="決定" /></p>
 </form>
 <p tal:condition="self/date1">入力された日付1は<span tal:replace="self/date1">DATE</span>です。</p>
