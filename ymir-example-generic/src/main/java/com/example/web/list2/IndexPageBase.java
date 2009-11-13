@@ -71,7 +71,7 @@ public class IndexPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/list2/index.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/list2/index.html"})
     public void _prerender() {
 
     }

@@ -99,7 +99,7 @@ public class InputPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/update/input.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/update/input.html"})
     public void _prerender() {
 
     }

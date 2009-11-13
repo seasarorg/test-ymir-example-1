@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>バリデーションエラー時などの装飾</title>
+</head>
+<body>
+  <h1>バリデーションエラー時などの装飾</h1>
+<p>バリデーションエラーになった項目の見た目を変更するやり方のサンプルです。</p>
+<p>HTMLでタグの見た目を操作するにはCSSを使うのが一般的です。
+例えば「error」というクラスに対応するエントリをCSSで定義しておき、
+エラーになった項目に対応するHTMLタグのclass属性に動的に「error」という値を追加することで、
+エラーの時に項目の見た目を変更することができます。</p>
+<p>Ymir+ZPTでは、条件が満たされた場合に動的にclass属性に値を追加するための仕組みとして、
+decorate式とdecorate-by-notes式が提供されています。
+以下で具体的にこの2つの式の使い方を説明します。</p>
+
+<h2>decorate式を使うやり方</h2>
+<p>decorate式はtal:attributesの中でclass属性の値を設定するためだけに利用できる式で、
+以下の構文で記述します：</p>
+<blockquote>decorate:<em>条件</em> with <em>[!]class属性に追加する値</em></blockquote>
+<p>「条件」にはtal:conditionに書くような条件式を書くことができます。</p>
+<p>「class属性に追加する値」には文字列で値を書いて下さい。
+なお値の直前に「!」をつけると、既存のclass属性が置換されます。</p>
+<p>例えば項目「date」について、バリデーションエラーの時に動的にclass属性に「error」という値を追加するための記述例は以下の通りです：</p>
+<pre>&lt;input type="text" name="date" tal:attributes="class decorate:notes/contains(date) with error" /&gt;
+</pre>
+<p>次の項目はyyyyMMdd形式の日付文字列を受け付けるフォームです。</p>
+<p>最初はclass属性の値は「emphasized」（項目を太字で表示）ですが、
+形式が異なる値を入力すると「error」が追加されて項目の背景色が変更されます（項目は太字のまま）。</p>
+<pre>&lt;input type="text" name="date" tal:attributes="class decorate:notes/contains(date) with error" /&gt;
+</pre>
+<form name="form" action="./index.html">
+  <p>日付：<input type="text" name="date" tal:attributes="value param-self/date; class decorate:notes/contains(date) with error" class="emphasized" />
+  <p><input type="submit" value="決定" /></p>
+</form>
+
+<p>次はエラー時にclass属性の値を置換する例です。</p>
+<p>形式が異なる値を入力するとclass属性の値が「error」で置き換えられて太字表示が抑制されます。</p>
+<pre>&lt;input type="text" name="date" tal:attributes="class decorate:notes/contains(date) with <strong>!</strong>error" /&gt;
+</pre>
+<form name="form" action="./index.html">
+  <p>日付：<input type="text" name="date" tal:attributes="value param-self/date; class decorate:notes/contains(date) with !error" class="emphasized" />
+  <p><input type="submit" value="決定" /></p>
+</form>
+
+<h2>decorate-by-notes式を使うやり方</h2>
+<p>decorate-by-notes式はdecorate式とほぼ同じですが、メッセージ（Notes）表示に特化しています。
+具体的には、decorate式の条件部に「notes/contains(NAME)」と書く代わりに単に「NAME」と書くことができます。
+（逆に、普通の条件式を書くことはできません。）</p>
+<blockquote>decorate-by-notes:[<em>カテゴリ名</em>] with <em>[!]class属性に追加する値</em></blockquote>
+<p>「カテゴリ名」で指定されたカテゴリに属するNoteが現在のNotesに存在する場合に、
+指定された値がclass属性に追加されます。</p>
+<p>カテゴリ名は省略することができます。
+省略した場合、現在のNotesになんらかのメッセージが存在する場合に指定された値がclass属性に追加されます。</p>
+<p>例えば項目「date」について、バリデーションエラーの時に動的にclass属性に「error」という値を追加するための記述例は以下の通りです：</p>
+<pre>&lt;input type="text" name="date" tal:attributes="class decorate-by-notes:date with error" /&gt;
+</pre>
+<p>次の例はdecorate-by-notes式を使ってclass属性を動的に追加する例です。</p>
+<form name="form" action="./index.html">
+<p>最初はclass属性の値は「emphasized」（項目を太字で表示）ですが、
+形式が異なる値を入力すると「error」が追加されて項目の背景色が変更されます（項目は太字のまま）。</p>
+<pre>日付：&lt;input type="text" name="date" tal:attributes="class decorate-by-notes:date with error" /&gt;
+</pre>
+  <p>日付：<input type="text" name="date" tal:attributes="value param-self/date; class decorate-by-notes:date with error" class="emphasized" />
+<p>2番目の項目（日付2）にはdecorate-by-notes式にカテゴリ名を指定していませんので、
+2つの項目のいずれかがエラーの場合に背景色が変更されます。</p>
+<pre>日付2：&lt;input type="text" name="date2" tal:attributes="class decorate-by-notes:with error" /&gt;
+</pre>
+  <p>日付2：<input type="text" name="date2" tal:attributes="value param-self/date2; class decorate-by-notes:with error" class="emphasized" />
+  <p><input type="submit" value="決定" /></p>
+</form>
+
+<p>次はエラー時にclass属性の値を置換する例です。</p>
+<p>形式が異なる値を入力するとclass属性の値が「error」で置き換えられて太字表示が抑制されます。</p>
+<pre>&lt;input type="text" name="date" tal:attributes="class decorate-by-notes:date with <strong>!</strong>error" /&gt;
+</pre>
+<form name="form" action="./index.html">
+  <p>日付：<input type="text" name="date" tal:attributes="value param-self/date; class decorate-by-notes:date with !error" class="emphasized" />
+  <p><input type="submit" value="決定" /></p>
+</form>
+
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>

@@ -82,7 +82,7 @@ public class InputPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/register/input.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/register/input.html"})
     public void _prerender() {
 
     }

@@ -3,6 +3,7 @@
 %checkbox2%index.html=com.example.web.checkbox2.IndexPage
 %checkbox3%index.html=com.example.web.checkbox3.IndexPage
 %customTag%index.html=com.example.web.customTag.IndexPage
+%decorate%index.html=com.example.web.decorate.IndexPage
 %download%index.html=com.example.web.download.IndexPage
 %edit%complete.html=com.example.web.edit.CompletePage
 %edit%confirm.html=com.example.web.edit.ConfirmPage
@@ -41,6 +42,7 @@ com.example.web.checkbox.IndexPage=/checkbox/index.html
 com.example.web.checkbox2.IndexPage=/checkbox2/index.html
 com.example.web.checkbox3.IndexPage=/checkbox3/index.html
 com.example.web.customTag.IndexPage=/customTag/index.html
+com.example.web.decorate.IndexPage=/decorate/index.html
 com.example.web.download.IndexPage=/download/index.html
 com.example.web.edit.CompletePage=/edit/complete.html
 com.example.web.edit.ConfirmPage=/edit/confirm.html

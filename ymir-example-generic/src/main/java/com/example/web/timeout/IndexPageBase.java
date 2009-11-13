@@ -40,7 +40,7 @@ public class IndexPageBase extends PageBase {
         return new PassthroughResponse();
     }
 
-    @Meta(name = "bornOf", value = "/timeout/index.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/timeout/index.html"})
     public void _prerender() {
 
     }

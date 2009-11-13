@@ -25,7 +25,7 @@ public class IndexPageBase extends PageBase {
 
     }
 
-    @Meta(name = "bornOf", value = "/session/index.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/session/index.html"})
     public void _prerender() {
 
     }

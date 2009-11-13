@@ -1,4 +1,4 @@
-package com.example.web.requestHeader;
+package com.example.web.layout;
 
 import org.seasar.ymir.annotation.Meta;
 import org.seasar.ymir.id.action.GetAction;
@@ -6,19 +6,11 @@ import org.seasar.ymir.id.action.GetAction;
 import com.example.web.PageBase;
 
 public class IndexPageBase extends PageBase {
-    public static final String PACKAGE = "com.example.web.requestHeader";
+    public static final String PACKAGE = "com.example.web.layout";
 
     public static final String NAME = "index";
 
-    public static final String PATH = "/requestHeader/index.html";
-
-    @Meta(name = "bornOf", value = "/requestHeader/index.html")
-    protected String userAgent;
-
-    @Meta(name = "bornOf", value = "/requestHeader/index.html")
-    public String getUserAgent() {
-        return this.userAgent;
-    }
+    public static final String PATH = "/layout/index.html";
 
     public static interface _get extends GetAction {
         public static final String NAME = "_get";
@@ -33,7 +25,7 @@ public class IndexPageBase extends PageBase {
 
     }
 
-    @Meta(name = "bornOf", value = {"/index.html", "/requestHeader/index.html"})
+    @Meta(name = "bornOf", value = "/index.html")
     public void _prerender() {
 
     }

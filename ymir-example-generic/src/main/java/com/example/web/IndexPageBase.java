@@ -18,12 +18,12 @@ public class IndexPageBase extends PageBase {
         public static final Class<? extends GetAction> method = _get.class;
     }
 
-    @Meta(name = "bornOf", value = {"/aaa/index.html", "/checkbox/index.html", "/checkbox2/index.html", "/download/index.html", "/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/edit/input2.html", "/exceptionHandler/index.html", "/includedForm/index.html", "/list3/index.html", "/list4/index.html", "/ncheckbox/index.html", "/radio/index.html", "/select/index.html", "/select2/index.html", "/timeout/index.html", "/timeout/logined.html", "/update/input.html", "/upload/index.html"})
+    @Meta(name = "bornOf", value = {"/aaa/index.html", "/checkbox/index.html", "/checkbox2/index.html", "/decorate/index.html", "/download/index.html", "/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/edit/input2.html", "/exceptionHandler/index.html", "/includedForm/index.html", "/index.html", "/list3/index.html", "/list4/index.html", "/ncheckbox/index.html", "/radio/index.html", "/select/index.html", "/select2/index.html", "/timeout/index.html", "/timeout/logined.html", "/update/input.html", "/upload/index.html"})
     public void _get() {
 
     }
 
-    @Meta(name = "bornOf", value = {"/checkbox/index.html", "/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/edit/input2.html", "/includedForm/index.html", "/index.html", "/timeout/index.html", "/timeout/logined.html", "/update/input.html", "/upload/index.html"})
+    @Meta(name = "bornOf", value = {"/checkbox/index.html", "/decorate/index.html", "/edit/complete.html", "/edit/confirm.html", "/edit/index.html", "/edit/input.html", "/edit/input2.html", "/includedForm/index.html", "/index.html", "/timeout/index.html", "/timeout/logined.html", "/update/input.html", "/upload/index.html"})
     public void _prerender() {
 
     }

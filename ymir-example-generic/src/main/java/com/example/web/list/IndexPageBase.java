@@ -31,12 +31,12 @@ public class IndexPageBase extends PageBase {
         public static final Class<? extends GetAction> method = _get.class;
     }
 
-    @Meta(name = "bornOf", value = "/list/detail.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/list/detail.html"})
     public void _get() {
 
     }
 
-    @Meta(name = "bornOf", value = "/list/index.html")
+    @Meta(name = "bornOf", value = {"/index.html", "/list/index.html"})
     public void _prerender() {
 
     }
