@@ -11,10 +11,10 @@
   <p>ファンクションとは、ZPTのJava式に記述可能な関数のことです。</p>
   <p>ファンクションを追加するには、org.seasar.ymir.zpt.Functionsインタフェースの実装クラスを作成してsrc/main/resources/app.diconにコンポーネント登録しておく必要があります。</p>
   <p>Functionsインタフェースの実装クラスが持つ全てのpublic staticメソッドがファンクションとしてJava式から利用可能になります。</p>
-  <p>ここでは例として、足し算を行なうint add(int, int)というファンクションを追加します。このファンクションを追加するために、このファンクションを持つクラスcom.example.zpt.UserDefinedFunctionsを用意してapp.diconにコンポーネント登録してあります。</p>
+  <p>ここでは例として、足し算を行なうint sum(int, int)というファンクションを追加します。このファンクションを追加するために、このファンクションを持つクラスcom.example.zpt.UserDefinedFunctionsを用意してapp.diconにコンポーネント登録してあります。</p>
   <p>以下が利用例です。</p>
   <pre>
-    &lt;span tal:content="java:add(1, 2)"&gt;RESULT&lt;/span&gt; → <span tal:content="java:add(1, 2)">RESULT</span>
+    &lt;span tal:content="java:sum(1, 2)"&gt;RESULT&lt;/span&gt; → <span tal:content="java:sum(1, 2)">RESULT</span>
   </pre>
   <p>テンプレート<tt>src/main/webapp/function/index.html</tt>も見てみると分かりやすいでしょう。</p>
 

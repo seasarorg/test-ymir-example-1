@@ -9,7 +9,7 @@ import org.seasar.ymir.zpt.Functions;
  * </p>
  */
 public class UserDefinedFunctions implements Functions {
-    public static int add(int o1, int o2) {
+    public static int sum(int o1, int o2) {
         return o1 + o2;
     }
 }
