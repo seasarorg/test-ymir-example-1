@@ -37,3 +37,5 @@ label.edit_inputPage.description=説明
 label.included_loginPage.userId=ユーザID
 label.included_loginPage.password=パスワード
 error.included_loginPage.loginFailed=ユーザIDまたはパスワードが違います。
+
+message.redirectionScope.updated=更新しました。

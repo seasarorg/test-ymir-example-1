@@ -21,6 +21,8 @@
 %mailsender%index.html=com.example.web.mailsender.IndexPage
 %mailsender%sent.html=com.example.web.mailsender.SentPage
 %radio%index.html=com.example.web.radio.IndexPage
+%redirectionScope%index.html=com.example.web.redirectionScope.IndexPage
+%redirectionScope%view.html=com.example.web.redirectionScope.ViewPage
 %register%complete.html=com.example.web.register.CompletePage
 %register%confirm.html=com.example.web.register.ConfirmPage
 %register%input.html=com.example.web.register.InputPage
@@ -60,6 +62,8 @@ com.example.web.list4.IndexPage=/list4/index.html
 com.example.web.mailsender.IndexPage=/mailsender/index.html
 com.example.web.mailsender.SentPage=/mailsender/sent.html
 com.example.web.radio.IndexPage=/radio/index.html
+com.example.web.redirectionScope.IndexPage=/redirectionScope/index.html
+com.example.web.redirectionScope.ViewPage=/redirectionScope/view.html
 com.example.web.register.CompletePage=/register/complete.html
 com.example.web.register.ConfirmPage=/register/confirm.html
 com.example.web.register.InputPage=/register/input.html

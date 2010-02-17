@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>リダイレクト先でのメッセージの表示</title>
+</head>
+<body>
+<h1>リダイレクト先でのメッセージの表示</h1>
+<p>例えば更新系の画面の後に閲覧系の画面にリダイレクトさせて、リダイレクト先の画面で「更新しました」等のメッセージを一時的に表示させたい場合があります。Ymirではredirectionスコープを使うことでこのような処理を実現することができます。</p>
+<p>以下のフォームで「更新」ボタンを押すと一覧画面に遷移しますが、その時「更新しました。」というメッセージが一時的に表示されます。ブラウザのリロードボタンを押すとメッセージが消去されていることが分かります。</p>
+<form action="./index.html" method="post">
+  <input type="submit" value="更新" />
+</form>
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
