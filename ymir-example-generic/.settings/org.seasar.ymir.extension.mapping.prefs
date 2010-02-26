@@ -20,6 +20,7 @@
 %list4%index.html=com.example.web.list4.IndexPage
 %mailsender%index.html=com.example.web.mailsender.IndexPage
 %mailsender%sent.html=com.example.web.mailsender.SentPage
+%paging%index.html=com.example.web.paging.IndexPage
 %radio%index.html=com.example.web.radio.IndexPage
 %redirectionScope%index.html=com.example.web.redirectionScope.IndexPage
 %redirectionScope%view.html=com.example.web.redirectionScope.ViewPage
@@ -61,6 +62,7 @@ com.example.web.list2.IndexPage=/list2/index.html
 com.example.web.list4.IndexPage=/list4/index.html
 com.example.web.mailsender.IndexPage=/mailsender/index.html
 com.example.web.mailsender.SentPage=/mailsender/sent.html
+com.example.web.paging.IndexPage=/paging/index.html
 com.example.web.radio.IndexPage=/radio/index.html
 com.example.web.redirectionScope.IndexPage=/redirectionScope/index.html
 com.example.web.redirectionScope.ViewPage=/redirectionScope/view.html

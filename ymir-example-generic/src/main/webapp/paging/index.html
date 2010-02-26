@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>ページング（DBFluteと連携）</title>
+</head>
+<body>
+<h1>ページング（DBFluteと連携）</h1>
+<p>DBFluteと連携した場合のページング処理の実装例です。</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th><th>名前</th><th>説明</th>
+    </tr>
+  <tbody>
+    <tr tal:repeat="entity self/entities">
+      <td tal:content="entity/id">ID</td>
+      <td tal:content="entity/name">NAME</td>
+      <td tal:content="entity/description">DESCRIPTION</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<div tal:define="paging self/paging">
+全<span tal:content="paging/allRecordCount">N</span>件&nbsp;&nbsp;
+<a tal:omit-tag="not:paging/existPrePage" tal:attributes="href page:index.html?p=1" href="#">最初へ</a>&nbsp;
+<a tal:omit-tag="not:paging/existPrePage" tal:attributes="href page:index.html?p=${paging/prePageNumber}" href="#">前へ</a>&nbsp;
+<span tal:repeat="pageNumber self/paging/pageNumbers" tal:omit-tag="">
+  <a tal:omit-tag="pageNumber/current" tal:attributes="href page:index.html?p=${pageNumber/pageNumber}" tal:content="pageNumber/pageNumber" href="#">1</a>&nbsp;
+</span>
+<a tal:omit-tag="not:paging/existNextPage" tal:attributes="href page:index.html?p=${paging/nextPageNumber}" href="#">次へ</a>&nbsp;
+<a tal:omit-tag="not:paging/existNextPage" tal:attributes="href page:index.html?p=${paging/allPageCount}" href="#">最後へ</a>
+</div>
+<div align="right">
+  <a href="../index.html">戻る</a>
+</div>
+</body>
+</html>
