@@ -34,6 +34,6 @@ public class EntityLogic {
         }
         return new PagingResultBean<EntityDto>(list, new Paging(entityList
                 .size(), (entityList.size() + countByPage - 1) / countByPage,
-                pageNumber, 2));
+                countByPage, pageNumber, 2));
     }
 }
