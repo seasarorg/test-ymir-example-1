@@ -26,6 +26,10 @@ public class PagingResultBean<E> {
         return paging.getAllPageCount();
     }
 
+    public int getPageSize() {
+        return paging.getPageSize();
+    }
+
     public int getCurrentPageNumber() {
         return paging.getCurrentPageNumber();
     }
